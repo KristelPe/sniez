@@ -82,11 +82,19 @@
     background-size: 145%;
     background-repeat: no-repeat;
 }
+
+#action .overlay{
+    height:30vh;
+    z-index: 0;
+    opacity: 0.1;
+}
+
 .call{
     border-color: #6896a9;
     border-radius: 0;
     width: 65vw;
     height: 3.5em;
+    z-index: 1;
 }
 
 .call button{
@@ -110,6 +118,7 @@
 }
 
 .container__proto{
+    height: 40vh;
     width: 120vh;
     transition:all 2.5s ease;
 }
@@ -165,7 +174,11 @@
     flex-direction: column;
     justify-content: center;
 }
-
+#team .overlay{
+    height:48vh;
+    z-index: 0;
+    opacity: 0.5;
+}
 .container__team{
     display: flex;
     flex-direction: row;
@@ -173,6 +186,7 @@
     justify-content: center;
     margin: auto;
     width: 80vw;
+    z-index: 1;
 }
 
 .border__image{
