@@ -1,75 +1,183 @@
-/*
-    CHANGE:
-        - margin
-        - colors
-            -> text
-            -> backgound
-        - background-images
-        - font
-            -> family
-            -> size
-*/
-
+/* -- BASICS -- */
 .container__large{
-    min-height: 30vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#start{
-    height: 100vh;
+/* -- HEADER -- */
+#header{
+    /*height: 100vh;*/
+    height: 40vh;
     background-color: lightgray;
+    background-image: url("../images/mobiel/header_mobile.jpg");
+    background-position: center top ;
+    background-size: 145%;
+    background-repeat: no-repeat;
 }
 
-#center, #end{
-    background-color: lightgray;
+.overlay{
+    background-color: rgba(0,0,0,0.2);
+    height: 40vh;
+    position: absolute;
 }
 
+.border__inside{
+    width: 15.25vw;
+    height: 15.25vw;
+    /*width: 239px;
+    height: 239px;*/
+    padding: 2.55em;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2.75px dotted #f3be7d;
+    margin-left: -0.75em;
+    margin-top: -0.75em;
+}
+.border__outside{
+    border-radius: 50%;
+    border: 2px dashed white;
+    width: calc(15vw + 4em);
+    height: calc(15vw + 4em);
+    /*width: calc(241px + 4em);
+    height: calc(241px + 4em);*/
+    padding: 1em;
+    margin: auto;
+    z-index: 1;
+}
+
+#logo{
+    width: 30vw;
+    margin-left: -1.77em;
+    /*width: 239px;*/
+}
+
+
+/* -- FEATURES -- */
 #features{
     min-height: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 3em auto; 
+    margin: 1.25em auto;
 }
 
 .container__feature{
-    margin: 0.5em;
+    margin: 1.75em;
     padding: 1em;
-    background-color: #ffac4b;
+    width: 40vw;
+    min-height: 10vh;
+    background-color: #f3be7d;
 }
 
+/* -- CALL2ACTION -- */
 #action{
+    height: 30vh;
+    background-image: url("../images/mobiel/Cta_mobile.jpg");
+    background-position: center bottom ;
+    background-size: 145%;
+    background-repeat: no-repeat;
+}
+.call{
+    border-color: #6896a9;
+    border-radius: 0;
+    width: 65vw;
+    height: 3.5em;
+}
+
+.call button{
+    background-color: #6896a9;
+    border-radius: 0;
+    color: white;
+    font-size: 1.75em;
+    width: 65vw;
+    height: 2em;
+    border: none;
+}
+
+/* -- PROTOTYPE -- */
+#proto{
+    background-color: lightgray;
+    margin: 3em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#proto .container__proto{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.border__inside{
-    width: 239px;
-    height: 239px;
-    padding: 2em;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 2px dotted #ffac4b; 
-    margin-left: -1px;
-    margin-top: -1px;
+#proto div img{
+    height: 40vh;
 }
-.border__outside{
-    border-radius: 50%;
-    border: 2px dashed rgba(255, 255, 255, 0.7); 
-    width: calc(241px + 4em);
-    height: calc(241px + 4em);
-    padding: 1em;
+
+#proto .container__proto div:not(:first-of-type){
+    display: none;
+}
+
+.nav ul{
+    width: 30vw;
+    max-width: 125px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     margin: auto;
 }
 
-#start img{
-    width: 239px;
+.nav ul li{
+    width: 8px;
+    height: 8px;
+    border: 2px solid #6896a9;
+    border-radius: 50%;
+    margin: auto 0.5em;
+    margin-top: 2.5em;
+}
+
+.nav ul li:first-of-type{
+    background-color: #6896a9;
+}
+
+/* -- TEAM -- */
+#team{
+    height: 48vh;
+    background-image: url("../images/mobiel/team_mobile.jpg");
+    background-position: top center;
+    background-size: 145%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container__team{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 80vw;
+}
+
+.border__image{
+    width: 110px;
+    height: 110px;
+    padding: 5px;
+    border: 2px dotted white;
+    border-radius: 50%;
+    margin: 0.37em 0.75em;
+}
+
+.border__image div{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: white;
 }
