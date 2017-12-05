@@ -101,26 +101,33 @@
 
 /* -- PROTOTYPE -- */
 #proto{
-    background-color: lightgray;
     margin: 3em auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 40vh;
+    overflow: hidden;
 }
 
-#proto .container__proto{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+.container__proto{
+    width: 120vh;
+    transition:all 2.5s ease;
+}
+
+.container__proto__item {
+    opacity: 0;
+    float:left;
+    transition:all 0.8s ease;
+}
+
+.block{
+    opacity: 1;
+    transition:all 1s ease;
+    transition-delay: 1s;
 }
 
 #proto div img{
     height: 40vh;
-}
-
-#proto .container__proto div:not(:first-of-type){
-    display: none;
 }
 
 .nav ul{
@@ -139,10 +146,12 @@
     border-radius: 50%;
     margin: auto 0.5em;
     margin-top: 2.5em;
+    transition:all 0.5s ease;
 }
 
 .nav ul li:first-of-type{
     background-color: #6896a9;
+    transition:all 0.5s ease;
 }
 
 /* -- TEAM -- */
@@ -180,4 +189,6 @@
     height: 110px;
     border-radius: 50%;
     background-color: white;
+    background-position: center;
+    background-size: cover;
 }
