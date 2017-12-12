@@ -11,6 +11,15 @@ body {
     justify-content: center;
 }
 
+
+/* -- NAVIGATION -- */
+
+#navigation {
+
+    height: 5vh;
+    background-color: #f3be7d;
+}
+
 /* -- HEADER -- */
 #header{
     /*height: 100vh;*/
@@ -294,6 +303,11 @@ body {
     background-size: cover;
 }
 
+.nameTeam {
+
+    display: none;
+}
+
 @media screen and (min-width: 750px) {
 
     #header{
@@ -325,7 +339,7 @@ body {
 
 
     /* -- FEATURES -- */
-
+    
 
     .container__feature p {
 
@@ -420,17 +434,29 @@ body {
 
         padding-top: 50px;
         font-size: 1em;
+        font-weight: 400;
     }
 
     .border__image{
         width: 120px;
         height: 120px;
+        margin: 3.37em 3.75em;
     }
 
     .border__image div{
         width: 120px;
         height: 120px;
 
+    }
+
+    .nameTeam {
+
+        display: block;
+        font-size: 1.6em;
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 20px;
     }
 
 
@@ -453,21 +479,21 @@ body {
     }
 
     .border__inside {
-        width: 350px;
-        height: 350px;
+        width: 250px;
+        height: 250px;
         border: 4px dotted #f3be7d;
     }
 
     .border__outside {
         border: 4px dashed white;
-        width: calc(350px + 4em);
-        height: calc(350px + 4em);
+        width: calc(250px + 4em);
+        height: calc(250px + 4em);
         padding: 2em;
         align-self: center;
     }
 
     #logo {
-        width: 350px;
+        width: 250px;
         margin-left: auto;
     }
 
@@ -604,20 +630,30 @@ body {
 
     .border__image .back h3 {
 
-        padding-top: 50px;
-        font-size: 1em;
+        padding-top: 80px;
+        font-size: 1.2em;
     }
 
     .border__image {
         width: 200px;
         height: 200px;
-        margin: 2.37em 2.75em;
+        margin: 5.37em 5.75em;
     }
 
     .border__image div {
         width: 200px;
         height: 200px;
 
+    }
+
+    .nameTeam {
+
+        display: block;
+        font-size: 1.6em;
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 40px;
     }
 
 }
