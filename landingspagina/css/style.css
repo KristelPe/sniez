@@ -1,4 +1,9 @@
 /* -- BASICS -- */
+
+body {
+
+    font-family: 'Lato', sans-serif;
+}
 .container__large{
     width: 100vw;
     display: flex;
@@ -36,7 +41,11 @@
     border: 2.75px dotted #f3be7d;
     margin-left: -0.75em;
     margin-top: -0.75em;
+    position: relative;
+
+
 }
+
 .border__outside{
     border-radius: 50%;
     border: 2px dashed white;
@@ -47,7 +56,10 @@
     padding: 1em;
     margin: auto;
     z-index: 1;
+
+
 }
+
 
 #logo{
     width: 30vw;
@@ -72,6 +84,50 @@
     width: 40vw;
     min-height: 10vh;
     background-color: #f3be7d;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: all .2s ease-in-out;
+}
+
+.container__feature:hover {
+
+    transform: scale(1.1);
+    background-color: #6896a9;
+
+}
+
+.container__feature img{
+
+    width: 80px;
+    height: auto;
+    align-self: center;
+    margin-top: 20px;
+
+}
+
+#product_icon {
+
+    width: 50px;
+}
+
+#lijst_icon {
+
+    width: 60px;
+}
+
+.container__feature p {
+
+    width: 90%;
+    margin-left: 5%;
+    font-size: 0.8em;
+    color: white;
+    text-align: center;
+    line-height: 14px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 /* -- CALL2ACTION -- */
@@ -95,17 +151,31 @@
     width: 65vw;
     height: 3.5em;
     z-index: 1;
+    transition: all .2s ease-in-out;
+}
+
+.call:hover {
+
+    border-color: #ff667d;
+    transform: scale(1.1);
 }
 
 .call button{
     background-color: #6896a9;
     border-radius: 0;
     color: white;
-    font-size: 1.75em;
+    font-size: 1em;
     width: 65vw;
-    height: 2em;
+    height: 3.5em;
     border: none;
 }
+
+.call button:hover {
+
+    background-color: #ff667d;
+}
+
+
 
 /* -- PROTOTYPE -- */
 #proto{
@@ -185,13 +255,30 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    width: 80vw;
+    width: 50vw;
     z-index: 1;
 }
 
+.border__image .back {
+
+    margin-top: -80px;
+    background-color: #ff667d;
+}
+
+.border__image  .back h3 {
+
+    padding-top: 25px;
+    color: white;
+    text-align: center;
+    font-weight: 200;
+    font-size: 0.8em;
+    width: 80%;
+    margin-left: 10%;
+}
+
 .border__image{
-    width: 110px;
-    height: 110px;
+    width: 80px;
+    height: 80px;
     padding: 5px;
     border: 2px dotted white;
     border-radius: 50%;
@@ -199,10 +286,338 @@
 }
 
 .border__image div{
-    width: 110px;
-    height: 110px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background-color: white;
     background-position: center;
     background-size: cover;
+}
+
+@media screen and (min-width: 750px) {
+
+    #header{
+        height: 80vh;
+    }
+
+    .overlay{
+        height: 80vh;
+    }
+
+    .border__inside{
+        width: 239px;
+        height: 239px;
+        border: 4px dotted #f3be7d;
+    }
+
+    .border__outside{
+        border: 4px dashed white;
+        width: calc(241px + 4em);
+        height: calc(241px + 4em);
+        padding: 2em;
+        align-self: center;
+    }
+
+    #logo{
+        width: 239px;
+        margin-left: auto;
+    }
+
+
+    /* -- FEATURES -- */
+
+
+    .container__feature p {
+
+        font-size: 1.2em;
+        color: white;
+        line-height: 22px;
+    }
+
+    /* -- CALL2ACTION -- */
+
+    .call{
+
+        border-color: #6896a9;
+        width: 40vw;
+        height: 3em;
+    }
+
+    .call button {
+        width: 40vw;
+        height: 3em;
+    }
+
+
+    /* -- PROTOTYPE -- */
+    #proto{
+        margin: 3em auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40vh;
+        overflow: hidden;
+    }
+
+    .container__proto{
+        height: 40vh;
+        width: 120vh;
+        transition:all 2.5s ease;
+    }
+
+    .container__proto__item {
+        opacity: 0;
+        float:left;
+        transition:all 0.8s ease;
+    }
+
+    .block{
+        opacity: 1;
+        transition:all 1s ease;
+        transition-delay: 1s;
+    }
+
+    #proto div img{
+        height: 40vh;
+    }
+
+    .nav ul{
+        width: 30vw;
+        max-width: 125px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: auto;
+    }
+
+    .nav ul li{
+        width: 8px;
+        height: 8px;
+        border: 2px solid #6896a9;
+        border-radius: 50%;
+        margin: auto 0.5em;
+        margin-top: 2.5em;
+        transition:all 0.5s ease;
+    }
+
+    .nav ul li:first-of-type{
+        background-color: #6896a9;
+        transition:all 0.5s ease;
+    }
+
+    /* -- TEAM -- */
+    .container__team{
+        width: 80vw;
+    }
+
+    .border__image .back {
+
+        margin-top: -120px;
+        background-color: #ff667d;
+    }
+
+    .border__image  .back h3 {
+
+        padding-top: 50px;
+        font-size: 1em;
+    }
+
+    .border__image{
+        width: 120px;
+        height: 120px;
+    }
+
+    .border__image div{
+        width: 120px;
+        height: 120px;
+
+    }
+
+
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    #header {
+        height: 100vh;
+        background-image: url("../images/desktop/header_desktop.png");
+        background-position: bottom;
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .border__inside {
+        width: 350px;
+        height: 350px;
+        border: 4px dotted #f3be7d;
+    }
+
+    .border__outside {
+        border: 4px dashed white;
+        width: calc(350px + 4em);
+        height: calc(350px + 4em);
+        padding: 2em;
+        align-self: center;
+    }
+
+    #logo {
+        width: 350px;
+        margin-left: auto;
+    }
+
+    /* -- FEATURES -- */
+
+    #features {
+
+        height: 80vh;
+        margin-top: -100px;
+
+    }
+
+    .container__feature {
+
+        width: 30vh;
+        height: 40vh;
+        align-self: center;
+
+    }
+
+    .container__feature:hover {
+
+        border: 2px dotted white;
+    }
+    .container__feature p {
+
+        font-size: 1em;
+        color: white;
+        line-height: 22px;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    /* -- CALL2ACTION -- */
+
+    #action {
+
+        margin-top: -100px;
+        height: 130vh;
+        background-image: url("../images/desktop/Cta_desktop.png");
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    #action .overlay {
+
+        display: none;
+    }
+
+    .call {
+
+        border-color: #6896a9;
+        width: 40vw;
+        height: 3em;
+    }
+
+    .call button {
+        width: 40vw;
+        height: 3em;
+    }
+
+    /* -- PROTOTYPE -- */
+    #proto {
+        margin: 3em auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40vh;
+        overflow: hidden;
+    }
+
+    .container__proto {
+        height: 40vh;
+        width: 120vh;
+        transition: all 2.5s ease;
+    }
+
+    .container__proto__item {
+        opacity: 0;
+        float: left;
+        transition: all 0.8s ease;
+    }
+
+    .block {
+        opacity: 1;
+        transition: all 1s ease;
+        transition-delay: 1s;
+    }
+
+    #proto div img {
+        height: 40vh;
+    }
+
+    .nav ul {
+        width: 30vw;
+        max-width: 125px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: auto;
+    }
+
+    .nav ul li {
+        width: 8px;
+        height: 8px;
+        border: 2px solid #6896a9;
+        border-radius: 50%;
+        margin: auto 0.5em;
+        margin-top: 2.5em;
+        transition: all 0.5s ease;
+    }
+
+    .nav ul li:first-of-type {
+        background-color: #6896a9;
+        transition: all 0.5s ease;
+    }
+
+    /* -- TEAM -- */
+
+    #team {
+
+        height: 80vh;
+    }
+    .container__team {
+        width: 100vw;
+    }
+
+    .border__image .back {
+
+        margin-top: -200px;
+        background-color: #ff667d;
+    }
+
+    .border__image .back h3 {
+
+        padding-top: 50px;
+        font-size: 1em;
+    }
+
+    .border__image {
+        width: 200px;
+        height: 200px;
+        margin: 2.37em 2.75em;
+    }
+
+    .border__image div {
+        width: 200px;
+        height: 200px;
+
+    }
+
 }

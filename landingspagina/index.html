@@ -5,11 +5,16 @@
     <title>Sniez</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Lato -->
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
 </head>
 <body>
     <div id="header" class="container__large">
         <div class="container__large overlay"></div>
-        <div class=border__outside>
+        <div class=border__outside id="border">
            <div class="border__inside">
                 <img id="logo" src="images/logo.png" alt="logo-sniez">
            </div>
@@ -17,34 +22,53 @@
     </div>
     
     <div id="features" class="container__large">
-        <div class="container__feature"></div>
-        <div class="container__feature"></div>
-        <div class="container__feature"></div>
+        <div class="container__feature">
+
+            <img id="winkelkar_icon" src="images/icons/winkelkar.png" alt="winkelkar">
+
+            <p>Winkel snel en gericht: gebruik de scan-functie om de inhoud van je product te weten. Zo hoef je niet steeds het etiketje te lezen.</p>
+
+        </div>
+
+        <div class="container__feature">
+
+            <img id="product_icon" src="images/icons/product.png" alt="product">
+
+            <p>De inhoud van het product wordt gecontroleerd. Je ontvangt een melding mocht je een allergische reactie krijgen.</p>
+
+        </div>
+        <div class="container__feature">
+
+            <img id="lijst_icon" src="images/icons/lijst.png" alt="lijst">
+
+            <p>Hou je favoriete producten en recepten bij in lijstjes. Zo hoef je niet steeds te zoeken naar producten die veilig voor je zijn.</p>
+
+        </div>
     </div>
     
     <div id="action" class="container__large">
         <div class="container__large overlay"></div>
         <div class="border__outside call">
-            <button>Action</button>
+            <button>Ga naar de applicatie!</button>
         </div>
     </div>
     
     <div id="proto" class="container__large">
         <div class="container__proto">
             <div id="one" class="container__proto__item block">
-                <img src="https://staticshop.o2.co.uk/product/images/iphone-x-silver-sku-header.png?cb=37135ded0d948ad3f5c8bcbc3afdafc8" alt="iphone">
+                <img src="images/mockups/scan_sniez.png" alt="iphone">
                 <div>
                     <!-- ??? -->
                 </div>
             </div>
             <div id="two" class="container__proto__item">
-                <img src="https://thesweetsetup.com/wp-content/uploads/2015/10/fantastical-2-5.png" alt="iphone">
+                <img src="images/mockups/product_sniez.png" alt="iphone">
                 <div>
                     <!-- ??? -->
                 </div>
             </div>
             <div id="tree" class="container__proto__item">
-                <img src="https://staticshop.o2.co.uk/product/images/iphone-x-silver-sku-header.png?cb=37135ded0d948ad3f5c8bcbc3afdafc8" alt="iphone">
+                <img src="images/mockups/recept_sniez.png" alt="iphone">
                 <div>
                     <!-- ??? -->
                 </div>
@@ -63,17 +87,37 @@
         <div class="container__large overlay"></div>
         <div class="container__team">
             <div class="border__image">
-                <div style="background-image: url('https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/23435183_1490615761037144_2951564974914663444_n.jpg?oh=323a29622112787b07a145ce364f010e&oe=5A8ECA47')"></div>
+                <div style="background-image: url('https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/11986532_1036352623062616_2541839599244879844_n.jpg?oh=3745afd584ca38894006018e908fa637&oe=5AD6F455')"></div>
+                <div class="back">
+                    <h3>Code Queen</h3>
+                </div>
             </div>
             <div class="border__image">
                 <div style="background-image: url('https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/23658577_1641444982583075_2235861520697286149_n.jpg?oh=504c494fff4d54fd4d33fe2ad80c4773&oe=5AD19327')"></div>
+                <div class="back">
+                    <h3>Design hero</h3>
+                </div>
             </div>
             <div class="border__image">
-                <div style="background-image: url('https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/11986532_1036352623062616_2541839599244879844_n.jpg?oh=3745afd584ca38894006018e908fa637&oe=5AD6F455')"></div>
+                <div style="background-image: url('https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/23435183_1490615761037144_2951564974914663444_n.jpg?oh=323a29622112787b07a145ce364f010e&oe=5A8ECA47')"></div>
+                <div class="back">
+                    <h3>In betweener</h3>
+                </div>
             </div>
+
+
         </div>
     </div>
 </body>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/proto-change.js"></script>
+<script src="js/jquery.flip.min.js"></script>
+
+<script>
+    $(function(){
+        $(".border__image").flip({
+            trigger: 'hover'
+        });
+    });
+</script>
 </html>
