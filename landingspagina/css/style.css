@@ -704,7 +704,8 @@ body {
 
     #team {
 
-        height: 80vh;
+        height: 90vh;
+        background-image: url("../images/desktop/team_desktop.png");
     }
     .container__team {
         width: 100vw;
