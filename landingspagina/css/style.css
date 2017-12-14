@@ -126,8 +126,44 @@ body {
     margin-left: 0.25em;
 }
 
+/* -- TITLES -- */
+
+.title {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.title h2 {
+
+    font-size: 1.2em;
+    color: #f3be7d;
+    font-weight: 600;
+
+}
+
+.title p {
+
+    width: 80%;
+    align-self: center;
+    font-size: 0.8em;
+    color: lightgrey;
+    font-weight: 200;
+    margin-top: 20px;
+    line-height: 16px;
+
+}
+
+
+
 
 /* -- FEATURES -- */
+
 #features{
     min-height: 0;
     display: flex;
@@ -190,6 +226,18 @@ body {
 }
 
 /* -- CALL2ACTION -- */
+
+.action p {
+
+    text-align: center;
+    font-size: 0.6em;
+    color: lightgray;
+    font-weight: 200;
+    line-height: 12px;
+    margin-bottom: 20px;
+}
+
+
 #action{
     height: 30vh;
     background-image: url("../images/mobiel/Cta_mobile.jpg");
@@ -244,6 +292,11 @@ body {
     justify-content: center;
     width: 40vh;
     overflow: hidden;
+}
+
+.proto h2 {
+
+    color: #6896a9;
 }
 
 .container__proto{
@@ -304,6 +357,17 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+.team h2 {
+
+    color: #ff667d;
+}
+
+.team p {
+
+    color: white;
+}
+
 #team .overlay{
     height:48vh;
     z-index: 0;
@@ -365,6 +429,7 @@ body {
         height: 80vh;
     }
 
+<<<<<<< HEAD
     .libelle-lekker{
         margin-top: 1.8em;
     }
@@ -373,10 +438,29 @@ body {
         font-size: 1.1em;
     }
 
-    #libelle{
+    #libelle {
         margin-top: -0.35em;
         height: 3.25em;
         margin-left: 0.25em;
+    }
+    
+    .title {
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .title h2 {
+
+        font-size: 1.8em;
+
+    }
+
+    .title p {
+
+        font-size: 1em;
+        margin-top: 30px;
+
     }
 
     .overlay{
@@ -577,12 +661,17 @@ body {
 
         height: 80vh;
         margin-top: -100px;
+    }
 
+    .features {
+
+        width: 100%;
+        
     }
 
     .container__feature {
 
-        width: 30vh;
+        width: 50vh;
         height: 40vh;
         align-self: center;
 
@@ -690,7 +779,8 @@ body {
 
     #team {
 
-        height: 80vh;
+        height: 90vh;
+        background-image: url("../images/desktop/team_desktop.png");
     }
     .container__team {
         width: 100vw;
