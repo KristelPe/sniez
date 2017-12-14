@@ -15,15 +15,47 @@ body {
 /* -- NAVIGATION -- */
 
 #navigation {
-
-    height: 5vh;
+    height: 5.5vh;
+    /*background-color: #ff667d;*/
     background-color: #f3be7d;
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#navigation nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 1em;
+}
+
+#navigation nav ul li{
+    margin: auto 1em;
+}
+
+#navigation nav ul a{
+    text-decoration: none;
+    margin-top: 1.6vh;
+    color: white;
+}
+
+#navigation img{
+    height: 3vh;
+    margin-top: -0.3vh;
+}
+
+#navigation nav a:first-of-type{
+    position: absolute;
+    margin-left: calc( -100vw + 6em);
 }
 
 /* -- HEADER -- */
 #header{
     /*height: 100vh;*/
-    height: 40vh;
+    height: 44vh;
+    padding-top:5vh;
     background-color: lightgray;
     background-image: url("../images/mobiel/header_mobile.jpg");
     background-position: center top ;
@@ -33,7 +65,7 @@ body {
 
 .overlay{
     background-color: rgba(0,0,0,0.2);
-    height: 40vh;
+    height: 44vh;
     position: absolute;
 }
 
@@ -51,8 +83,6 @@ body {
     margin-left: -0.75em;
     margin-top: -0.75em;
     position: relative;
-
-
 }
 
 .border__outside{
@@ -64,16 +94,36 @@ body {
     height: calc(241px + 4em);*/
     padding: 1em;
     margin: auto;
-    z-index: 1;
-
-
 }
 
+.container__center{
+    margin: auto;
+    margin-top: 3em;
+    z-index: 1;
+    margin-bottom:1em;
+}
 
 #logo{
-    width: 30vw;
-    margin-left: -1.77em;
-    /*width: 239px;*/
+    width: 27vw;
+    margin-left: -6vw;
+}
+
+.libelle-lekker{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.6em;
+}
+
+.libelle-lekker h2{
+    color: white;
+    font-size: 0.95em;
+}
+
+#libelle{
+    margin-top: -0.29em;
+    height: 2.7em;
+    margin-left: 0.25em;
 }
 
 
@@ -216,6 +266,7 @@ body {
 
 #proto div img{
     height: 40vh;
+    margin-left: 4.1em;
 }
 
 .nav ul{
@@ -314,8 +365,23 @@ body {
         height: 80vh;
     }
 
+    .libelle-lekker{
+        margin-top: 1.8em;
+    }
+
+    .libelle-lekker h2{
+        font-size: 1.1em;
+    }
+
+    #libelle{
+        margin-top: -0.35em;
+        height: 3.25em;
+        margin-left: 0.25em;
+    }
+
     .overlay{
         height: 80vh;
+        background-color: rgba(0,0,0,0.35);
     }
 
     .border__inside{
@@ -336,6 +402,11 @@ body {
         width: 239px;
         margin-left: auto;
     }
+
+    .container__center{
+        margin-top: auto;
+        margin-bottom: auto;
+}
 
 
     /* -- FEATURES -- */
@@ -471,7 +542,10 @@ body {
         background-position: bottom;
         background-size: 100%;
         background-repeat: no-repeat;
+    }
 
+    .container__center{
+        margin-top: 19vh;
     }
 
     .overlay {

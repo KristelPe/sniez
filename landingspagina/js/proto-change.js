@@ -4,17 +4,17 @@ $(function() {
         $(this).css("background-color", "#6896a9");
         x = "#" + $(this).attr('class');
         $(".container__proto__item").removeClass("block");
-        $(".container__proto").css("transform","translateX("+$(this).index() * -40+"vh)");
+        $(".container__proto").css("transform","translateX("+$(this).index() * -31.7+"vh)");
         $(x).addClass("block");
     });
     $(".container__proto__item").on("click",function() {
         x = $(this).attr('id');
         if(x == "one"){
             y = "two";
-            swipe = "-40vh";
+            swipe = "-31.7vh";
         } else if (x == "two") {
             y = "tree";
-            swipe = "-80vh";
+            swipe = "-63.4vh";
         } else if(x == "tree"){
             y = "one";
             swipe = "0vh";
