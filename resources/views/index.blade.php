@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <form action="{{ action('TestController@index') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ action('QrController@index') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <input name="qr" type="file" accept="image/*" capture="camera">
         <button>send</button>
