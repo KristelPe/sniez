@@ -20,3 +20,8 @@ Route::get('/scan', function () {
 });
 
 Route::post('/scan', 'QrController@index');
+
+
+Route::get('/test', function (){
+    return view('test');
+});
