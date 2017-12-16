@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/scan', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::post('/scan', 'QrController@index');
