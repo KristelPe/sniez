@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/scan', function () {
+    return view('welcome');
+});
+Route::post('/scan', 'QrController@index');
