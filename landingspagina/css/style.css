@@ -245,6 +245,7 @@ body {
     width: 65vw;
     height: 3.5em;
     border: none;
+    transition: 0.2s ease-in-out;
 }
 
 .call button:hover {
@@ -309,7 +310,7 @@ body {
 
 /* -- TEAM -- */
 #team{
-    height: 40vh;
+    height: 50vh;
     background-image: url("../images/mobiel/team_mobile.jpg");
     background-position: top center;
     background-size: 145%;
@@ -420,6 +421,7 @@ body {
         margin-top: -10px;
         padding: 20px 0px;
         border-radius: 10px;
+        transition: 0.2s ease-in-out;
     }
 
     #go:hover {
@@ -450,10 +452,14 @@ body {
         margin: auto 1em;
     }
 
-    #navigation nav ul a{
+    #navigation nav ul a:link,
+    #navigation nav ul a:visited,
+    #navigation nav ul a:hover,
+    #navigation nav ul a:active{
         text-decoration: none;
         margin-top: 1.6vh;
         color: white;
+        transition: 0.2s ease-in;
     }
 
     #navigation nav ul a:hover{
@@ -578,7 +584,7 @@ body {
         height: 40vh;
     }
 
-
+    
 
     /* -- TEAM -- */
     .container__team{
@@ -634,7 +640,7 @@ body {
 @media screen and (min-width: 1200px) {
 
     #header {
-        height: 100vh;
+        height: 140vh;
         background-image: url("../images/desktop/header_desktop.png");
         background-position: bottom;
         background-size: 100%;
@@ -697,7 +703,7 @@ body {
         height: 40vh;
         align-self: center;
         margin-bottom: 0px;
-
+        transition: 0.2s ease-in-out;
     }
 
     .container__feature:hover {
@@ -718,7 +724,7 @@ body {
     #action {
 
         margin-top: -200px;
-        height: 130vh;
+        height: 190vh;
         background-image: url("../images/desktop/Cta_desktop.png");
         background-position: center;
         background-size: 120%;
@@ -751,7 +757,7 @@ body {
         width: 80vh;
         height: auto;
         overflow: hidden;
-        margin-top: -150px;
+        margin-top: -250px;
     }
 
     .proto p {
@@ -795,13 +801,13 @@ body {
 
     #team {
 
-        height: 90vh;
+        height: 125vh;
         background-image: url("../images/desktop/team_desktop.png");
     }
 
     .team {
 
-        margin-top: 300px;
+        margin-top: 170px;
 
     }
 
