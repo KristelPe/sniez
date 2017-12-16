@@ -309,7 +309,7 @@ body {
 
 /* -- TEAM -- */
 #team{
-    height: auto;
+    height: 40vh;
     background-image: url("../images/mobiel/team_mobile.jpg");
     background-position: top center;
     background-size: 145%;
@@ -330,7 +330,7 @@ body {
 }
 
 #team .overlay{
-    height:auto;
+    height: 40vh;
     z-index: 0;
     opacity: 0.5;
 }
@@ -338,7 +338,6 @@ body {
 .container__team{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     margin: auto;
     width: 50vw;
@@ -821,25 +820,25 @@ body {
 
     .border__image .back {
 
-        margin-top: -200px;
+        margin-top: -180px;
         background-color: #ff667d;
     }
 
     .border__image .back h3 {
 
-        padding-top: 90px;
+        padding-top: 75px;
         font-size: 1.2em;
     }
 
     .border__image {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         margin: 5.37em 5.75em;
     }
 
     .border__image div {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
 
     }
 
