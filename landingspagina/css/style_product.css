@@ -1,0 +1,105 @@
+body {
+
+    font-family: 'Lato', sans-serif;
+    background-color: rgba(255, 164, 178, 0.18);
+}
+
+header {
+
+    height: 20vh;
+    background-image: url("../images/mobiel/Cta_mobile.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+
+#product {
+
+
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    margin-left: 10%;
+
+    margin-top: 50px;
+
+}
+
+#product h2 {
+
+    color: #f3be7d;
+    font-size: 0.8em;
+
+}
+
+.product_info {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 0;
+
+    margin-top: 10px;
+}
+
+.product_info img {
+
+    width: 50%;
+    height: 50%;
+}
+
+.product_title {
+
+    margin-right: 10%;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.product_title h3 {
+
+    color: #ff667d;
+    font-size: 1.2em;
+    text-align: end;
+}
+
+.product_title p {
+
+    color: darkgrey;
+    font-size: 0.6em;
+    text-align: end;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.product_safety {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+#safety {
+
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+
+    background-color: rgba(255, 162, 11, 0.76);
+}
+
+.safety_title {
+
+    color: rgba(255, 162, 11, 0.76);
+    margin-left: 15px;
+    font-size: 0.8em;
+    align-self: center;
+
+}
