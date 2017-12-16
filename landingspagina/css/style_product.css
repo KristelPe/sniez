@@ -13,6 +13,24 @@ header {
 
 }
 
+#qrlink {
+
+    font-size: 1em;
+    text-align: center;
+    color: #ff667d;
+    background-color: white;
+
+    padding: 30px 15px;
+    border-radius: 10px;
+}
+
+#qrlink_info {
+
+    text-align: center;
+    margin-top: 10px;
+    color: white
+}
+
 #product {
 
 
