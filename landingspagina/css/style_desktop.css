@@ -115,28 +115,32 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 80vh;
+        width: 100vh;
         height: auto;
         overflow: hidden;
         margin-top: -450px;
     }
 
     .proto p {
-
+        width: 50vw;
         font-size: 1.2em;
         line-height: 1.2em;
         font-weight: 400;
+        max-width: 700px;
     }
 
     .container__proto {
         height: 60vh;
-        width: 120vh;
+        width: 100%;
         transition: all 2.5s ease;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
     }
 
     .container__proto__item {
-        opacity: 0;
-        float: left;
+        opacity: 1;
         transition: all 0.8s ease;
     }
 
@@ -148,7 +152,7 @@
 
     #proto div img {
         height: 60vh;
-        margin-left: 9em;
+        margin-left: auto;
     }
 
     .nav ul {
@@ -158,6 +162,7 @@
         flex-direction: row;
         justify-content: space-around;
         margin: auto;
+        display: none;
     }
     /* -- TEAM -- */
 

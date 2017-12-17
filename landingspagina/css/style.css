@@ -5,6 +5,13 @@
         font-family: 'Lato', sans-serif;
     }
 
+    .nav{
+        z-index: 1;
+    }
+    .container__proto{
+        z-index: 0;
+    }
+
     .container__large {
         width: 100vw;
         display: flex;
@@ -277,9 +284,9 @@
     }
 
     .container__proto {
-        height: 80vh;
         width: 120vh;
-        margin-top: 200px;
+        margin-top: 30px;
+        margin-bottom: 25px;
         transition: all 2.5s ease;
     }
 
@@ -297,7 +304,7 @@
 
     #proto div img {
         height: 40vh;
-        margin-left: 4.1em;
+        margin-left: 4.17em;
     }
 
     .nav ul {
@@ -314,6 +321,10 @@
         width: 10px;
         border: 1px #6896a9 solid; 
         border-radius: 10px;
+    }
+
+    .nav li:first-of-type{
+        background-color: #6896a9;
     }
 
     /* -- TEAM -- */

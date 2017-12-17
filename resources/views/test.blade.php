@@ -8,30 +8,39 @@
         body, input {
             font-size:14pt
         }
-        
         body{
-            background-image: url("../../landingspagina/images/desktop/header_desktop.png");
-            background-position: center;
-            background-size: cover;
+            background-color: #f3be7d;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
         }
-        
         input, label {
             vertical-align:middle
         }
-        .qrcode-text-btn {display:inline-block;
-            background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat;
-            height:50vh;
-            width:50vw;
-            cursor:pointer}
+        .qrcode-text-btn {
+            display:inline-block;
+            background-color: white;
+            border-radius: 50%;
+            background-image: url('/images/sniez_strawberry.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 90%;
+            height:70vw;
+            width:70vw;
+            max-height: 50vh;
+            max-width: 50vh;
+            cursor:pointer;
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            margin: auto;
+        }
         .qrcode-text-btn > input[type=file] {
             position:absolute;
             overflow:hidden;
             width:1px;
             height:1px;
-            opacity:0}
-
-        label{
-            height: 50vh;
+            opacity:0
         }
     </style>
 

@@ -121,10 +121,11 @@
 
     }
 
-    .container__proto{
-        height: 80vh;
+    .container__proto {
         width: 120vh;
-        margin-top: 50px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        transition: all 2.5s ease;
     }
 
     /* -- TEAM -- */
