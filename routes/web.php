@@ -15,15 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/scan', function () {
-    return view('index');
+
+//Route::post('/scan', 'QrController@index');
+
+
+Route::get('/scan', function (){
+    return view('scan');
 });
 
-Route::post('/scan', 'QrController@index');
-
-
-Route::get('/test', function (){
-    return view('test');
-});
-
-Route::post('/test', 'QrController@test');
+Route::post('/scan', 'QrController@test');

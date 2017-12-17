@@ -8,7 +8,7 @@ use QrReader;
 
 class QrController extends Controller
 {
-    public function index(){
+    /*public function index(){
         $file = Input::file('qr');
         $filename = $file->getClientOriginalName();
         $file->move('uploads/', $filename);
@@ -23,7 +23,7 @@ class QrController extends Controller
 
         return $text;
         //return redirect($text);
-    }
+    }*/
 
     public function test(Request $request){
         $item = json_decode($request->input('data'));

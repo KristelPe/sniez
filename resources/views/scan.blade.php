@@ -1,11 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>QrCode</title>
+    <title>Qr</title>
+    <link rel="stylesheet" href="css/reset.css">
     <style>
         body, input {
             font-size:14pt
@@ -54,19 +52,45 @@
         }
 
         img{
-            margin-top: calc(70vw - 2.3em);
-            height: 1.5em;
+            margin-top: calc(70vw - 5.5em);
+            height: 4em;
         }
     </style>
 </head>
 <body>
 
-    <form action="{{ action('QrController@index') }}" method="post" enctype="multipart/form-data">
+    <form id="qr" action="{{ action('QrController@test') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <label class=qrcode-text-btn>
-            <input name="qr" type=file accept="image/*" capture="camera" onchange="submit()" tabindex=-1>
+            <input name="qr" type=file accept="image/*" capture="camera" onchange="openQRCamera(this);" tabindex=-1>
             <img src="/images/sniez_strawberry.png" alt="sniez">
         </label>
+        <input id="data" name="data" type="text" hidden>
     </form>
+
+<script src='https://dmla.github.io/jsqrcode/src/qr_packed.js'></script>
+<script>
+    function openQRCamera(node) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            node.value = "";
+            qrcode.callback = function(res) {
+                if(res instanceof Error) {
+                    alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+                } else {
+                    //node.parentNode.previousElementSibling.value = res;
+                    //window.location.href = res;
+                    //alert(res);
+                    document.getElementById('data').value = res;
+                    document.getElementById("qr").submit();
+                }
+            };
+            qrcode.decode(reader.result);
+        };
+        reader.readAsDataURL(node.files[0]);
+
+    }
+
+</script>
 </body>
 </html>
