@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style_product.css">
     <style>
         body, input {
             font-size:14pt
         }
         body{
-            background-color: #f3be7d;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -27,8 +28,8 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 90%;
-            height:70vw;
-            width:70vw;
+            height:50vw;
+            width:50vw;
             max-height: 50vh;
             max-width: 50vh;
             cursor:pointer;
@@ -43,12 +44,26 @@
             opacity:0
         }
         label{
-            height: 50vh;
+            height: 10vh;
+        }
+
+        .scan_quote {
+
+            text-align: center;
+            color: #ff667d;
+            padding-top: 50px;
         }
     </style>
 
 </head>
 <body>
+
+<header>
+
+
+</header>
+
+<p class="scan_quote">Druk op het logo om de code te scannen.</p>
 
 <label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
 
