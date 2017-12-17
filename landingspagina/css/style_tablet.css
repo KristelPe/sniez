@@ -1,0 +1,480 @@
+@media screen and (min-width : 400px){
+
+    /* -- HEADER -- */
+
+    .border__inside{
+        width: 30vw;
+        height: 30vw;
+        border: 2px dotted #f3be7d;
+    }
+
+    .border__outside{
+        border: 3px dashed white;
+        width: calc(30vw + 4em);
+        height: calc(30vw + 4em);
+    }
+
+    #logo{
+        width: 30vw;
+    }
+
+    .libelle-lekker{
+        margin-top: 2em;
+
+    }
+
+    .libelle-lekker h2{
+
+        font-size: 1em;
+    }
+    #libelle{
+        height: 3em;
+    }
+
+    /* -- TITLES -- */
+
+    .title {
+        margin-top: 50px;
+    }
+
+    .title h2 {
+
+        font-size: 1.2em;
+        color: #ff667d;
+        font-weight: 600;
+
+    }
+
+    .title p {
+
+        font-size: 0.8em;
+        margin-top: 10px;
+
+    }
+
+    /* -- FEATURES -- */
+
+
+    .container__feature img{
+
+        width: 80px;
+
+    }
+
+    #product_icon {
+
+        width: 50px;
+    }
+
+    #lijst_icon {
+
+        width: 60px;
+    }
+
+    .container__feature p {
+
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+
+    /* -- CALL2ACTION -- */
+    .call{
+        border-color: #6896a9;
+        border-radius: 0;
+        width: 65vw;
+        height: 4em;
+    }
+
+    .call button{
+        background-color: #6896a9;
+        border-radius: 0;
+        color: white;
+        font-size: 1.2em;
+        width: 65vw;
+        height: 3.5em;
+        border: none;
+        transition: 0.2s ease-in-out;
+    }
+
+
+
+    /* -- PROTOTYPE -- */
+
+    #proto{
+        margin-top: -50px;
+    }
+
+    .proto {
+
+        align-self: center;
+    }
+
+
+    .proto h2 {
+
+        font-size: 1.2em;
+    }
+
+    .proto p {
+
+        font-size: 1em;
+
+    }
+
+    .container__proto{
+        height: 80vh;
+        width: 120vh;
+        margin-top: 50px;
+    }
+
+    /* -- TEAM -- */
+    #team{
+        height: 100vh;
+        background-image: url("../images/mobiel/team_mobile.jpg");
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .team {
+
+        align-self: center;
+    }
+
+    .team h2 {
+
+        color: #ff667d;
+        font-size: 1.2em;
+    }
+
+    .team p {
+
+        color: white;
+        font-size: 1em;
+    }
+
+    #team .overlay{
+        height: 100vh;
+        z-index: 0;
+        opacity: 0.5;
+    }
+
+    .container__team{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        z-index: 1;
+    }
+
+    .border__image .back {
+
+        margin-top: -100px;
+        background-color: #ff667d;
+    }
+
+    .border__image  .back h3 {
+
+        padding-top: 40px;
+        color: white;
+        text-align: center;
+        font-weight: 200;
+        font-size: 0.8em;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .border__image{
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 2px dotted white;
+        border-radius: 50%;
+        margin: 2em 0.75em;
+        justify-self: center;
+    }
+
+    .border__image div{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .nameTeam {
+
+        display: none;
+    }
+
+}
+
+@media screen and (min-width : 768px) {
+
+    /* -- HEADER -- */
+
+    #header{
+        height: 80vh;
+    }
+
+    .overlay{
+        height: 80vh;
+    }
+    .container__center{
+        margin: auto;
+        margin-top: 3em;
+        z-index: 1;
+        margin-bottom:1em;
+    }
+
+    #logo{
+        width: 20vw;
+    }
+
+    .libelle-lekker{
+        margin-top: 1.8em;
+    }
+
+    .libelle-lekker h2{
+        font-size: 1.1em;
+    }
+
+    #libelle {
+        margin-top: -0.35em;
+        height: 3.25em;
+        margin-left: 0.25em;
+    }
+
+    #go {
+
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: #f3be7d;
+        color: white;
+        font-size: 0.8em;
+        width: 50%;
+        margin-left: 25%;
+        margin-top: -10px;
+        padding: 20px 0px;
+        border-radius: 10px;
+        transition: 0.2s ease-in-out;
+    }
+
+    #go:hover {
+
+        background-color: #ff667d;
+    }
+
+    /* -- NAVIGATION -- */
+
+    #navigation {
+        display: block;
+        height: 5.5vh;
+        background-color: #f3be7d;
+        position: fixed;
+        width: 100vw;
+        z-index: 2;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #navigation nav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 1em;
+    }
+
+    #navigation nav ul li{
+        margin: auto 1em;
+    }
+
+    #navigation nav ul a:link,
+    #navigation nav ul a:visited,
+    #navigation nav ul a:hover,
+    #navigation nav ul a:active{
+        text-decoration: none;
+        margin-top: 1.6vh;
+        color: white;
+        transition: 0.2s ease-in;
+    }
+
+    #navigation nav ul a:hover{
+        color: #ff667d;
+    }
+
+    #navigation img{
+        height: 3vh;
+        margin-top: -0.3vh;
+    }
+
+    #navigation nav a:first-of-type{
+        position: absolute;
+        margin-left: calc( -100vw + 6em);
+        background-color: transparent;
+    }
+    .title {
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .title h2 {
+
+        font-size: 1.8em;
+
+    }
+
+    .title p {
+
+        font-size: 1em;
+        margin-top: 30px;
+
+
+    }
+
+    .border__inside{
+        width: 239px;
+        height: 239px;
+        border: 4px dotted #f3be7d;
+    }
+
+    .border__outside{
+        border: 4px dashed white;
+        width: calc(241px + 4em);
+        height: calc(241px + 4em);
+        padding: 2em;
+        align-self: center;
+    }
+
+    #logo{
+        width: 239px;
+        margin-left: auto;
+    }
+
+    .container__center{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+
+    /* -- FEATURES -- */
+
+
+
+    .container__feature p {
+
+        font-size: 1.2em;
+        color: white;
+        line-height: 22px;
+    }
+
+    /* -- CALL2ACTION -- */
+
+    .call{
+
+        border-color: #6896a9;
+        width: 40vw;
+        height: 3em;
+    }
+
+    .call button {
+        width: 40vw;
+        height: 3em;
+    }
+
+
+    /* -- PROTOTYPE -- */
+    #proto{
+        margin: 3em auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40vh;
+        overflow: hidden;
+    }
+
+    .container__proto{
+        height: 40vh;
+        width: 120vh;
+        transition:all 2.5s ease;
+    }
+
+    .container__proto__item {
+        opacity: 0;
+        float:left;
+        transition:all 0.8s ease;
+    }
+
+    .block{
+        opacity: 1;
+        transition:all 1s ease;
+        transition-delay: 1s;
+    }
+
+    #proto div img{
+        height: 40vh;
+    }
+
+
+
+    /* -- TEAM -- */
+
+
+    .container__team{
+        width: 100vw;
+        padding-bottom: 100px;
+    }
+
+
+    .border__image .back {
+
+        margin-top: -120px;
+        background-color: #ff667d;
+    }
+
+    .border__image  .back h3 {
+
+        padding-top: 50px;
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    .border__image{
+        width: 120px;
+        height: 120px;
+        margin: 2.37em 2.75em;
+        align-self: center;
+    }
+
+    .border__image div{
+        width: 120px;
+        height: 120px;
+
+    }
+
+    .nameTeam {
+
+        display: block;
+        font-size: 1.2em;
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .nameTeam:hover {
+
+        color: #ff667d;
+    }
+
+
+
+}

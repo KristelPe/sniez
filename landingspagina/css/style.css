@@ -1,577 +1,254 @@
 /* -- BASICS -- */
 
-body {
+    body {
 
-    font-family: 'Lato', sans-serif;
-}
-.container__large{
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#navigation {
-
-    display: none;
-}
-
-
-/* -- HEADER -- */
-#header{
-    height: 100vh;
-    background-image: url("../images/mobiel/header_mobile.jpg");
-    background-position: center top ;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.overlay{
-    background-color: rgba(0,0,0,0.2);
-    height: 100vh;
-    position: absolute;
-}
-
-.border__inside{
-    width: 40vw;
-    height: 40vw;
-    /*width: 239px;
-    height: 239px;*/
-    padding: 2.55em;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 5px dotted #f3be7d;
-    margin-left: -0.75em;
-    margin-top: -0.75em;
-    position: relative;
-}
-
-.border__outside{
-    border-radius: 50%;
-    border: 8px dashed white;
-    width: calc(40vw + 4em);
-    height: calc(40vw + 4em);
-    /*width: calc(241px + 4em);
-    height: calc(241px + 4em);*/
-    padding: 1em;
-    margin: auto;
-}
-
-.container__center{
-    margin: auto;
-    margin-top: 3em;
-    z-index: 1;
-    margin-bottom:1em;
-}
-
-#logo{
-    width: 40vw;
-}
-
-.libelle-lekker{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 5em;
-}
-
-.libelle-lekker h2{
-    color: white;
-    font-size: 3em;
-}
-
-#libelle{
-    margin-top: -0.29em;
-    height: 8em;
-    margin-left: 0.25em;
-}
-
-#go {
-
-    display: none;
-}
-
-/* -- TITLES -- */
-
-.title {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 20px;
-    width: 90%;
-}
-
-.title h2 {
-
-    font-size: 3em;
-    color: #ff667d;
-    font-weight: 600;
-
-}
-
-.title p {
-
-    width: 80%;
-    align-self: center;
-    font-size: 2em;
-    color: rgba(255, 164, 178, 0.98);
-    font-weight: 200;
-    margin-top: 50px;
-    line-height: 1.2em;
-
-}
-
-
-
-
-/* -- FEATURES -- */
-
-#features{
-    min-height: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 1.25em auto;
-}
-
-.container__feature{
-    margin: 1.75em;
-    padding: 1em;
-    width: 80vw;
-    min-height: 40vh;
-    background-color: #f3be7d;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    transition: all .2s ease-in-out;
-}
-
-.container__feature:hover {
-
-    transform: scale(1.1);
-    background-color: #6896a9;
-
-}
-
-.container__feature img{
-
-    width: 150px;
-    height: auto;
-    align-self: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-#product_icon {
-
-    width: 100px;
-}
-
-#lijst_icon {
-
-    width: 120px;
-}
-
-.container__feature p {
-
-    width: 90%;
-    margin-left: 5%;
-    font-size: 2em;
-    color: white;
-    text-align: center;
-    line-height: 2em;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-/* -- CALL2ACTION -- */
-
-.action p {
-
-    text-align: center;
-    font-size: 0.6em;
-    color: lightgray;
-    font-weight: 200;
-    line-height: 12px;
-    margin-bottom: 20px;
-}
-
-
-#action{
-    height: 60vh;
-    background-image: url("../images/mobiel/Cta_mobile.jpg");
-    background-position: center bottom ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 50px;
-}
-
-#action .overlay{
-    height:60vh;
-    z-index: 0;
-    opacity: 0.1;
-}
-
-.call{
-    border-color: #6896a9;
-    border-radius: 0;
-    width: 65vw;
-    height: 11em;
-    z-index: 1;
-    transition: all .2s ease-in-out;
-}
-
-.call:hover {
-
-    border-color: #ff667d;
-    transform: scale(1.1);
-}
-
-.call button{
-    background-color: #6896a9;
-    border-radius: 0;
-    color: white;
-    font-size: 3em;
-    width: 65vw;
-    height: 3.5em;
-    border: none;
-    transition: 0.2s ease-in-out;
-}
-
-.call button:hover {
-
-    background-color: #ff667d;
-}
-
-
-
-/* -- PROTOTYPE -- */
-#proto{
-    height: 100vh;
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40vh;
-    overflow: hidden;
-}
-
-.proto {
-
-    align-self: center;
-}
-
-
-.proto h2 {
-
-    color: #6896a9;
-    font-size: 4em;
-    margin-top: 100px;
-}
-
-.proto p {
-
-    color: rgba(126, 162, 169, 0.71);
-    font-size: 2.5em;
-
-}
-
-.container__proto{
-    height: 80vh;
-    width: 120vh;
-    margin-top: 200px;
-    transition:all 2.5s ease;
-}
-
-.container__proto__item {
-    opacity: 0;
-    float:left;
-    transition:all 0.8s ease;
-}
-
-.block{
-    opacity: 1;
-    transition:all 1s ease;
-    transition-delay: 1s;
-}
-
-#proto div img{
-    height: 40vh;
-    margin-left: 4.1em;
-}
-
-.nav ul{
-    width: 30vw;
-    max-width: 125px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: auto;
-}
-
-/* -- TEAM -- */
-#team{
-    height: 100vh;
-    background-image: url("../images/mobiel/team_mobile.jpg");
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-}
-
-.team {
-
-    align-self: center;
-}
-
-.team h2 {
-
-    color: #ff667d;
-    font-size: 2.5em;
-}
-
-.team p {
-
-    color: white;
-    font-size: 2em;
-}
-
-#team .overlay{
-    height: 100vh;
-    z-index: 0;
-    opacity: 0.5;
-}
-
-.container__team{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    z-index: 1;
-}
-
-.border__image .back {
-
-    margin-top: -300px;
-    background-color: #ff667d;
-}
-
-.border__image  .back h3 {
-
-    padding-top: 130px;
-    color: white;
-    text-align: center;
-    font-weight: 200;
-    font-size: 2em;
-    width: 80%;
-    margin-left: 10%;
-}
-
-.border__image{
-    width: 300px;
-    height: 300px;
-    padding: 5px;
-    border: 2px dotted white;
-    border-radius: 50%;
-    margin: 3em 0.75em;
-    justify-self: center;
-}
-
-.border__image div{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: white;
-    background-position: center;
-    background-size: cover;
-}
-
-.nameTeam {
-
-    display: none;
-}
-
-@media screen and(min-width: 750px) {
-
-    #header{
-        height: 80vh;
+        font-family: 'Lato', sans-serif;
     }
 
-    .libelle-lekker{
-        margin-top: 1.8em;
+    .container__large {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .libelle-lekker h2{
-        font-size: 1.1em;
+    #navigation {
+
+        display: none;
+    }
+
+    /* -- HEADER -- */
+    #header {
+        height: 100vh;
+        background-image: url("../images/mobiel/header_mobile.jpg");
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100vh;
+        position: absolute;
+    }
+
+    .border__inside {
+        width: 40vw;
+        height: 40vw;
+        /*width: 239px;
+        height: 239px;*/
+        padding: 2.55em;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 3px dotted #f3be7d;
+        margin-left: -0.75em;
+        margin-top: -0.75em;
+        position: relative;
+    }
+
+    .border__outside {
+        border-radius: 50%;
+        border: 4px dashed white;
+        width: calc(40vw + 4em);
+        height: calc(40vw + 4em);
+        /*width: calc(241px + 4em);
+        height: calc(241px + 4em);*/
+        padding: 1em;
+        margin: auto;
+    }
+
+    .container__center {
+        margin: auto;
+        margin-top: 3em;
+        z-index: 1;
+        margin-bottom: 1em;
+    }
+
+    #logo {
+        width: 40vw;
+    }
+
+    .libelle-lekker {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 5em;
+    }
+
+    .libelle-lekker h2 {
+        color: white;
+        font-size: 1em;
     }
 
     #libelle {
-        margin-top: -0.35em;
-        height: 3.25em;
+        margin-top: -0.29em;
+        height: 3em;
         margin-left: 0.25em;
     }
 
     #go {
 
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        text-align: center;
-        justify-content: center;
-        text-decoration: none;
-        background-color: #f3be7d;
-        color: white;
-        font-size: 0.8em;
-        width: 50%;
-        margin-left: 25%;
-        margin-top: -10px;
-        padding: 20px 0px;
-        border-radius: 10px;
-        transition: 0.2s ease-in-out;
+        display: none;
     }
 
-    #go:hover {
-
-        background-color: #ff667d;
-    }
-
-    /* -- NAVIGATION -- */
-
-    #navigation {
-        display: block;
-        height: 5.5vh;
-        background-color: #f3be7d;
-        position: fixed;
-        width: 100vw;
-        z-index: 2;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-
-    #navigation nav ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-right: 1em;
-    }
-
-    #navigation nav ul li{
-        margin: auto 1em;
-    }
-
-    #navigation nav ul a:link,
-    #navigation nav ul a:visited,
-    #navigation nav ul a:hover,
-    #navigation nav ul a:active{
-        text-decoration: none;
-        margin-top: 1.6vh;
-        color: white;
-        transition: 0.2s ease-in;
-    }
-
-    #navigation nav ul a:hover{
-        color: #ff667d;
-    }
-
-    #navigation img{
-        height: 3vh;
-        margin-top: -0.3vh;
-    }
-
-    #navigation nav a:first-of-type{
-        position: absolute;
-        margin-left: calc( -100vw + 6em);
-        background-color: transparent;
-    }
+    /* -- TITLES -- */
     .title {
 
-        margin-top: 50px;
-        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        width: 90%;
     }
 
     .title h2 {
 
-        font-size: 1.8em;
+        font-size: 1.2em;
+        color: #ff667d;
+        font-weight: 600;
 
     }
 
     .title p {
 
-        font-size: 1em;
-        margin-top: 30px;
-
-
-    }
-
-    .overlay{
-        height: 80vh;
-        background-color: rgba(0,0,0,0.35);
-    }
-
-    .border__inside{
-        width: 239px;
-        height: 239px;
-        border: 4px dotted #f3be7d;
-    }
-
-    .border__outside{
-        border: 4px dashed white;
-        width: calc(241px + 4em);
-        height: calc(241px + 4em);
-        padding: 2em;
+        width: 80%;
         align-self: center;
+        font-size: 1em;
+        color: rgba(255, 164, 178, 0.98);
+        font-weight: 200;
+        margin-top: 50px;
+        line-height: 1.2em;
+
     }
-
-    #logo{
-        width: 239px;
-        margin-left: auto;
-    }
-
-    .container__center{
-        margin-top: auto;
-        margin-bottom: auto;
-}
-
 
     /* -- FEATURES -- */
+    #features {
+        min-height: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1.25em auto;
+    }
 
+    .container__feature {
+        margin: 1.75em;
+        padding: 1em;
+        width: 80vw;
+        min-height: 40vh;
+        background-color: #f3be7d;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        transition: all .2s ease-in-out;
+    }
+
+    .container__feature:hover {
+
+        transform: scale(1.1);
+        background-color: #6896a9;
+
+    }
+
+    .container__feature img {
+
+        width: 80px;
+        height: auto;
+        align-self: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    }
+
+    #product_icon {
+
+        width: 50px;
+    }
+
+    #lijst_icon {
+
+        width: 60px;
+    }
 
     .container__feature p {
 
-        font-size: 1.2em;
+        width: 90%;
+        margin-left: 5%;
+        font-size: 1em;
         color: white;
-        line-height: 22px;
+        text-align: center;
+        line-height: 2em;
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
 
     /* -- CALL2ACTION -- */
+    .action p {
 
-    .call{
+        text-align: center;
+        font-size: 0.6em;
+        color: lightgray;
+        font-weight: 200;
+        line-height: 12px;
+        margin-bottom: 20px;
+    }
 
+    #action {
+        height: 60vh;
+        background-image: url("../images/mobiel/Cta_mobile.jpg");
+        background-position: center bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+    }
+
+    #action .overlay {
+        height: 60vh;
+        z-index: 0;
+        opacity: 0.1;
+    }
+
+    .call {
         border-color: #6896a9;
-        width: 40vw;
-        height: 3em;
+        border-radius: 0;
+        width: 65vw;
+        height: 2em;
+        z-index: 1;
+        transition: all .2s ease-in-out;
+    }
+
+    .call:hover {
+
+        border-color: #ff667d;
+        transform: scale(1.1);
     }
 
     .call button {
-        width: 40vw;
-        height: 3em;
+        background-color: #6896a9;
+        border-radius: 0;
+        color: white;
+        font-size: 1em;
+        width: 65vw;
+        height: 2em;
+        border: none;
+        transition: 0.2s ease-in-out;
     }
 
+    .call button:hover {
+
+        background-color: #ff667d;
+    }
 
     /* -- PROTOTYPE -- */
-    #proto{
+    #proto {
+        height: 100vh;
         margin: 3em auto;
         display: flex;
         flex-direction: column;
@@ -580,214 +257,29 @@ body {
         overflow: hidden;
     }
 
-    .container__proto{
-        height: 40vh;
-        width: 120vh;
-        transition:all 2.5s ease;
-    }
+    .proto {
 
-    .container__proto__item {
-        opacity: 0;
-        float:left;
-        transition:all 0.8s ease;
-    }
-
-    .block{
-        opacity: 1;
-        transition:all 1s ease;
-        transition-delay: 1s;
-    }
-
-    #proto div img{
-        height: 40vh;
-    }
-
-    
-
-    /* -- TEAM -- */
-    .container__team{
-        width: 100vw;
-        padding-bottom: 100px;
-    }
-
-
-    .border__image .back {
-
-        margin-top: -120px;
-        background-color: #ff667d;
-    }
-
-    .border__image  .back h3 {
-
-        padding-top: 50px;
-        font-size: 1em;
-        font-weight: 400;
-    }
-
-    .border__image{
-        width: 120px;
-        height: 120px;
-        margin: 2.37em 2.75em;
-    }
-
-    .border__image div{
-        width: 120px;
-        height: 120px;
-
-    }
-
-    .nameTeam {
-
-        display: block;
-        font-size: 1.2em;
-        color: white;
-        font-weight: 400;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .nameTeam:hover {
-
-        color: #ff667d;
-    }
-
-
-
-}
-
-@media screen and(min-width: 1200px) {
-
-    #header {
-        height: 140vh;
-        background-image: url("../images/desktop/header_desktop.png");
-        background-position: bottom;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-
-    .container__center{
-        margin-top: 19vh;
-    }
-
-    .overlay {
-        display: none;
-    }
-
-    .border__inside {
-        width: 250px;
-        height: 250px;
-        border: 4px dotted #f3be7d;
-    }
-
-    .border__outside {
-        border: 4px dashed white;
-        width: calc(250px + 4em);
-        height: calc(250px + 4em);
-        padding: 2em;
         align-self: center;
     }
 
-    #logo {
-        width: 250px;
-        margin-left: auto;
-    }
+    .proto h2 {
 
-    /* -- FEATURES -- */
-
-    #features {
-
-        height: 80vh;
-        margin-top: -100px;
-    }
-
-    .features {
-
-        width: 100%;
-        margin-top: 150px;
-
-    }
-
-    .features p {
-
-        width: 50%;
+        color: #6896a9;
         font-size: 1.2em;
-        font-weight: 400;
-        line-height: 1.2em;
-    }
-
-    .container__feature {
-
-        width: 30vh;
-        height: 40vh;
-        align-self: center;
-        margin-bottom: 0px;
-        transition: 0.2s ease-in-out;
-    }
-
-    .container__feature:hover {
-
-        border: 2px dotted white;
-    }
-    .container__feature p {
-
-        font-size: 1em;
-        color: white;
-        line-height: 22px;
-        width: 80%;
-        margin-left: 10%;
-    }
-
-    /* -- CALL2ACTION -- */
-
-    #action {
-
-        margin-top: -200px;
-        height: 190vh;
-        background-image: url("../images/desktop/Cta_desktop.png");
-        background-position: center;
-        background-size: 120%;
-        background-repeat: no-repeat;
-    }
-
-    #action .overlay {
-
-        display: none;
-    }
-
-    .call {
-
-        border-color: #6896a9;
-        width: 40vw;
-        height: 3em;
-    }
-
-    .call button {
-        width: 40vw;
-        height: 3em;
-    }
-
-    /* -- PROTOTYPE -- */
-    #proto {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 80vh;
-        height: auto;
-        overflow: hidden;
-        margin-top: -250px;
+        margin-top: 100px;
     }
 
     .proto p {
 
-        font-size: 1.2em;
-        line-height: 1.2em;
-        font-weight: 400;
+        color: rgba(126, 162, 169, 0.71);
+        font-size: 0.8em;
+
     }
 
     .container__proto {
-        height: 60vh;
+        height: 80vh;
         width: 120vh;
+        margin-top: 200px;
         transition: all 2.5s ease;
     }
 
@@ -804,7 +296,8 @@ body {
     }
 
     #proto div img {
-        height: 60vh;
+        height: 40vh;
+        margin-left: 4.1em;
     }
 
     .nav ul {
@@ -815,65 +308,93 @@ body {
         justify-content: space-around;
         margin: auto;
     }
+
     /* -- TEAM -- */
-
     #team {
-
-        height: 125vh;
-        background-image: url("../images/desktop/team_desktop.png");
+        height: 100vh;
+        background-image: url("../images/mobiel/team_mobile.jpg");
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
     }
 
     .team {
 
-        margin-top: 170px;
+        align-self: center;
+    }
 
+    .team h2 {
+
+        color: #ff667d;
+        font-size: 1.2em;
     }
 
     .team p {
 
-        color: rgba(255, 164, 178, 0.98);
-        width: 50%;
-        font-size: 1.2em;
-        line-height: 1.2em;
-        font-weight: 400;
+        color: white;
+        font-size: 1em;
     }
+
+    #team .overlay {
+        height: 100vh;
+        z-index: 0;
+        opacity: 0.5;
+    }
+
     .container__team {
-        width: 100vw;
-        padding-bottom: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        z-index: 1;
     }
 
     .border__image .back {
 
-        margin-top: -180px;
+        margin-top: -100px;
         background-color: #ff667d;
     }
 
     .border__image .back h3 {
 
-        padding-top: 75px;
-        font-size: 1.2em;
+        padding-top: 30px;
+        color: white;
+        text-align: center;
+        font-weight: 200;
+        font-size: 1em;
+        width: 80%;
+        margin-left: 10%;
     }
 
     .border__image {
-        width: 180px;
-        height: 180px;
-        margin: 5.37em 5.75em;
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 2px dotted white;
+        border-radius: 50%;
+        margin: 2em 0.75em;
+        justify-self: center;
     }
 
     .border__image div {
-        width: 180px;
-        height: 180px;
-
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+        background-position: center;
+        background-size: cover;
     }
 
     .nameTeam {
 
-        display: block;
-        font-size: 1.6em;
-        color: white;
-        font-weight: 400;
-        text-align: center;
-        margin-top: 40px;
+        display: none;
     }
 
-}
+
+
+
+
+
