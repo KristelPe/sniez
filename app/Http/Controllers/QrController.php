@@ -21,7 +21,13 @@ class QrController extends Controller
         //$qrcode = new QrReader("../public/uploads/test.jpg");
         $text = $qrcode->text();
 
-        //return $text;
-        return redirect($text);
+        return $text;
+        //return redirect($text);
+    }
+
+    public function test(Request $request){
+        $item = json_decode($request->input('data'));
+        //dd($item);
+        return view('product', compact('item'));
     }
 }

@@ -25,3 +25,5 @@ Route::post('/scan', 'QrController@index');
 Route::get('/test', function (){
     return view('test');
 });
+
+Route::post('/test', 'QrController@test');
