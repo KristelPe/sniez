@@ -104,7 +104,10 @@
 
 <header></header>
 
-<?php $allergy = "noten" ?>
+<?php
+    $allergy = "melk";
+    $danger = false;
+?>
 
 
 <div id="product">
@@ -123,7 +126,7 @@
             <h5>Ingrediënten</h5>
             <ul>
                 @foreach($item->ingredients as $i)
-                    @if(strpos($i, $allergy) !== false)
+                    @if( preg_match("/$allergy/i", $i))
                         <li class="danger">{{$i}}</li>
                         <?php $danger = true ?>
                     @else
