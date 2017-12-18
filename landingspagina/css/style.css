@@ -27,7 +27,7 @@
     /* -- HEADER -- */
     #header {
         height: 100vh;
-        background-image: url("../images/mobiel/header_mobile.jpg");
+        background-image: url("../images/mobiel/header_mobile.png");
         background-position: center top;
         background-size: cover;
         background-repeat: no-repeat;
@@ -209,7 +209,7 @@
 
     #action {
         height: 60vh;
-        background-image: url("../images/mobiel/Cta_mobile.jpg");
+        background-image: url("../images/mobiel/Cta_mobile.png");
         background-position: center bottom;
         background-size: cover;
         background-repeat: no-repeat;
@@ -330,7 +330,7 @@
     /* -- TEAM -- */
     #team {
         height: 100vh;
-        background-image: url("../images/mobiel/team_mobile.jpg");
+        background-image: url("../images/mobiel/team_mobile.png");
         background-position: top center;
         background-size: cover;
         background-repeat: no-repeat;
