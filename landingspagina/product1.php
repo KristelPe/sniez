@@ -45,7 +45,10 @@
 
         </div>
 
+        <h4>Er zitten noten in dit product.</h4>
+
     </div>
+
 
 </body>
 </html>

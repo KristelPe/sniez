@@ -45,6 +45,8 @@
 
     </div>
 
+    <h4>Er zitten gluten in dit product.</h4>
+
 </div>
 
 </body>

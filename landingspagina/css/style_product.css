@@ -51,6 +51,15 @@ header {
 
 }
 
+#product h4 {
+
+    color: #f3be7d;
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
 .product_info {
 
     display: flex;
