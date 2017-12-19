@@ -28,12 +28,12 @@
     <h2>Gescand product :</h2>
     <div class="product_info">
 
-        <img src="http://www2.soubry.be/sites/soubry.aegir/files/styles/b2c_product_detail/public/products/Spirelli.png" alt="product">
+        <img src="https://nl.aldi.be/images/spaghetti_big_9443.jpg" alt="product">
 
         <div class="product_title">
 
-            <h3>Spirelli pasta</h3>
-            <p>Soubry</p>
+            <h3>Spaghetti</h3>
+            <p>Pasta Mare</p>
 
             <div class="product_safety">
 
