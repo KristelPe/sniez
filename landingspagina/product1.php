@@ -41,11 +41,13 @@
                     <div class="safety_title">Pas op!</div>
 
                 </div>
+
+                <h4 class="safety_title" style="margin-top: 20px;">Er zitten noten in dit product.</h4>
             </div>
 
         </div>
 
-        <h4>Er zitten noten in dit product.</h4>
+
 
     </div>
 
