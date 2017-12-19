@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Sniez | Spirelli pasta</title>
+    <title>Sniez | Spaghetti</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style_product.css">
 
