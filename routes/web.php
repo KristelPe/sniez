@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Socialite : Facebooklogin */
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/', 'Controller@index');
+
+Route::get('/registration', 'UserController@profile');
 
 
 //Route::post('/scan', 'QrController@index');

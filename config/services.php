@@ -35,4 +35,12 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    /* Socialite - Facebook login */
+
+    'facebook' => [
+        'client_id' => '1959522321042224',
+        'client_secret' => 'bed04b5408361b366fb506eade2981ca',
+        'redirect' => 'http://homestead.app/login/callback',
+    ],
+
 ];
