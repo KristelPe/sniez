@@ -14,6 +14,7 @@ class Controller extends BaseController
 
     public function index() {
 
-        return view('partials/login');
+        return view('registration.partials.login');
+
     }
 }

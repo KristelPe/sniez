@@ -20,9 +20,22 @@ Route::get('/', 'Controller@index');
 
 Route::get('/registration', 'UserController@profile');
 
+/*
+=================
+    ALLERGY
+=================
+*/
+Route::get('/allergy', 'AllergyController@index');
+Route::post('/allergy', 'AllergyController@store');
 
+
+
+/*
+==================
+    QR SCANNER
+==================
+*/
 //Route::post('/scan', 'QrController@index');
-
 
 Route::get('/scan', function (){
     return view('scan');

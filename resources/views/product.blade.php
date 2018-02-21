@@ -51,6 +51,7 @@
             margin-left: 3em;
         }
         .product_title {
+            padding-left: 2em;
             margin-right: 10%;
             margin-top: 20px;
             display: flex;
@@ -93,10 +94,29 @@
         ul{
             list-style-type: none;
         }
-        h5{
+        h5 {
             color: rgba(255, 162, 11, 0.76);
             font-size: 1em;
             margin-bottom: -0.5em;
+        }
+        @media screen and (max-width: 670px){
+            .product_title{
+                margin-right: 2em;
+            }
+            .product_info img{
+                margin-left: 2em;
+            }
+        }
+        @media screen and (max-width: 641px){
+            .product_title{
+                margin: auto;
+                padding-right: 2em;
+            }
+            .product_info img{
+                margin: 1em auto;
+                padding: auto 1em;
+                border-bottom: 5px dotted rgba(255, 238, 241, 0.76);
+            }
         }
     </style>
 </head>

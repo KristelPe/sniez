@@ -17,7 +17,7 @@ class UserController extends Controller
     public function profile() {
 
         $user = User::find(1);
-        return view('partials/registration', compact('user'));
+        return view('registration.partials.registration', compact('user'));
 
     }
 
