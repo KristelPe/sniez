@@ -27,6 +27,7 @@ class AllergyController extends Controller
             $user_allergy->allergy_id = $allergy;
             $user_allergy->save();
         }
+        //return view() -> moet nog toegevoegd worden eens volgende pagina af is
     }
 
     /*
