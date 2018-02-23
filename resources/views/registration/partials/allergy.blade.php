@@ -50,7 +50,7 @@
         // easy-autocomplete documentation -> http://easyautocomplete.com/guide
         // themes -> http://easyautocomplete.com/themes
         var options = {
-            data:[
+            data:[ {"name": "all", "allergy_id": "" },
                 @foreach($allergies as $allergy)
                     {"name": "{{$allergy->name}}", "allergy_id": "{{$allergy->id}}" },
                 @endforeach
@@ -75,8 +75,10 @@
             var items = $(".allergy");
             var id = $("#search_val").val();
             for(i = 0; i < items.length; i++){
-                if(items[i].id != id){
+                if(id != "" && items[i].id != id){
                     items[i].style.display = "none";
+                } else if(id == ""){
+                    items[i].style.display = "block"
                 }
             }
         }
