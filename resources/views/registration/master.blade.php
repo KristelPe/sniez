@@ -11,8 +11,19 @@
         <!-- Fonts -->
 
 
+    <style>
+        body
 
+        {
+
+            height: 80vh;
+            max-height: 90vh;
+
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
     </head>
+
     <body>
 
     @yield('content')

@@ -6,13 +6,26 @@ body {
 
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
-    max-height: 90vh;
+
 
     -webkit-animation-name: changeBG;
     -webkit-animation-duration: 50s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
+}
+
+.layover {
+    background-color: rgba(0, 0, 0, 0.18);
+
+    width: 100%;
+    height: 104vh;
+
+    margin-top: -8em;
+    margin-left: -0.5em;
+
+    position: absolute;
+    z-index: -2;
+
 }
 
 .login {
@@ -21,6 +34,8 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-top: 130px;
+    z-index: 1;
+
 }
 
 #login-logo {
@@ -45,6 +60,12 @@ body {
     align-self: center;
 
     margin-top: 50px;
+}
+
+#login-btn:hover {
+
+    background-color: #E55266;
+    color: white;
 }
 
 #login-btn a {
@@ -83,11 +104,15 @@ body {
 
 @section('content')
 
+    <div class="layover">
+
+    </div>
+
     <div class="login">
 
         <div id="login-logo">
 
-            <img src="/images/logo/logo_ei.png" alt="logo">
+            <img src="/images/logo/logo_ei.png" alt="logo Sniez">
 
         </div>
 
