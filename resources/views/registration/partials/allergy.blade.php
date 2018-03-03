@@ -32,6 +32,11 @@
             border-radius: 4px;
         }
 
+        #btn_search:hover {
+
+            background-color: #90bccf;
+        }
+
         #allergies-box {
 
             background-color: white;
@@ -140,6 +145,12 @@
             font-weight: 200;
         }
 
+        #search{
+
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid lightgray;
+        }
     </style>
 
 
@@ -206,25 +217,39 @@
                 match: {
                     enabled: true
                     },
-                onChooseEvent: function () {
+                onSelectItemEvent: function () {
                     var value = $("#search").getSelectedItemData().allergy_id;
                     $("#search_val").val(value);
                 }
             }
         };
 
-        $("#search").easyAutocomplete(options);
+        //$("#search").easyAutocomplete(options);
+
+        $("#search").keypress(function(e) {
+            if(e.which == 13) {
+                search();
+            }
+        });
 
         function search() {
-            var items = $(".allergy");
+            /*var items = $(".allergy");
             var id = $("#search_val").val();
-            for(i = 0; i < items.length; i++){
+            for(var i = 0; i < items.length; i++){
                 if(id != "" && items[i].id != id){
                     items[i].style.display = "none";
                 } else if(id == ""){
-                    items[i].style.display = "block"
+                    items[i].style.display = "block";
                 }
+            }*/
+            var search = $("#search").val();
+            if (search == ""){
+                $( ".allergy").css( "display", "block" );
+            } else {
+                $( ".allergy").css( "display", "none" );
+                $( ".allergy:contains("+search+")").css( "display", "block" );
             }
         }
+
     </script>
 @endsection
