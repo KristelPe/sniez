@@ -64,7 +64,7 @@
         .allergies__container li {
             width: 50px;
             padding:1em;
-            margin: 1em;
+            /*margin: 1em;*/
             border: 1px solid lightgray;
 
             display: flex;
@@ -151,6 +151,23 @@
             border-radius: 4px;
             border: 1px solid lightgray;
         }
+
+        #not_found{
+            border: 1px solid rgba(220, 20, 60, 0.3);
+            padding: 8px 0;
+            font-size: 12px;
+            align-self: center;
+            color: black;
+            display: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 2em;
+            margin-left:-1px;
+        }
+
+        .allergies__container label{
+            margin: 1em;
+        }
     </style>
 
 
@@ -173,19 +190,22 @@
 
         <div class="search">
             <input id="search" type="text" value="" placeholder="Zoek hier">
-            <input id="search_val" type="text" value="" hidden>
+            <!--<input id="search_val" type="text" value="" hidden>-->
             <button id="btn_search" onclick="search()">Zoek</button>
         </div>
 
     <div id="allergies-form">
     <form method="post" action="{{URL::action('AllergyController@store')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
+        <p id="not_found">Geen allergiëen gevonden</p>
         <ul class="allergies__container">
             @foreach($allergies as $allergy)
-                <li id="{{$allergy->id}}" class="allergy">
-                    <p>{{$allergy->name}}</p>
-                    <input type="checkbox" value="{{$allergy->id}}" name="allergies[]">
-                </li>
+                <label for="{{$allergy->id}}">
+                    <li class="allergy">
+                        <p>{{$allergy->name}}</label>
+                        <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]">
+                    </li>
+                </label>
             @endforeach
         </ul>
 
@@ -232,6 +252,12 @@
             }
         });
 
+        $('#search').on('input', function() {
+            if ($(this).val() == ""){
+                $( ".allergy").css( "display", "block" );
+            }
+        });
+
         function search() {
             /*var items = $(".allergy");
             var id = $("#search_val").val();
@@ -249,7 +275,11 @@
                 $( ".allergy").css( "display", "none" );
                 $( ".allergy:contains("+search+")").css( "display", "block" );
             }
+            if($(".allergy").is(":visible")){
+                $("#not_found").css("display", "none");
+            } else {
+                $("#not_found").css("display", "block");
+            }
         }
-
     </script>
 @endsection
