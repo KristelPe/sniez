@@ -28,6 +28,6 @@ class QrController extends Controller
     public function test(Request $request){
         $item = json_decode($request->input('data'));
         //dd($item);
-        return view('product', compact('item'));
+        return view('scan.product', compact('item'));
     }
 }

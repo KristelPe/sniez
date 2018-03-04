@@ -1,4 +1,4 @@
-@extends('registration.master')
+@extends('master')
 
 @section('content')
     <link rel="stylesheet" href="/css/easy-autocomplete.min.css">

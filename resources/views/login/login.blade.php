@@ -1,4 +1,4 @@
-@extends('registration.master')
+@extends('master')
 
 <style>
 

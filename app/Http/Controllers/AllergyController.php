@@ -14,7 +14,7 @@ class AllergyController extends Controller
     public function index()
     {
         $allergies = Allergy::all();
-        return view("registration.partials.allergy", compact("allergies"));
+        return view("login.registration", compact("allergies"));
     }
 
     /*
