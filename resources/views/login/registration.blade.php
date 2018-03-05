@@ -7,10 +7,10 @@
 
         body {
 
-            background-image: url("images/backgrounds/bg2.jpg");
+            /*background-image: url("images/backgrounds/bg2.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            height: 110vh;
+            height: 110vh;*/
         }
 
         .search {
@@ -22,26 +22,34 @@
 
         }
 
+        .search input {
+
+            width: 100%;
+            height: 30px;
+        }
+
         #btn_search {
 
-            background-color:  #A0D1E6;
+            background-color:  #E55266;
             color: white;
             border-color: transparent;
 
             margin-left: 10px;
             border-radius: 4px;
+
+            box-shadow: 1px 1px lightgrey;
         }
 
         #btn_search:hover {
 
-            background-color: #90bccf;
+            background-color: #F4BF73;
         }
 
         #allergies-box {
 
             background-color: white;
-            width: 80%;
-            margin-left: 10%;
+            width: 90%;
+            margin-left: 2.5%;
 
             position: absolute;
             z-index: 2;
@@ -50,32 +58,35 @@
         #allergies-form .allergies__container {
 
             overflow: scroll;
-            height: 50vh;
+            height: 60vh;
         }
 
         .allergies__container{
+
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
             list-style-type: none;
 
         }
 
         .allergies__container li {
-            width: 50px;
-            padding:1em;
-            /*margin: 1em;*/
-            border: 1px solid lightgray;
 
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
-        }
+            background-color: #F4BF73;
+            border-color: transparent;
 
-        .allergies__container li p {
+            width: 300px;
+            padding: 1em;
+            margin-left: -50px;
+            margin-top: -20px;
 
-            text-align: center;
-
+            -webkit-box-shadow: 0 1px 2px lightgrey;
+            -moz-box-shadow: 0 2px 1px lightgrey;
+            box-shadow: 0 2px 1px lightgrey;
         }
 
         #btn_save {
@@ -83,8 +94,7 @@
             background-color:  #A0D1E6;
             color: white;
             border-color: transparent;
-            width: 20%;
-            margin-left: 40%;
+            width: 100%;
             text-align: center;
             padding: 10px 10px;
 
@@ -95,7 +105,7 @@
             width: 100px;
         }*/
 
-        .header {
+        /*.header {
 
             background-color: #E55266;
             width: 100%;
@@ -124,7 +134,7 @@
 
             width: 4em;
 
-        }
+        }*/
 
         .title {
 
@@ -132,17 +142,34 @@
             flex-direction: column;
             justify-content: center;
             align-content: center;
-            width: 70%;
-            margin-left: 15%;
-            margin-top: 50px;
+            width: 100%;
+
+            background-color:#A0D1E6 ;
+            border-radius: 10px 10px 0px 0px;
         }
 
         .title h1 {
 
-            font-size: 1em;
+            font-size: 0.8em;
             text-align: center;
-            color:#61A0BB ;
+
             font-weight: 200;
+            color:white;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-bottom: 1em;
+
+
+        }
+
+        .title img {
+
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+            align-self: center;
+            border-radius: 100%;
+            border: 4px solid white;
         }
 
         #search{
@@ -168,22 +195,44 @@
         .allergies__container label{
             margin: 1em;
         }
+
+        .allergy img {
+
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .allergy p {
+
+            color:white;
+            font-weight: 200;
+        }
+
+        #allergies-form input {
+
+            width: 20px;
+            height: 20px;
+            background-color: #F4BF73 ;
+            border-radius: 100%;
+            margin-left: 20px;
+        }
     </style>
 
 
 
-    <div class="header">
+    <!--<div class="header">
 
         <div id="header-logo">
         <img src="/images/logo/logo_ei.png">
         </div>
 
-    </div>
+    </div>-->
 
     <div id="allergies-box">
 
     <div class="title">
 
+        <img src="{{$user->avatar}}" alt="profilepicture" id="avatar">
         <h1>Aan welke soorten voedingsproducten ben je allergisch?</h1>
 
     </div>
@@ -202,6 +251,7 @@
             @foreach($allergies as $allergy)
                 <label for="{{$allergy->id}}">
                     <li class="allergy">
+                        <img src="{{$allergy->path}}" alt="allergy_icon" id="allergy_icon">
                         <p>{{$allergy->name}}</label>
                         <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]">
                     </li>

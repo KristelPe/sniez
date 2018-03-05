@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Allergy;
+use App\User;
 use App\UserAllergy;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class AllergyController extends Controller
     public function index()
     {
         $allergies = Allergy::all();
-        return view("login.registration", compact("allergies"));
+        $user = User::find(1);
+        return view("login.registration", compact("allergies", "user"));
     }
 
     /*
