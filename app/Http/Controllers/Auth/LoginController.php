@@ -70,7 +70,7 @@ class LoginController extends Controller
         }
 
 
-        return redirect('/registration');
+        return redirect('/allergy');
 
 
     }

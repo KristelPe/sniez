@@ -25,10 +25,26 @@ Route::get('/registration', 'UserController@profile');
     ALLERGY
 =================
 */
+
 Route::get('/allergy', 'AllergyController@index');
-Route::post('/allergy', 'AllergyController@store');
+Route::post('/profile', 'AllergyController@store');
+
+/*
+=================
+    RECIPE
+=================
+*/
+
+Route::get('/recipe', 'RecipeController@index');
 
 
+/*
+==================
+    PROFILE
+==================
+*/
+
+Route::get('/profile', 'UserController@profile');
 
 /*
 ==================
