@@ -30,7 +30,7 @@
 
         #btn_search {
 
-            background-color:  #E55266;
+            background-color:  #A0D1E6;
             color: white;
             border-color: transparent;
 
@@ -58,7 +58,7 @@
         #allergies-form .allergies__container {
 
             overflow: scroll;
-            height: 60vh;
+            height: 50vh;
         }
 
         .allergies__container{
@@ -78,6 +78,7 @@
             justify-content: center;
             background-color: #F4BF73;
             border-color: transparent;
+            border-radius: 4px;
 
             width: 300px;
             padding: 1em;
@@ -97,6 +98,7 @@
             width: 100%;
             text-align: center;
             padding: 10px 10px;
+            border-radius: 4px;
 
         }
 
@@ -136,40 +138,44 @@
 
         }*/
 
-        .title {
+        #allergy_header {
+
+            width: 100%;
+            height: 5em;
+            background-image: url("images/backgrounds/bg_profile.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            z-index: -2;
+        }
+
+        #allergy_avatar {
 
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-content: center;
-            width: 100%;
-
-            background-color:#A0D1E6 ;
-            border-radius: 10px 10px 0px 0px;
         }
 
-        .title h1 {
+        #allergy_avatar img {
 
-            font-size: 0.8em;
-            text-align: center;
-
-            font-weight: 200;
-            color:white;
-            padding-left: 2em;
-            padding-right: 2em;
-            padding-bottom: 1em;
-
-
-        }
-
-        .title img {
-
-            width: 50px;
-            height: 50px;
-            margin-top: 20px;
-            align-self: center;
+            width: 80px;
+            height: 80px;
             border-radius: 100%;
-            border: 4px solid white;
+            border: 5px solid white;
+
+            align-self: center;
+            margin-top: -50px;
+
+            -webkit-box-shadow: 0 2px 4px lightgrey;
+            -moz-box-shadow: 0 2px 4px lightgrey;
+            box-shadow: 0 2px 4px lightgrey;
+
+        }
+
+        #allergy_avatar h1 {
+
+            font-size: 1em;
+            text-align: center;
         }
 
         #search{
@@ -206,6 +212,7 @@
 
             color:white;
             font-weight: 200;
+            font-size: 0.8em;
         }
 
         #allergies-form input {
@@ -230,7 +237,12 @@
 
     <div id="allergies-box">
 
-    <div class="title">
+        <div id="allergy_header">
+
+
+        </div>
+
+    <div id="allergy_avatar">
 
         <img src="{{$user->avatar}}" alt="profilepicture" id="avatar">
         <h1>Aan welke soorten voedingsproducten ben je allergisch?</h1>
