@@ -20,6 +20,15 @@ Route::get('/', 'Controller@index');
 
 Route::get('/registration', 'UserController@profile');
 
+
+/*
+=================
+    MENU
+=================
+*/
+Route::get('/nav', function (){
+    return view('partials.nav');
+});
 /*
 =================
     ALLERGY

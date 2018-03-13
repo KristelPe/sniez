@@ -16,7 +16,7 @@ class AllergyController extends Controller
     {
         $allergies = Allergy::all();
         $user = User::find(1);
-        return view("login.registration", compact("allergies", "user"));
+        return view('login.registration', compact("allergies", "user"));
     }
 
     /*
