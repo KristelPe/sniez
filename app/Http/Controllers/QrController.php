@@ -8,8 +8,8 @@ use QrReader;
 
 class QrController extends Controller
 {
-    /*public function index(){
-        $file = Input::file('qr');
+    public function index(){
+        /*$file = Input::file('qr');
         $filename = $file->getClientOriginalName();
         $file->move('uploads/', $filename);
         $image = imagecreatefromjpeg("../public/uploads/".$filename);
@@ -23,7 +23,9 @@ class QrController extends Controller
 
         return $text;
         //return redirect($text);
-    }*/
+        */
+        return view('scan.scan');
+    }
 
     public function test(Request $request){
         $item = json_decode($request->input('data'));

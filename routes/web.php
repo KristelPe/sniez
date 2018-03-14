@@ -23,14 +23,6 @@ Route::get('/registration', 'UserController@profile');
 
 /*
 =================
-    MENU
-=================
-*/
-Route::get('/nav', function (){
-    return view('partials.nav');
-});
-/*
-=================
     ALLERGY
 =================
 */
@@ -60,10 +52,7 @@ Route::get('/profile', 'UserController@profile');
     QR SCANNER
 ==================
 */
-//Route::post('/scan', 'QrController@index');
 
-Route::get('/scan', function (){
-    return view('scan');
-});
 
+Route::get('/scan', 'QrController@index');
 Route::post('/scan', 'QrController@test');

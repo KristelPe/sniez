@@ -25,6 +25,9 @@
     </head>
 
     <body>
+    @if($_SERVER['REQUEST_URI'] != "/")
+        @include("partials.nav")
+    @endif
 
     @yield('content')
 
