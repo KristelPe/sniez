@@ -36,6 +36,7 @@ Route::post('/profile', 'AllergyController@store');
 =================
 */
 
+Route::get('/recipes', 'RecipeController@allRecipes');
 Route::get('/recipe', 'RecipeController@index');
 
 

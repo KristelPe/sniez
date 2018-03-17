@@ -1,6 +1,6 @@
 <style>
     .darkblue{
-        background-color: #1d6184;
+        background-color: lightgrey;
         z-index: 8;
     }
     .blue{
@@ -8,13 +8,14 @@
         z-index: 7;
     }
     .yellow{
-        background-color: #f0bf73;
+        background-color: lightgrey;
         z-index: 6;
     }
     .pink{
-        background-color: #dd5366;
+        background-color: #a3cfe5;
         z-index: 5;
     }
+
     .nav-block{
         width: 100vw;
         height: 25vh;
@@ -66,14 +67,16 @@
     .hamburger-container div{
         height: 3px;
         width: 40px;
-        background-color: #dd5366;
+        background-color: white;
+        box-shadow: 10px 0px 8px grey;
         border-radius: 3px;
     }
     .hamburger-container div:nth-child(2){
         margin: 10px 0;
     }
     .close div{
-        background-color: #f0bf73;
+        background-color: white;
+        box-shadow: none;
     }
     .close div:first-of-type{
         margin-top: 1em;
@@ -99,7 +102,7 @@
                 <img class="nav-icon" src="/images/icons/menu/product.png" alt="lists"><p>Lijstjes</p>
             </li>
         </a>
-        <a class="nav-block blue" href="/recipe">
+        <a class="nav-block blue" href="/recipes">
             <li>
                 <img class="nav-icon" src="/images/icons/menu/recept.png" alt="lists"><p>Recepten</p>
             </li>

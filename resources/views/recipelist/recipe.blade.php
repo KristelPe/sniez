@@ -216,7 +216,7 @@
 
         <div id="recipe_footer">
 
-            <a href="/profile"><img src="images/nav/left-arrow.png" alt="back"></a>
+            <a href="/recipes"><img src="images/nav/left-arrow.png" alt="back"></a>
             <p>Ga terug</p>
 
         </div>

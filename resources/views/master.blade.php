@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 
+        <! -- Fonts -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
 
         <title>Sniez | We make sure you won't</title>
 
@@ -19,7 +23,7 @@
             height: 80vh;
             max-height: 90vh;
 
-            font-family: 'Lato', sans-serif;
+            font-family: 'Roboto Slab', sans-serif;
         }
     </style>
     </head>

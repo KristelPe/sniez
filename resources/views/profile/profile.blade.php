@@ -258,7 +258,7 @@
 
             </div>
 
-            <a href="/recipe" style="text-decoration: none;">
+            <a href="/recipes" style="text-decoration: none;">
             <div id="profile_content_recipe">
 
 

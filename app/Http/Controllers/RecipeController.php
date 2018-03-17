@@ -18,5 +18,11 @@ class RecipeController extends Controller
         return view('recipelist.recipe', compact('recipe', 'user'));
     }
 
+    public function allRecipes()
+    {
+        $recipe = Recipe::find(1);
+        $user = User::find(1);
+        return view('recipelist.recipes', compact('recipe', 'user'));
+    }
 
 }
