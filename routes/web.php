@@ -20,6 +20,7 @@ Route::get('/', 'Controller@index');
 
 Route::get('/registration', 'UserController@profile');
 
+Route::get('/logout', 'Auth\LoginController@logout'); 
 
 /*
 =================

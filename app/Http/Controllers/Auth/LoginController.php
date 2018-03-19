@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+//use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
 
@@ -20,7 +21,7 @@ class LoginController extends Controller
      |
      */
 
-    use AuthenticatesUsers;
+    //use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -69,10 +70,9 @@ class LoginController extends Controller
             $user->save();
         }
 
+        Auth::login(User::where('email', $user->email)->first());
 
         return redirect('/allergy');
-
-
     }
 
     public function logout()

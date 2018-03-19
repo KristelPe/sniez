@@ -5,7 +5,7 @@ use App\Allergy;
 use App\User;
 use App\UserAllergy;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class AllergyController extends Controller
 {
@@ -14,23 +14,28 @@ class AllergyController extends Controller
      * */
     public function index()
     {
-        $allergies = Allergy::all();
-        $user = User::find(1);
-        return view('login.registration', compact("allergies", "user"));
+        if(Auth::check()){ 
+            $allergies = Allergy::all(); 
+            $user = Auth::user();  
+            return view('login.registration', compact("allergies", "user")); 
+        } else { 
+            redirect('/'); 
+        }
     }
 
     /*
      * Save allergies to user
      * */
     public function store(Request $request){
+        $user = Auth::user();
+
         foreach ($request->allergies as $allergy) {
             $user_allergy = new UserAllergy();
-            $user_allergy->user_id = 1; //moet nadien door session_id vervangen worden
+            $user_allergy->user_id = $user->id;
             $user_allergy->allergy_id = $allergy;
             $user_allergy->save();
         }
 
-        $user = User::find(1);
         return view('profile.profile', compact('user'));
     }
 
