@@ -22,7 +22,16 @@ class RecipeController extends Controller
     {
         $recipe = Recipe::find(1);
         $user = User::find(1);
-        return view('recipelist.recipes', compact('recipe', 'user'));
+        $user_allergies = UserAllergy::all()->where('user_id', 1);
+
+        foreach ($user_allergies as $user_allergy) {
+
+            $allergy = Allergy::all()->where('allergy_id', $user_allergy);
+
+        }
+
+
+        return view('recipelist.recipes', compact('recipe', 'user', 'allergy'));
     }
 
 }

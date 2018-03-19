@@ -149,6 +149,16 @@
 
         </select>
 
+        <div id="recipes_allergies">
+
+            @foreach($allergy as $a)
+
+                <p>{{$a->name}}</p>
+
+            @endforeach
+
+        </div>
+
         <div id="recipes_saved" class="drop-down-show-hide">
 
             Mijn bewaarde recepten
