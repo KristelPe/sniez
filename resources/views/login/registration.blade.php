@@ -68,7 +68,7 @@
             flex-wrap: wrap;
             justify-content: center;
             list-style-type: none;
-
+            padding-top: 10px;
         }
 
         .allergies__container li {
@@ -203,8 +203,8 @@
         }
 
         .allergy img {
-
             width: 50px;
+            height: 100%;
             margin-right: 10px;
         }
 
@@ -215,7 +215,7 @@
             font-size: 0.8em;
         }
 
-        #allergies-form input {
+        #allergies-form input, .allergies__container .select_box {
 
             width: 20px;
             height: 20px;
@@ -264,8 +264,8 @@
                 <label for="{{$allergy->id}}">
                     <li class="allergy">
                         <img src="{{$allergy->path}}" alt="allergy_icon" id="allergy_icon">
-                        <p>{{$allergy->name}}</label>
-                        <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]">
+                        <p>{{$allergy->name}}
+                        <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]" hidden>
                     </li>
                 </label>
             @endforeach
@@ -343,5 +343,15 @@
                 $("#not_found").css("display", "block");
             }
         }
+
+        $("input[type='checkbox']").on("change", function () {
+            if ($(this).is(":checked")){
+                $("label[for='" + $(this).attr('id') + "'] > li").css("background-color", "#679ac8");
+                $("label[for='" + $(this).attr('id') + "'] > li").append("<p style='margin-left: 10px'>&#10004;</p>")
+            }else {
+                $("label[for='" + $(this).attr('id') + "'] > li").css("background-color", "#F4BF73");
+                $("label[for='" + $(this).attr('id') + "'] > li > p:last-of-type").remove();
+            }
+        });
     </script>
 @endsection
