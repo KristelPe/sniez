@@ -151,9 +151,9 @@
 
         <div id="recipes_allergies">
 
-            @foreach($allergy as $a)
+            @foreach($user_allergies as $a)
 
-                <p>{{$a->name}}</p>
+                <p>{{$a->allergies->name}}</p>
 
             @endforeach
 

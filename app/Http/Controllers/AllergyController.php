@@ -14,12 +14,12 @@ class AllergyController extends Controller
      * */
     public function index()
     {
-        if(Auth::check()){ 
-            $allergies = Allergy::all(); 
-            $user = Auth::user();  
-            return view('login.registration', compact("allergies", "user")); 
-        } else { 
-            redirect('/'); 
+        if (Auth::check()) {
+            $allergies = Allergy::all();
+            $user = Auth::user();
+            return view('login.registration', compact('allergies', 'user'));
+        } else {
+            redirect('/');
         }
     }
 

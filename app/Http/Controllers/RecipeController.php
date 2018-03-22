@@ -24,14 +24,14 @@ class RecipeController extends Controller
         $user = User::find(1);
         $user_allergies = UserAllergy::all()->where('user_id', 1);
 
-        foreach ($user_allergies as $user_allergy) {
+        /*foreach ($user_allergies as $user_allergy) {
 
             $allergy = Allergy::all()->where('allergy_id', $user_allergy);
 
-        }
+        }*/
 
 
-        return view('recipelist.recipes', compact('recipe', 'user', 'allergy'));
+        return view('recipelist.recipes', compact('recipe', 'user', 'user_allergies'));
     }
 
 }

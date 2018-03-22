@@ -13,6 +13,11 @@ class UserAllergy extends Model
 
     public function allergies()
     {
-        return $this->belongsTo('App\Allergy');
+        return $this->belongsTo('App\Allergy', 'allergy_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'user_id');
     }
 }
