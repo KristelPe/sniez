@@ -6,6 +6,7 @@ use App\UserAllergy;
 use Illuminate\Http\Request;
 use App\Recipe;
 use App\User;
+use GuzzleHttp\Client;
 
 class RecipeController extends Controller
 {
@@ -20,18 +21,14 @@ class RecipeController extends Controller
 
     public function allRecipes()
     {
-        $recipe = Recipe::find(1);
+
         $user = User::find(1);
         $user_allergies = UserAllergy::all()->where('user_id', 1);
 
-        /*foreach ($user_allergies as $user_allergy) {
+        $json_string=file_get_contents("https://getbridgeapp.co/api/testsniezapi/snieztest/");
+        $recipes = json_decode($json_string);
 
-            $allergy = Allergy::all()->where('allergy_id', $user_allergy);
-
-        }*/
-
-
-        return view('recipelist.recipes', compact('recipe', 'user', 'user_allergies'));
+        return view('recipelist.recipes', compact('recipes', 'user', 'user_allergies'));
     }
 
 }

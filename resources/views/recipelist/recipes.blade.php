@@ -52,15 +52,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-content: center;
 
             margin: auto;
-            margin-top: 10px;
+            margin-top: 20px;
             z-index: 10000;
-        }
 
-        #recipes_dropDown option {
+            background-color: #A0D1E6;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 100 ;
+            border: none;
 
-            width: 280px;
+            padding: 10px 50px;
         }
 
         #recipes_all {
@@ -68,26 +72,25 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
 
             width: 90%;
             margin-left: 5%;
 
+            margin-top: 20px;
+
 
         }
 
-        #recipes_all h2 {
+        #recipes_recipe {
 
             margin-top: 20px;
-            margin-bottom: 20px;
-            font-size: 0.8em;
-            letter-spacing: 1px;
         }
 
         #recipes_recipe a {
 
-            width: 150px;
-            height: 150px;
+            width: 240px;
+            height: 240px;
 
             display: flex;
             flex-direction: column;
@@ -99,27 +102,28 @@
 
             border-radius: 4px;
 
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
+            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
         }
 
         #recipes_recipe a img {
 
-            width: auto;
+            width: 240px;
+            height: auto;
             z-index: 0;
         }
 
-        #recipes_recipe p {
+        #recipes_recipe a p {
 
             position: absolute;
-            color: #A0D1E6;
+            color: black;
             z-index: 1;
             background-color: rgba(255, 255, 255, 0.95);
-            font-size: 0.8em;
+            font-size: 0.9em;
 
-            width: 150px;
-            margin-top: 110px;
+            width: 240px;
+            margin-top: 100px;
             padding: 20px 5px;
 
         }
@@ -137,8 +141,7 @@
 
         <div id="recipes_avatar">
 
-            <img src="{{$user->avatar}}" alt="avatar">
-            <h1>{{$user->name}}</h1>
+            <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
 
         </div>
 
@@ -151,9 +154,9 @@
 
         <div id="recipes_allergies">
 
-            @foreach($user_allergies as $a)
+            @foreach($user_allergies as $allergy)
 
-                <p>{{$a->allergies->name}}</p>
+                <p>{{$allergy->name}}</p>
 
             @endforeach
 
@@ -161,40 +164,28 @@
 
         <div id="recipes_saved" class="drop-down-show-hide">
 
-            Mijn bewaarde recepten
+
 
         </div>
 
         <div id="recipes_all" class="drop-down-show-hide">
 
-            <h2>Alle recepten van Libelle Lekker</h2>
 
-            <div id="recipes_recipe">
-                <a href="/recipe">
-                <img src="images/recipe/bg_recipe.jpg" alt="recipe">
-                <p>{{$recipe->title}}</p>
-                </a>
+            @foreach($recipes as $r)
 
-            </div>
+                <div id="recipes_recipe">
 
-            <div id="recipes_recipe">
+                    <a href="/recipe/{{$r->id}}">
+                        <img src="{{$r->img}}" alt="recipe">
+                        <p>{{$r->titel}}</p>
+                    </a>
 
-                <a href="/recipe">
-                <img src="images/recipe/bg_recipe.jpg" alt="recipe">
-                <p>{{$recipe->title}}</p>
-                </a>
+                </div>
 
-            </div>
-
-            <div id="recipes_recipe">
-                <a href="/recipe">
-                <img src="images/recipe/bg_recipe.jpg" alt="recipe">
-                <p>{{$recipe->title}}</p>
-                </a>
-
-            </div>
+                @endforeach
 
         </div>
+
 
     </div>
 
