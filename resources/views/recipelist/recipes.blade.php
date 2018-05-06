@@ -67,6 +67,38 @@
             padding: 10px 50px;
         }
 
+        #recipes_allergies {
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            margin-top: 20px;
+        }
+
+        #recipes_allergy {
+
+            display: flex;
+            flex-direction: row;
+
+            background-color: #f3be7d;
+            color:white;
+            margin-left: 20px;
+            margin-top: 10px;
+            padding: 0px 20px;
+
+            border-radius: 4px;
+
+        }
+
+        #recipes_allergy img {
+
+            width: 10px;
+            height: 10px;
+            margin-top: 22.5px;
+            margin-right: 20px;
+        }
+
         #recipes_all {
 
             display: flex;
@@ -109,7 +141,7 @@
 
         #recipes_recipe a img {
 
-            width: 240px;
+            width: 400px;
             height: auto;
             z-index: 0;
         }
@@ -154,9 +186,10 @@
 
         <div id="recipes_allergies">
 
-            @foreach($user_allergies as $allergy)
-
-                <p>{{$allergy->name}}</p>
+            @foreach($user_allergies as $a)
+                <div id="recipes_allergy">
+                <img src="images/cancel.png" alt="deleteBtn"> <p>{{$a->allergies->name}}</p>
+                </div>
 
             @endforeach
 
