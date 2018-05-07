@@ -61,8 +61,10 @@
             background-color: #A0D1E6;
             color: white;
             letter-spacing: 1px;
-            font-weight: 100 ;
+            font-size: 0.8em;
+            font-weight: 400 ;
             border: none;
+            border-radius: 0%;
 
             padding: 10px 50px;
         }
@@ -73,7 +75,7 @@
             flex-direction: row;
             flex-wrap: wrap;
 
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         #recipes_allergy {
@@ -83,6 +85,8 @@
 
             background-color: #f3be7d;
             color:white;
+            font-size: 0.8em;
+            font-weight: 100;
             margin-left: 20px;
             margin-top: 10px;
             padding: 0px 20px;
@@ -95,9 +99,216 @@
 
             width: 10px;
             height: 10px;
-            margin-top: 22.5px;
-            margin-right: 20px;
+            margin-top: 15px;
+            margin-right: 10px;
         }
+
+
+
+        #recipes_saved {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 90%;
+            margin-left: 5%;
+
+            margin-top: 20px;
+        }
+
+        #add_recipes_list {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        #add_recipes_list a {
+
+            display: flex;
+            flex-direction: row;
+            background-color: #A0D1E6 ;
+
+            width: 280px;
+            height: 112px;
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+
+            border-radius: 4px;
+            text-decoration: none;
+
+            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
+
+        }
+
+        #add_recipes_list a img {
+
+            width: 40px;
+            height: 40px;
+
+            margin-left: 50px;
+            margin-right: 50px;
+
+            align-self: center;
+
+        }
+
+        #add_recipes_list a #text_add {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background-color: white;
+        }
+
+        #add_recipes_list a p {
+
+            margin-left: 20px;
+            color: #3f3f3f;
+            font-weight: 400;
+            align-self: center;
+            font-size: 0.8em;
+        }
+
+        #add_list_form {
+
+            margin-top: -20px;
+            margin-bottom: 50px;
+
+            display: none;
+        }
+
+        #add_list_form form {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            margin: auto;
+
+            background-color: #A0D1E6 ;
+            width: 280px;
+            height: 280px;
+        }
+
+        #add_list_form h2 {
+
+            color: white;
+            font-weight: 400;
+            font-size: 1em;
+            text-align: center;
+        }
+
+
+        #add_list_form form input {
+
+            width: 90%;
+            margin-left: 3.5%;
+            height: 40px;
+            margin-top: 20px;
+        }
+
+        #add_list_form form input::-webkit-input-placeholder {
+
+            padding-left: 10px;
+            opacity: 0.5;
+
+        }
+        
+        #add_list_form form button {
+            
+            color: white;
+            padding: 10px;
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 20px;
+            background-color: #f3be7d;
+
+        }
+
+
+
+        #recipes_list {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 90%;
+            margin-left: 5%;
+
+        }
+
+        #recipes_list a {
+
+            display: flex;
+            flex-direction: row;
+
+            width: 280px;
+            height: 112px;
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+
+            border-radius: 4px;
+
+            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
+
+            text-decoration: none;
+
+        }
+
+        #recipes_list a #img_list {
+
+            width: 140px;
+            height: 112px;
+        }
+
+        #recipes_list a #img_list img {
+
+            width: 180px;
+            margin-top: -8px;
+            height: auto;
+            z-index: 0;
+        }
+
+
+
+        #recipes_list a #info_list {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background-color: white;
+        }
+
+        #recipes_list a #info_list p {
+
+            margin-left: 20px;
+            color: #3f3f3f;
+            font-weight: 400;
+            align-self: center;
+        }
+
+        #recipes_list a #info_list span {
+
+            font-size: 0.6em;
+            margin-top: -20px;
+        }
+
+
 
         #recipes_all {
 
@@ -160,6 +371,111 @@
 
         }
 
+        @media screen and (min-width: 768px) {
+
+            #recipes_allergies {
+
+                display: flex;
+                flex-direction: row;
+
+                justify-content: center;
+
+                margin-top: 10px;
+            }
+
+            
+            #recipes_saved {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 90%;
+                margin-left: 5%;
+
+                margin-top: 20px;
+            }
+
+            #add_recipes_list {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                width: 90%;
+                margin-left: 5%;
+            }
+
+            #recipes_list {
+
+                display: flex;
+                flex-direction: row;
+
+                width: 400px;
+                height: 240px;
+
+                margin-bottom: 20px;
+
+                overflow: hidden;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+
+                text-decoration: none;
+
+            }
+
+            #recipes_list a {
+
+                display: flex;
+                flex-direction: row;
+
+                width: 400px;
+                height: 240px;
+
+                margin-bottom: 20px;
+
+                overflow: hidden;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+
+                text-decoration: none;
+            }
+
+
+            #recipes_list a #img_list {
+
+                width: 240px;
+                height: 240px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+            }
+
+            #recipes_list a #img_list img {
+
+                width: 240px;
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
 
 
     </style>
@@ -167,39 +483,96 @@
 
     <div id="recipes">
 
-        <div id="recipes_header">
+        <div>
 
-        </div>
+            <div id="recipes_header">
 
-        <div id="recipes_avatar">
+            </div>
+
+            <div id="recipes_avatar">
 
             <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
 
-        </div>
+            </div>
 
-        <select id="recipes_dropDown">
+            <select id="recipes_dropDown">
 
             <option value="recipes_saved">Bewaarde recepten</option>
             <option value="recipes_all">Alle recepten</option>
 
-        </select>
+            </select>
 
-        <div id="recipes_allergies">
+            <div id="recipes_allergies">
 
             @foreach($user_allergies as $a)
                 <div id="recipes_allergy">
+
                 <img src="images/cancel.png" alt="deleteBtn"> <p>{{$a->allergies->name}}</p>
                 </div>
 
             @endforeach
+
+            </div>
 
         </div>
 
         <div id="recipes_saved" class="drop-down-show-hide">
 
 
+            <div id="add_recipes_list">
+
+                <a href="#">
+
+                    <img src="images/add.png" alt="add_list">
+                    <div id="text_add">
+                    <p>Voeg een nieuw bord toe</p>
+                    </div>
+
+                </a>
+
+            </div>
+
+           <div id="add_list_form">
+
+                <form action="" method="POST">
+
+                    {{ csrf_field() }}
+
+                    <input name="name_list" placeholder="De naam van je lijstje" type="text">
+                    <input name="img_list" placeholder="Link van de foto" type="text">
+
+                    <button type="submit">Verzenden</button>
+
+
+                </form>
+
+
+            </div>
+
+
+            @foreach($recipe_lists as $list)
+
+                <div id="recipes_list">
+
+                    <a href="/list/{{$list->id}}">
+
+                        <div id="img_list"><img src="{{$list->img}}" alt="header_List"></div>
+                        <div id="info_list">
+                        <p>{{$list->name}}</p>
+                        <span><p style="color: #a3a3a3;">X recepten</p></span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+            @endforeach
+
 
         </div>
+
+
 
         <div id="recipes_all" class="drop-down-show-hide">
 
@@ -232,6 +605,37 @@
             $('#' + this.value).show();
 
         });
+
+        // POPUP FORM
+
+        function deselect(e) {
+            $('#add_list_form ').slideFadeToggle(function() {
+                e.removeClass('selected');
+            });
+        }
+
+        $(function() {
+            $('#add_recipes_list').on('click', function() {
+                if($(this).hasClass('selected')) {
+                    deselect($(this));
+                } else {
+                    $(this).addClass('selected');
+                    $('.pop').slideFadeToggle();
+                }
+                return false;
+            });
+
+            $('.close').on('click', function() {
+                deselect($('#add_recipes_list'));
+                return false;
+            });
+        });
+
+        $.fn.slideFadeToggle = function(easing, callback) {
+            return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+        };
+
+
     </script>
 
 

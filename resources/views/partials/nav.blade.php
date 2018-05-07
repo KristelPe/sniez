@@ -65,14 +65,14 @@
         height: 35px;
     }
     .hamburger-container div{
-        height: 3px;
+        height: 4px;
         width: 40px;
         background-color: white;
-        box-shadow: 10px 0px 8px grey;
+        box-shadow: 0px 0px 8px #e3e3e3;
         border-radius: 3px;
     }
     .hamburger-container div:nth-child(2){
-        margin: 10px 0;
+        margin: 6px 0;
     }
     .close div{
         background-color: white;

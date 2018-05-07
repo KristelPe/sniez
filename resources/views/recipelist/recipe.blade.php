@@ -8,7 +8,7 @@
 
             width: 100%;
             height: 12em;
-            background-image: url("images/recipe/bg_recipe.jpg");
+            background-image: url("{{$recipe->img}}");
             background-size: cover;
             background-repeat: no-repeat;
 
@@ -174,8 +174,8 @@
 
             <div id="recipe_title">
 
-                <h1>{{$recipe->title}}</h1>
-                <p>4 pers. - 20 min.</p>
+                <h1>{{$recipe->titel}}</h1>
+                <p>Geschikt voor {{$recipe->personen}} personen</p>
 
             </div>
 
@@ -200,7 +200,7 @@
 
                 <h2 class="recipe_content_title">Ingrediënten</h2>
 
-                <p>{{$recipe->ingredients}}</p>
+                <p>{{$recipe->ingredienten}}</p>
 
             </div>
 
@@ -208,7 +208,7 @@
 
                 <h2 class="recipe_content_title">Werkwijze</h2>
 
-                <p>{{$recipe->preparation}}</p>
+                <p>{{$recipe->bereiding}}</p>
 
             </div>
 

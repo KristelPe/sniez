@@ -33,13 +33,20 @@ Route::post('/profile', 'AllergyController@store');
 
 /*
 =================
-    RECIPE
+    RECIPE GET
 =================
 */
 
 Route::get('/recipes', 'RecipeController@allRecipes');
-Route::get('/recipe', 'RecipeController@index');
+Route::get('/recipe/{id}', 'RecipeController@showRecipe');
 
+/*
+=================
+    RECIPE POST
+=================
+*/
+
+Route::post('/recipes', 'RecipeController@addList');
 
 /*
 ==================
