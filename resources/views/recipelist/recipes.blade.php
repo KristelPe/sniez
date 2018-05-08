@@ -123,8 +123,6 @@
             flex-direction: column;
             justify-content: center;
 
-            width: 90%;
-            margin-left: 5%;
         }
 
         #add_recipes_list a {
@@ -242,9 +240,6 @@
             flex-direction: column;
             justify-content: center;
 
-            width: 90%;
-            margin-left: 5%;
-
         }
 
         #recipes_list a {
@@ -300,6 +295,7 @@
             color: #3f3f3f;
             font-weight: 400;
             align-self: center;
+            width: 100px;
         }
 
         #recipes_list a #info_list span {

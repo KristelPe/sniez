@@ -1,63 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Qr</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <style>
-        body, input {
-            font-size:14pt
-        }
-        body{
-            background-color: #f3be7d;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100vw;
-            height: 80vh;
-        }
-        input, label {
-            vertical-align:middle
-        }
-        form{
-            height:70vw;
-            width:70vw;
-            max-height: 50vh;
-            max-width: 50vh;
-            margin: auto;
-            text-align: center;
-        }
-        .qrcode-text-btn {
-            display:inline-block;
-            background-color: white;
-            border-radius: 50%;
-            background-image: url('/images/sniez.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 65%;
-            height:70vw;
-            width:70vw;
-            max-height: 50vh;
-            max-width: 50vh;
-            cursor:pointer;
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
-            margin: auto;
-        }
-        .qrcode-text-btn > input[type=file] {
-            position:absolute;
-            overflow:hidden;
-            width:1px;
-            height:1px;
-            opacity:0
-        }
+@extends('master')
+@section('content')
 
-        img{
-            margin-top: calc(70vw - 5.5em);
-            height: 4em;
-        }
-    </style>
-</head>
-<body>
+
 
     <form id="qr" action="{{ action('QrController@test') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -91,6 +35,4 @@
 
     }
 
-</script>
-</body>
-</html>
+@endsection
