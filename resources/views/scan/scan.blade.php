@@ -2,40 +2,44 @@
 @section('content')
 
 <style>
-    
+
     #scan_header {
+
         width: 100%;
         height: 12em;
         background-image: url("images/backgrounds/bg_profile.jpg");
         background-size: cover;
+        background-position: top;
         background-repeat: no-repeat;
+
         z-index: -2;
     }
 
     #scan_avatar {
+
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
     #scan_avatar img {
+
         width: 100px;
         height: 100px;
         border-radius: 100%;
         border: 5px solid white;
+
         align-self: center;
         margin-top: -50px;
+
         -webkit-box-shadow: 0 2px 4px lightgrey;
         -moz-box-shadow: 0 2px 4px lightgrey;
         box-shadow: 0 2px 4px lightgrey;
+
     }
 
-    #scan_avatar h1 {
-        text-align: center;
-        font-size: 1em;
-        letter-spacing: 1px;
-    }
     .search{
+        margin-top: 50px;
         width: 200px;
         margin-left: auto;
         margin-right: auto;
@@ -86,7 +90,43 @@
         border: 1px solid #F4BF73;
     }
     
-    @media screen and (min-width: 768px){
+    #profile_footer {
+        margin-top: 3em;
+        bottom:0;
+        height: 6em;
+        width: 100%;
+        background-image: url("images/backgrounds/bg_profile.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #profile_footer img {
+
+        width: 50px;
+        height: auto;
+        border-radius: 100%;
+        align-self: center;
+    }
+    
+    .inside_footer{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .social_fb{
+        background-image: url(/images/icons/facebook-white.svg);
+        background-repeat: no-repeat;
+        background-siz: 40%;
+        float: right;
+        height: 30px;
+        width: 30px;
+    }
+    
+    @media screen and (min-width: 1024px){
         .search{
             width: 330px;
         }
@@ -104,20 +144,20 @@
             max-width: 50%;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 5em;
+            margin-top: 3em;
             margin-bottom: 5em;
         }
     }
 </style>
 
-<div id="scan_header"></div>
-
-<div id="scan_avatar">
-    <img src="{{$user->avatar}}" alt="avatar">
-    <h1>{{$user->name}}</h1>
-</div>
-
 <div class="scan">
+
+    <div id="scan_header"></div>
+
+    <div id="scan_avatar">
+        <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
+    </div>
+
     <div class="search">
         <input class="input_search" type="text" placeholder="Zoek hier een product...">
         <button class="btn_search">Zoek</button>
@@ -164,6 +204,13 @@
         };
         reader.readAsDataURL(node.files[0]);
 
-    }
+    }  
+</script>
+
+<div id="profile_footer">
+    <div class="inside_footer">
+        <a class="social_fb" href="https://www.facebook.com/Sniezapp/"></a>
+    </div>
+</div>
 
 @endsection
