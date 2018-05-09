@@ -7,7 +7,7 @@
         #profile_header {
 
             width: 100%;
-            height: 12em;
+            height: 8em;
             background-image: url("images/backgrounds/bg_profile.jpg");
             background-size: cover;
             background-repeat: no-repeat;
@@ -45,6 +45,76 @@
             letter-spacing: 1px;
         }
 
+        #recipes_allergies {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            margin-left: -5%;
+
+            margin-top: 10px;
+        }
+
+        #recipes_allergy {
+
+            display: flex;
+            flex-direction: row;
+
+            background-color: #A0D1E6;
+            color:white;
+            font-size: 0.8em;
+            font-weight: 100;
+            margin-left: 20px;
+            margin-top: 10px;
+            padding: 0px 20px;
+
+            border-radius: 4px;
+
+        }
+
+        #recipes_allergy img {
+
+            width: 10px;
+            height: 10px;
+            margin-top: 15px;
+            margin-right: 10px;
+        }
+
+        #edit_allergies {
+
+            font-size: 0.6em;
+            color: #A0D1E6;
+
+            align-self: center;
+            margin-left: 20px;
+            margin-top: 10px;
+
+            border-bottom: 1px solid #A0D1E6;
+
+        }
+
+        .scan h1, p{
+            text-align: center;
+        }
+
+        .input_file{
+            display: none;
+        }
+
+        #qr img{
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+            border-radius: 100%;
+            border: 1px solid #F4BF73;
+        }
+
         #profile_content {
 
             display: flex;
@@ -56,158 +126,27 @@
             margin-top: 20px;
         }
 
-        #profile_content_product {
+        #profile_content_mobile h1 {
 
-
-            height: 80px;
-            background-color: #A0D1E6 ;
-            border-radius: 4px;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
-        }
-
-        #profile_content_product:hover {
-
-            background-color: #F4BF73;
-        }
-
-        #profile_content_product img {
-
-            width: 40px;
-            align-self: center;
-        }
-
-        #profile_content_product p {
-
-            color: white;
-            font-size: 0.8em;
-            align-self: center;
-            margin-left: 10px;
-            font-weight: 100;
-        }
-
-        #profile_content_recipe {
-
-            margin-top: 10px;
-            height: 80px;
-            background-color: #A0D1E6 ;
-            border-radius: 4px;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
-        }
-
-        #profile_content_recipe:hover {
-
-            background-color: #F4BF73;
-        }
-
-        #profile_content_recipe img {
-
-            width: 50px;
-            align-self: center;
-        }
-
-        #profile_content_recipe p {
-
-            color: white;
-            font-size: 0.8em;
-            align-self: center;
-            margin-left: 10px;
-            font-weight: 100;
-        }
-
-        #profile_content_links {
-
-            margin-top: 10px;
-            display: flex;
-            flex-direction: row;
-        }
-
-        #profile_content_scan {
-
-            width: 48.5%;
-            height: 80px;
-            background-color: #A0D1E6;
-            border-radius: 4px;
-
-            display: flex;
-            flex-direction: column;
-
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
-        }
-
-        #profile_content_scan:hover {
-
-            background-color: #F4BF73;
-        }
-
-        #profile_content_scan img {
-
-            margin-top: 15px;
-            width: 30px;
-            align-self: center;
-        }
-
-        #profile_content_scan p {
-
-            color: white;
-            font-size: 0.5em;
+            font-size: 1em;
+            font-weight: 400;
             text-align: center;
+            margin-top: 20px;
+        }
+
+        #profile_content_mobile p {
+
+            font-size: 0.8em;
             font-weight: 100;
-            margin-top: 5px;
-        }
-
-        #profile_content_edit {
-
-            margin-left: 3%;
-            width: 48.5%;
-            height: 80px;
-            background-color: #A0D1E6;
-            border-radius: 4px;
-
-            display: flex;
-            flex-direction: column;
-
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
-        }
-
-        #profile_content_edit:hover {
-
-            background-color: #F4BF73;
-        }
-
-
-        #profile_content_edit img {
-
-            margin-top: 15px;
-            width: 30px;
-            align-self: center;
-        }
-
-        #profile_content_edit p {
-
-            color: white;
-            font-size: 0.5em;
             text-align: center;
-            font-weight: 100;
-            margin-top: 5px;
+            line-height: 1.8em;
         }
+
+        #profile_content_desktop {
+
+            display: none;
+        }
+
 
         #profile_footer {
 
@@ -234,6 +173,124 @@
             align-self: center;
         }
 
+        @media screen and (min-width: 1100px) {
+
+            #profile_content_mobile {
+
+                display: none;
+            }
+
+            #profile_content_desktop {
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            #profile_content_desktop h2 {
+
+                font-weight: 100;
+            }
+
+            #last_recipes {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            #last_recipes_block {
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                width: 100%;
+
+                margin-top: 20px;
+                margin-left: -20px;
+
+            }
+
+            #recipes_recipe {
+
+                margin-top: 20px;
+            }
+
+            #recipes_recipe a {
+
+                width: 200px;
+                height: 200px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                margin-bottom: 20px;
+                margin-left: 20px;
+
+                overflow: hidden;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+            }
+
+            #recipes_recipe a img {
+
+                width: 350px;
+                height: auto;
+                z-index: 0;
+            }
+
+            #recipes_recipe a p {
+
+                position: absolute;
+                color: black;
+                z-index: 1;
+                background-color: rgba(255, 255, 255, 0.95);
+                font-size: 0.9em;
+
+                width: 200px;
+                margin-top: 80px;
+                padding: 20px 5px;
+                text-align: left;
+
+            }
+
+            #show_recipes {
+
+                width: 200px;
+                height: 200px;
+                margin-top: 20px;
+                background-color: #A0D1E6 ;
+                color: white;
+                font-weight: 100;
+                font-size: 0.8em;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px lightgrey;
+                -moz-box-shadow: 0 2px 4px lightgrey;
+                box-shadow: 0 2px 4px lightgrey;
+
+                margin-left: 20px;
+
+            }
+
+            #last_products {
+
+                margin-top: 30px;
+            }
+
+
+        }
+
     </style>
 
     <div id="profile">
@@ -249,54 +306,118 @@
 
     </div>
 
+        <div id="recipes_allergies">
+
+            @foreach($user_allergies as $a)
+                <div id="recipes_allergy">
+
+                    <img src="images/cancel.png" alt="deleteBtn"> <p>{{$a->allergies->name}}</p>
+
+                </div>
+
+            @endforeach
+
+                <a id="edit_allergies">bewerken</a>
+
+        </div>
+
         <div id="profile_content">
 
-            <div id="profile_content_product">
+            <div id="profile_content_mobile">
 
-                <img src="images/icons/menu/product.png">
-                <p>Mijn producten</p>
-
-            </div>
-
-            <a href="/recipes" style="text-decoration: none;">
-            <div id="profile_content_recipe">
-
-
-
-                <img src="images/icons/menu/recept.png">
-                <p>Mijn recepten</p>
+                <form id="qr" action="{{ action('QrController@test') }}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <label class=qrcode-text-btn>
+                        <input class="input_file" name="qr" type=file accept="image/*" capture="camera" onchange="openQRCamera(this);" tabindex=-1>
+                        <img src="/images/icons/menu/scan.png" alt="sniez">
+                    </label>
+                    <input id="data" name="data" type="text" hidden>
+                </form>
 
 
+                    <h1>Scan een barcode van een product</h1>
+                    <p>Of open het menu om je recepten en producten te bekijken.</p>
 
             </div>
-            </a>
 
-            <div id="profile_content_links">
 
-                <div id="profile_content_scan">
 
-                    <img src="images/icons/menu/scan.png">
-                    <p>Scan een product</p>
+            <div id="profile_content_desktop">
+
+                <div id="last_recipes">
+
+                    <h2>Laatst opgeslagen recepten</h2>
+
+                    <div id="last_recipes_block">
+
+                        @foreach($recipes as $r)
+
+                            @if(($r->id)< 4)
+
+                            <div id="recipes_recipe">
+
+                                <a href="/recipe/{{$r->id}}">
+                                    <img src="{{$r->img}}" alt="recipe">
+                                    <p>{{$r->titel}}</p>
+                                </a>
+
+                            </div>
+
+                            @endif
+
+                        @endforeach
+
+                        <a id="show_recipes">Alle opgeslagen recepten ... </a>
+
+                    </div>
 
                 </div>
 
-                <div id="profile_content_edit">
+                <div id="last_products">
 
-                    <img src="images/icons/menu/profile.png">
-                    <p>Mijn profiel</p>
+                    <h2>Laatst bewaarde recepten</h2>
 
                 </div>
+
 
             </div>
 
         </div>
 
-        <div id="profile_footer">
+
+        </div>
+
+        <!--<div id="profile_footer">
 
             <img src="images/logo/logo_ei.png" alt="logo">
 
-        </div>
+        </div>-->
 
     </div>
+
+    <script src='https://dmla.github.io/jsqrcode/src/qr_packed.js'></script>
+    <script>
+        function openQRCamera(node) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                node.value = "";
+                qrcode.callback = function(res) {
+                    if(res instanceof Error) {
+                        alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+                    } else {
+                        //node.parentNode.previousElementSibling.value = res;
+                        //window.location.href = res;
+                        //alert(res);
+                        document.getElementById('data').value = res;
+                        document.getElementById("qr").submit();
+                    }
+                };
+                qrcode.decode(reader.result);
+            };
+            reader.readAsDataURL(node.files[0]);
+
+        }
+
+    </script>
 
 @endsection
