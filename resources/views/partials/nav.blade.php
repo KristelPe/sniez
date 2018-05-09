@@ -1,18 +1,18 @@
 <style>
     .darkblue{
-        background-color: lightgrey;
+        background-color: #0E6184;
         z-index: 8;
     }
     .blue{
-        background-color: #a3cfe5;
+        background-color: #A0D1E6;
         z-index: 7;
     }
     .yellow{
-        background-color: lightgrey;
+        background-color: #E55266;
         z-index: 6;
     }
     .pink{
-        background-color: #a3cfe5;
+        background-color: #F4BF73;
         z-index: 5;
     }
 
@@ -20,6 +20,7 @@
         width: 100vw;
         height: 25vh;
     }
+    
     #nav-container{
         height: 100vh;
         display: flex;
@@ -89,36 +90,102 @@
         margin-top: -3.5px;
         transform: rotate(-45deg);
     }
+    
+    .nav-desktop{
+        display: none;   
+    }
+    
+    @media screen and (min-width: 768px){
+        .nav-mobile{
+            display: none;   
+        }
+        
+        .nav-desktop{
+            display: block;  
+            background-color: white;
+            height: 3em;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .logo{
+            display: inline-block;
+            background-image: url(/images/sniez_strawberry.png);
+            background-repeat: no-repeat;
+            background-size: 75px;
+            text-indent: -9999px;
+            height: 50px;
+            width: 75px;
+            margin-top: 0em;
+        }
+        
+        .nav-desktop ul{
+            list-style: none;  
+            float: right;
+        }
+        
+        .nav-desktop li{
+            float: left;   
+        }
+        
+        .nav-desktop a{
+            text-decoration: none;
+            color: black;
+            padding-left: 1em;
+            padding-right: 1em;
+            width: 20%;
+        }
+        
+        .nav-desktop a:hover{
+            color: #A0D1E6;
+        }
+    }
 </style>
-<nav>
-    <a id="hamburger" class="hamburger-container" onclick="toggleNav()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </a>
-    <ul id="nav-container">
-        <a class="nav-block darkblue" href="">
-            <li>
-                <img class="nav-icon" src="/images/icons/menu/product.png" alt="lists"><p>Lijstjes</p>
-            </li>
+
+<div class="nav-mobile">
+    <nav>
+        <a id="hamburger" class="hamburger-container" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
         </a>
-        <a class="nav-block blue" href="/recipes">
-            <li>
-                <img class="nav-icon" src="/images/icons/menu/recept.png" alt="lists"><p>Recepten</p>
-            </li>
-        </a>
-        <a class="nav-block yellow" href="/scan">
-            <li>
-                <img class="nav-icon" src="/images/icons/menu/scan.png" alt="lists"><p>Scan</p>
-            </li>
-        </a>
-        <a class="nav-block pink" href="/profile">
-            <li>
-                <img class="nav-icon" src="/images/icons/menu/profile.png" alt="lists"><p>Profile</p>
-            </li>
-        </a>
-    </ul>
-</nav>
+        <ul id="nav-container">
+            <a class="nav-block darkblue" href="">
+                <li>
+                    <img class="nav-icon" src="/images/icons/menu/product-blue.svg" alt="lists"><p>Lijstjes</p>
+                </li>
+            </a>
+            <a class="nav-block blue" href="/recipes">
+                <li>
+                    <img class="nav-icon" src="/images/icons/menu/recept.svg" alt="lists"><p>Recepten</p>
+                </li>
+            </a>
+            <a class="nav-block pink" href="/scan">
+                <li>
+                    <img class="nav-icon" src="/images/icons/menu/scan.svg" alt="lists"><p>Scan</p>
+                </li>
+            </a>
+            <a class="nav-block yellow" href="/profile">
+                <li>
+                    <img class="nav-icon" src="/images/icons/menu/profile.svg" alt="lists"><p>Profile</p>
+                </li>
+            </a>
+        </ul>
+    </nav>
+</div>
+
+<div class="nav-desktop">
+    <nav>
+        <a class="logo" href="#">Logo</a>
+        <ul>
+            <li><a href="#">Producten</a></li>
+            <li><a href="#">Recepten</a></li>
+            <li><a href="#">Scan</a></li>
+        </ul>
+    </nav>
+</div>
+
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script>
     function toggleNav(){
