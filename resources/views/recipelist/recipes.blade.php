@@ -11,7 +11,7 @@
             height: 12em;
             background-image: url("images/backgrounds/bg_recipes.jpg");
             background-size: cover;
-            background-position: center;
+            background-position: bottom;
             background-repeat: no-repeat;
 
             z-index: -2;
@@ -69,11 +69,39 @@
             padding: 10px 50px;
         }
 
+        .search{
+
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .input_search{
+            border-radius: 3px;
+            border: 1px solid #F4BF73;
+            padding: 1em;
+            width: 200px;
+        }
+
+        .btn_search{
+            background-image: url(/images/icons/search-orange.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border: 0;
+            text-indent: -9999px;
+            margin-left: -3em;
+            align-self: center;
+        }
+
         #recipes_allergies {
 
             display: flex;
             flex-direction: row;
+            justify-content: center;
             flex-wrap: wrap;
+
+            margin-left: -5%;
 
             margin-top: 10px;
         }
@@ -112,7 +140,7 @@
             justify-content: center;
 
             width: 90%;
-            margin-left: 5%;
+            margin-left: auto;
 
             margin-top: 20px;
         }
@@ -369,38 +397,91 @@
 
         @media screen and (min-width: 768px) {
 
-            #recipes_allergies {
-
-                display: flex;
-                flex-direction: row;
-
-                justify-content: center;
-
-                margin-top: 10px;
-            }
-
-            
             #recipes_saved {
 
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
                 flex-wrap: wrap;
-                width: 90%;
-                margin-left: 5%;
+                justify-content: space-around;
 
-                margin-top: 20px;
+                width: 100%;
+
+                margin-top: 50px;
+            }
+
+            .input_search{
+                width: 300px;
+            }
+
+            #recipes_allergies {
+
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 30px;
+            }
+
+            #recipes_all {
+
+                justify-content: space-around;
+            }
+
+
+
+
+        }
+
+        @media screen and (min-width: 1240px) {
+
+
+            
+            #recipes_saved {
+
+                width: 80%;
+                margin-left: 10%;
+            }
+
+            .input_search{
+                width: 300px;
+            }
+
+            #recipes_allergies {
+
+                width: 50%;
+                margin-left: 25%;
+                margin-top: 30px;
             }
 
             #add_recipes_list {
 
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-
-                width: 90%;
-                margin-left: 5%;
+                display: block;
             }
+
+            #add_recipes_list a {
+
+                width: 400px;
+                height: 240px;
+            }
+
+            #add_recipes_list a img {
+
+                width: 50px;
+                height: 50px;
+
+                margin-left: 75px;
+                margin-right: 75px;
+
+            }
+
+            #add_recipes_list a #text_add {
+
+                width: 200px;
+            }
+
+            #add_recipes_list a p {
+
+                margin-left: -5px;
+            }
+
 
             #recipes_list {
 
@@ -461,12 +542,11 @@
                 width: 240px;
             }
 
+            #recipes_all {
 
-
-
-
-
-
+                width: 80%;
+                margin-left: 10%;
+            }
 
 
 
@@ -498,6 +578,8 @@
 
             </select>
 
+
+
             <div id="recipes_allergies">
 
             @foreach($user_allergies as $a)
@@ -506,7 +588,14 @@
                 <img src="images/cancel.png" alt="deleteBtn"> <p>{{$a->allergies->name}}</p>
                 </div>
 
+
+
             @endforeach
+
+                <div class="search">
+                    <input class="input_search" type="text" placeholder="Zoek hier een recept...">
+                    <button class="btn_search">Zoek</button>
+                </div>
 
             </div>
 
