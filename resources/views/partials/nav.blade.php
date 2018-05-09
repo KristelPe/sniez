@@ -180,8 +180,8 @@
         <a class="logo" href="#">Logo</a>
         <ul>
             <li><a href="#">Producten</a></li>
-            <li><a href="#">Recepten</a></li>
-            <li><a href="#">Scan</a></li>
+            <li><a href="/recipes">Recepten</a></li>
+            <li><a href="/scan">Scan</a></li>
         </ul>
     </nav>
 </div>
