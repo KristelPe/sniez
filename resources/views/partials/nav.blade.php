@@ -177,7 +177,7 @@
 
 <div class="nav-desktop">
     <nav>
-        <a class="logo" href="#">Logo</a>
+        <a class="logo" href="/profile">Logo</a>
         <ul>
             <li><a href="#">Producten</a></li>
             <li><a href="/recipes">Recepten</a></li>
