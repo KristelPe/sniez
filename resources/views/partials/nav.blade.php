@@ -101,10 +101,12 @@
         }
         
         .nav-desktop{
-            display: block;  
+            position: fixed;
+            display: block;
+            top:0;
             background-color: white;
-            height: 3em;
-            width: 80%;
+            height: 4em;
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -117,12 +119,16 @@
             text-indent: -9999px;
             height: 50px;
             width: 75px;
-            margin-top: 0em;
+            margin-top: 0.7em;
+            margin-left: 50px;
+            align-self: center;
         }
         
         .nav-desktop ul{
             list-style: none;  
             float: right;
+            margin-right: 50px;
+            margin-top: 1.3em;
         }
         
         .nav-desktop li{
