@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="29" height="30" rx="14.5"></rect>
+    </defs>
+    <g id="Desktop---Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-Recept---overlay---desktop" transform="translate(-116.000000, -1109.000000)">
+            <g id="Group-3" transform="translate(116.000000, 1109.000000)">
+                <g id="Group-2">
+                    <g id="alison-marras-323016-unsplash">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#A0D1E6" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(14.000000, 15.000000) rotate(-45.000000) translate(-14.000000, -15.000000) translate(7.000000, 8.000000)">
+                    <path d="M4.81442077,4.73838569 L13.3372905,13.2307692" id="Path-5" stroke="#FFFFFF"></path>
+                    <polygon id="Triangle-2" fill="#FFFFFF" transform="translate(3.914214, 4.000000) rotate(-45.000000) translate(-3.914214, -4.000000) " points="3.91421356 2 6.41421356 6 1.41421356 6"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
