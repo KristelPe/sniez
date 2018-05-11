@@ -13,39 +13,30 @@
             height: 110vh;*/
         }
 
-        .search {
-
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 10px;
-
+        .search{
+            margin-top: 50px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .search input {
-
-            width: 100%;
-            height: 30px;
+        .input_search{
+            border-radius: 3px;
+            border: 1px solid #F4BF73;
+            padding: 1em;
+            width: 170px;
         }
 
-        #btn_search {
-
-            background-color:  #A0D1E6;
-            color: white;
-            border-color: transparent;
-
-            margin-left: 10px;
-            border-radius: 4px;
-
-            box-shadow: 1px 1px lightgrey;
+        .btn_search{
+            background-image: url(/images/icons/search-orange.svg);   
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border: 0;
+            text-indent: -9999px;
+            margin-left: -3em;
         }
 
-        #btn_search:hover {
-
-            background-color: #F4BF73;
-        }
-
-        #allergies-box {
+        /*#allergies-box {
 
             background-color: white;
             width: 90%;
@@ -103,11 +94,11 @@
         }
 
 
-        /*.allergies__container li img{
+        .allergies__container li img{
             width: 100px;
-        }*/
+        }
 
-        /*.header {
+        .header {
 
             background-color: #E55266;
             width: 100%;
@@ -130,36 +121,35 @@
 
             position: absolute;
             z-index: 5;
-        }
+        }*/
 
         #header-logo img{
 
             width: 4em;
 
-        }*/
+        }
 
         #allergy_header {
 
             width: 100%;
-            height: 5em;
+            height: 12em;
             background-image: url("images/backgrounds/bg_profile.jpg");
             background-size: cover;
+            background-position: top;
             background-repeat: no-repeat;
 
             z-index: -2;
         }
 
         #allergy_avatar {
-
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         #allergy_avatar img {
-
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 100%;
             border: 5px solid white;
 
@@ -169,35 +159,41 @@
             -webkit-box-shadow: 0 2px 4px lightgrey;
             -moz-box-shadow: 0 2px 4px lightgrey;
             box-shadow: 0 2px 4px lightgrey;
-
         }
 
         #allergy_avatar h1 {
-
             font-size: 1em;
             text-align: center;
         }
 
-        #search{
-
-            padding: 4px;
-            border-radius: 4px;
-            border: 1px solid lightgray;
-        }
-
         #not_found{
+            border-radius: 3px;
             border: 1px solid rgba(220, 20, 60, 0.3);
-            padding: 8px 0;
+            padding: 1em;
             font-size: 12px;
-            align-self: center;
             color: black;
             display: none;
             text-align: center;
-            width: 100%;
-            margin-top: 2em;
-            margin-left:-1px;
+            width: 170px;
+            margin-left: auto;
+            margin-right: auto;
         }
+        
+        .allergies__container{
+            display: block;
+            width: 170px;
+            background-color: #F4BF73;
+            list-style: none;
+            color: white;
+        }
+        
+        .allergies__container img{
+            width: 80px;
+            height: 80px;
+        }
+        
 
+        /*
         .allergies__container label{
             margin: 1em;
         }
@@ -222,18 +218,8 @@
             background-color: #F4BF73 ;
             border-radius: 100%;
             margin-left: 20px;
-        }
+        }*/
     </style>
-
-
-
-    <!--<div class="header">
-
-        <div id="header-logo">
-        <img src="/images/logo/logo_ei.png">
-        </div>
-
-    </div>-->
 
     <div id="allergies-box">
 
@@ -250,30 +236,30 @@
     </div>
 
         <div class="search">
-            <input id="search" type="text" value="" placeholder="Zoek hier">
+            <input id="search" class="input_search" type="text" value="" placeholder="Zoek hier">
             <!--<input id="search_val" type="text" value="" hidden>-->
-            <button id="btn_search" onclick="search()">Zoek</button>
+            <button id="btn_search" class="btn_search" onclick="search()">Zoek</button>
         </div>
 
     <div id="allergies-form">
-    <form method="post" action="{{URL::action('AllergyController@store')}}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <p id="not_found">Geen allergiëen gevonden</p>
-        <ul class="allergies__container">
-            @foreach($allergies as $allergy)
-                <label for="{{$allergy->id}}">
-                    <li class="allergy">
-                        <img src="{{$allergy->path}}" alt="allergy_icon" id="allergy_icon">
-                        <p>{{$allergy->name}}
-                        <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]" hidden>
-                    </li>
-                </label>
-            @endforeach
-        </ul>
+        <form method="post" action="{{URL::action('AllergyController@store')}}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <p id="not_found">Geen allergiëen gevonden</p>
+            <ul class="allergies__container">
+                @foreach($allergies as $allergy)
+                    <label for="{{$allergy->id}}">
+                        <li class="allergy">
+                            <img src="{{$allergy->path}}" alt="allergy_icon" id="allergy_icon">
+                            <p>{{$allergy->name}}
+                            <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]" hidden>
+                        </li>
+                    </label>
+                @endforeach
+            </ul>
 
 
-        <button type="submit" id="btn_save">Klaar!</button>
-    </form>
+            <button type="submit" id="btn_save" class="btn_save">Klaar!</button>
+        </form>
     </div>
     </div>
 
