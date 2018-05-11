@@ -2,7 +2,6 @@
 
     #profile_footer {
         margin-top: 3em;
-        position: fixed;
         left: 0;
         bottom: 0;
         height: 5em;
