@@ -126,14 +126,15 @@
             line-height: 20px;
         }
 
-        #recipe_footer {
+        #recipe_footer a {
 
-            width: 80%;
+            margin-top: 10px;
+
             margin-left: 10%;
-            margin-top: 20px;
 
             display: flex;
             flex-direction: row;
+            text-decoration: none;
 
         }
 
@@ -141,6 +142,7 @@
 
             background-color: #A0D1E6 ;
             width: 15px;
+            height: 15px;
             padding: 10px 10px;
             border-radius: 100%;
 
@@ -149,12 +151,106 @@
             box-shadow: 0 2px 4px lightgrey;
         }
 
-        #recipe_footer p {
+        #recipe_footer a p {
+
 
             font-size: 0.6em;
             margin-left: 10px;
             align-self: center;
             color:#A0D1E6;
+        }
+
+        #libelle_logo {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.6em;
+            color: darkgrey ;
+        }
+
+        #libelle_logo img {
+
+            width: 40%;
+            height: 40%;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            align-self: center;
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            #recipe_header {
+
+                height: 20em;
+                background-position: center;
+                background-size: cover;
+            }
+
+            #recipe_head {
+
+                width: 500px;
+
+
+            }
+
+            #recipe_avatar {
+                justify-content: center;
+                margin-left: 500px;
+            }
+
+            #recipe_content {
+
+                width: 80%;
+                height: 400px;
+                overflow: hidden;
+                margin-left: 10%;
+                margin-top: -10px;
+            }
+
+            .recipe_content_title {
+
+                color: black;
+                font-size: 1em;
+                font-weight: 600;
+                padding: 5px 0px;
+            }
+
+            #recipe_content p {
+
+                color: darkgrey;
+                font-weight: 100;
+                font-size: 1em;
+                line-height: 28px;
+            }
+
+            #recipe_footer a {
+
+
+                display: flex;
+                flex-direction: row;
+                text-decoration: none;
+
+            }
+
+            #libelle_logo {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            #libelle_logo img {
+
+                width: 10%;
+                height: 10%;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                align-self: center;
+            }
+
         }
 
 
@@ -214,10 +310,16 @@
 
         </div>
 
+        <div id="libelle_logo">
+            <p>Recept mogelijk gemaakt door:</p>
+            <img src="/images/libelle-lekker.png" alt="libellelogo">
+
+        </div>
+
         <div id="recipe_footer">
 
-            <a href="/recipes"><img src="/images/nav/left-arrow.png" alt="back"></a>
-            <p>Ga terug</p>
+            <a href="/recipes"><img src="/images/nav/left-arrow.png" alt="back"><p>Ga terug</p></a>
+
 
         </div>
 

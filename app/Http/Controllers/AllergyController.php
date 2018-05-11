@@ -39,7 +39,13 @@ class AllergyController extends Controller
             $user_allergy->save();
         }
 
-        return view('profile.profile', compact('user'));
+        $user_allergies = UserAllergy::all()->where('user_id', 1);
+        // Some recipes to show
+
+        $json_string=file_get_contents("https://bridge.buddyweb.fr/api/testsniezapi/snieztest");
+        $recipes = json_decode($json_string);
+
+        return view('profile.profile', compact('user', 'user_allergies', 'recipes'));
     }
 
     /*

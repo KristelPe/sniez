@@ -146,6 +146,10 @@
         .nav-desktop a:hover{
             color: #A0D1E6;
         }
+
+        .nav-desktop a:active{
+            color: #A0D1E6;
+        }
     }
 </style>
 

@@ -366,7 +366,7 @@
 
                         @endforeach
 
-                        <a id="show_recipes">Alle opgeslagen recepten ... </a>
+                        <a id="show_recipes" href="/recipes">Alle opgeslagen recepten ... </a>
 
                     </div>
 

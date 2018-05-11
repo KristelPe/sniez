@@ -143,6 +143,7 @@
             margin-left: auto;
 
             margin-top: 20px;
+            margin-bottom: 100px;
         }
 
         #add_recipes_list {
@@ -438,6 +439,7 @@
 
                 width: 80%;
                 margin-left: 10%;
+                margin-bottom: 100px;
             }
 
             .input_search{
@@ -546,6 +548,7 @@
 
                 width: 80%;
                 margin-left: 10%;
+
             }
 
 

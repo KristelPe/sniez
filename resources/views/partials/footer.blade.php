@@ -42,6 +42,6 @@
 
 <div id="profile_footer">
     <div class="inside_footer">
-        <a class="social_fb" href="https://www.facebook.com/Sniezapp/"></a>
+        <a class="social_fb" href="https://www.facebook.com/Sniezapp/" target="_blank"></a>
     </div>
 </div>

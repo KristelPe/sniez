@@ -29,7 +29,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 */
 
 Route::get('/allergy', 'AllergyController@index');
-Route::post('/profile', 'AllergyController@store');
+Route::post('/home', 'AllergyController@store');
 
 /*
 =================
@@ -54,7 +54,7 @@ Route::post('/recipes', 'RecipeController@addList');
 ==================
 */
 
-Route::get('/profile', 'UserController@profile');
+Route::get('/home', 'UserController@profile');
 
 /*
 ==================
