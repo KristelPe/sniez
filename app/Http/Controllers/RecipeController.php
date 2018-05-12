@@ -2,11 +2,12 @@
 namespace App\Http\Controllers;
 
 use App\Allergy;
+use App\Listable;
 use App\UserAllergy;
 use Illuminate\Http\Request;
 use App\Recipe;
 use App\User;
-use App\RecipesLists;
+use App\Lists;
 use GuzzleHttp\Client;
 
 class RecipeController extends Controller
@@ -25,21 +26,34 @@ class RecipeController extends Controller
 
         // All Libelle Lekker Recipes
 
-        $json_string=file_get_contents("https://bridge.buddyweb.fr/api/testsniezapi/snieztest");
-        $recipes = json_decode($json_string);
+        $all_recipes = Recipe::recipes();
+
+        // Recipes that take the users allergies into account
+
+        $recipes = $all_recipes;
+        foreach ($all_recipes as $key => $a) {
+            foreach ($user_allergies as $u){
+                if (str_contains(strtolower($a->ingredienten), $u->allergies()->first()->name)) {
+                    unset($recipes[$key]);
+                }
+            }
+        }
 
         // Saved Recipes
 
-        $recipe_lists = RecipesLists::all()->sortByDesc('id');
+        $recipe_lists = Lists::where('type', 'recipe')->get()->sortByDesc('id');
 
-        return view('recipelist.recipes', compact('recipes', 'recipe_lists', 'user', 'user_allergies'));
+        return view('recipelist.recipes', compact('recipes', 'recipe_lists', 'all_recipes', 'user', 'user_allergies'));
     }
 
     public function addList() {
 
-        $list = new RecipesLists();
-            $list->name=$_REQUEST['name_list'];
-            $list->img=$_REQUEST['img_list'];
+
+        $list = new Lists();
+            $list->user_id = 1;
+            $list->type = "recipe";
+            $list->name = $_REQUEST['name_list'];
+            $list->img = $_REQUEST['img_list'];
             $list->save();
 
             return redirect('/recipes');
@@ -50,12 +64,20 @@ class RecipeController extends Controller
 
         // All Libelle Lekker Recipes
 
-        $json_string=file_get_contents("https://bridge.buddyweb.fr/api/testsniezapi/snieztest/$id");
-        $recipe = json_decode($json_string);
+        $recipe = Recipe::recipe($id);
 
 
         $user = User::find(1);
         return view('recipelist.recipe', compact('recipe', 'user'));
+
+    }
+
+    public function addToList($recipeId, $listId) {
+
+        $listable = new Listable();
+        $listable->list_id = $listId;
+        $listable->listable_id = $recipeId;
+        $listable->save();
 
     }
 

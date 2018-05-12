@@ -31,6 +31,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/allergy', 'AllergyController@index');
 Route::post('/home', 'AllergyController@store');
 
+
 /*
 =================
     RECIPE GET
@@ -47,6 +48,8 @@ Route::get('/recipe/{id}', 'RecipeController@showRecipe');
 */
 
 Route::post('/recipes', 'RecipeController@addList');
+Route::post('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList');
+
 
 /*
 ==================
@@ -56,12 +59,21 @@ Route::post('/recipes', 'RecipeController@addList');
 
 Route::get('/home', 'UserController@profile');
 
+
 /*
 ==================
     QR SCANNER
 ==================
 */
 
-
 Route::get('/scan', 'QrController@index');
 Route::post('/scan', 'QrController@test');
+
+
+/*
+=================
+    LIST
+=================
+*/
+
+Route::get('/list/{id}', 'ListController@openList');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsListsTable extends Migration
+class CreatListables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateProductsListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products_lists', function (Blueprint $table) {
+        Schema::create('listables', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->unsignedInteger('list_id');
+            $table->foreign('list_id')->references('id')->on('lists');
+            $table->unsignedInteger('listable_id');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateProductsListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products_lists');
+        Schema::dropIfExists('listables');
     }
 }

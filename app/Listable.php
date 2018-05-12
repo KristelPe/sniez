@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RecipesLists extends Model
+class Listable extends Model
 {
     protected $fillable = [
-        'name',
-        'img'
+        'list_id',
+        'listable_id',
     ];
 }
