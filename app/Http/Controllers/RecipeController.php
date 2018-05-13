@@ -81,4 +81,22 @@ class RecipeController extends Controller
 
     }
 
+    public function getCustomRecipes(Request $request)
+    {
+        $allergies = $request->allergies;
+        $all_recipes = Recipe::recipes();
+        $recipes = $all_recipes;
+
+        foreach ($all_recipes as $key => $a){
+            foreach ($allergies as $allergy){
+                if (str_contains(strtolower($a->ingredienten), $allergy)) {
+                    unset($recipes[$key]);
+                }
+            }
+        }
+
+        return $recipes;
+
+    }
+
 }

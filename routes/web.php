@@ -48,6 +48,7 @@ Route::get('/recipe/{id}', 'RecipeController@showRecipe');
 */
 
 Route::post('/recipes', 'RecipeController@addList');
+Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
 Route::post('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList');
 
 

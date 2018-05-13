@@ -121,7 +121,7 @@
             margin-top: 10px;
         }
 
-        #recipes_allergy {
+        .recipes_allergy {
 
             display: flex;
             flex-direction: row;
@@ -138,7 +138,7 @@
 
         }
 
-        #recipes_allergy img {
+        .recipes_allergy img {
 
             width: 10px;
             height: 10px;
@@ -277,7 +277,7 @@
 
 
 
-        #recipes_list {
+        .recipes_list {
 
             display: flex;
             flex-direction: column;
@@ -285,7 +285,7 @@
 
         }
 
-        #recipes_list a {
+        .recipes_list a {
 
             display: flex;
             flex-direction: row;
@@ -307,13 +307,13 @@
 
         }
 
-        #recipes_list a #img_list {
+        .recipes_list a .img_list {
 
             width: 140px;
             height: 112px;
         }
 
-        #recipes_list a #img_list img {
+        .recipes_list a .img_list img {
 
             width: 180px;
             margin-top: -8px;
@@ -323,7 +323,7 @@
 
 
 
-        #recipes_list a #info_list {
+        .recipes_list a .info_list {
 
             display: flex;
             flex-direction: column;
@@ -332,7 +332,7 @@
             background-color: white;
         }
 
-        #recipes_list a #info_list p {
+        .recipes_list a .info_list p {
 
             margin-left: 20px;
             color: #3f3f3f;
@@ -341,7 +341,7 @@
             width: 100px;
         }
 
-        #recipes_list a #info_list span {
+        .recipes_list a .info_list span {
 
             font-size: 0.6em;
             margin-top: -20px;
@@ -364,12 +364,12 @@
 
         }
 
-        #recipes_recipe {
+        .recipes_recipe {
 
             margin-top: 20px;
         }
 
-        #recipes_recipe a {
+        .recipes_recipe a {
 
             width: 240px;
             height: 240px;
@@ -389,14 +389,14 @@
             box-shadow: 0 2px 4px darkgrey;
         }
 
-        #recipes_recipe a img {
+        .recipes_recipe a img {
 
             width: 400px;
             height: auto;
             z-index: 0;
         }
 
-        #recipes_recipe a p {
+        .recipes_recipe a p {
 
             position: absolute;
             color: black;
@@ -408,6 +408,10 @@
             margin-top: 100px;
             padding: 20px 5px;
 
+        }
+
+        #reset{
+            background-color: #A0D1E6;
         }
 
         @media screen and (min-width: 768px) {
@@ -536,7 +540,7 @@
             }
 
 
-            #recipes_list {
+            .recipes_list {
 
                 display: flex;
                 flex-direction: row;
@@ -558,7 +562,7 @@
 
             }
 
-            #recipes_list a {
+            .recipes_list a {
 
                 display: flex;
                 flex-direction: row;
@@ -580,7 +584,7 @@
             }
 
 
-            #recipes_list a #img_list {
+            .recipes_list a .img_list {
 
                 width: 240px;
                 height: 240px;
@@ -590,7 +594,7 @@
                 align-content: center;
             }
 
-            #recipes_list a #img_list img {
+            .recipes_list a .img_list img {
 
                 width: 240px;
             }
@@ -602,8 +606,6 @@
 
             }
 
-
-
         }
 
 
@@ -612,126 +614,81 @@
 
 
     <div id="recipes">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <div>
-
-            <div id="recipes_header">
-
-            </div>
+            <div id="recipes_header"></div>
 
             <div id="recipes_avatar">
-
-            <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
-
+                <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
             </div>
 
             <select id="recipes_dropDown">
-
                 <option class="recipes_dropDown_select" value="recipes_saved">Bewaarde recepten</option>
                 <option class="recipes_dropDown_select" value="recipes_all">Alle recepten</option>
-
             </select>
 
-
-
             <div id="recipes_allergies">
+                @foreach($user_allergies as $a)
+                    <div class="recipes_allergy">
+                        <img class="removeA" src="images/cancel.png" alt="deleteBtn"> <p>{{$a->allergies->name}}</p>
+                    </div>
+                @endforeach
 
-            @foreach($user_allergies as $a)
-                <div id="recipes_allergy">
-
-                <img src="images/cancel.png" alt="deleteBtn"> <p>{{$a->allergies->name}}</p>
+                <div id="reset" class="recipes_allergy">
+                   <p>Reset</p>
                 </div>
-
-
-
-            @endforeach
 
                 <div class="search">
                     <input class="input_search" type="text" placeholder="Zoek hier een recept...">
                     <button class="btn_search">Zoek</button>
                 </div>
-
             </div>
-
         </div>
 
         <div id="recipes_saved" class="drop-down-show-hide">
-
-
             <div id="add_recipes_list">
-
                 <a href="#">
-
                     <img src="images/add.png" alt="add_list">
                     <div id="text_add">
-                    <p>Voeg een nieuw bord toe</p>
+                        <p>Voeg een nieuw bord toe</p>
                     </div>
-
                 </a>
-
             </div>
 
            <div id="add_list_form">
-
                 <form action="" method="POST">
-
                     {{ csrf_field() }}
-
                     <input name="name_list" placeholder="De naam van je lijstje" type="text">
                     <input name="img_list" placeholder="Link van de foto" type="text">
-
                     <button type="submit">Verzenden</button>
-
-
                 </form>
-
-
-            </div>
-
+           </div>
 
             @foreach($recipe_lists as $list)
-
-                <div id="recipes_list">
-
+                <div class="recipes_list">
                     <a href="/list/{{$list->id}}">
-
-                        <div id="img_list"><img src="{{$list->img}}" alt="header_List"></div>
-                        <div id="info_list">
+                        <div class="img_list"><img src="{{$list->img}}" alt="header_List"></div>
+                        <div class="info_list">
                         <p>{{$list->name}}</p>
                         <span><p style="color: #a3a3a3;">X recepten</p></span>
                         </div>
-
                     </a>
-
                 </div>
-
-
             @endforeach
-
-
         </div>
 
 
-
         <div id="recipes_all" class="drop-down-show-hide">
-
-
             @foreach($recipes as $r)
-
-                <div id="recipes_recipe">
-
+                <div class="recipes_recipe">
                     <a href="/recipe/{{$r->id}}">
                         <img src="{{$r->img}}" alt="recipe">
                         <p>{{$r->titel}}</p>
                     </a>
-
                 </div>
-
-                @endforeach
-
+            @endforeach
         </div>
-
-
     </div>
 
     <script>
@@ -774,6 +731,38 @@
             return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
         };
 
+        $(".removeA").on("click", function () { 
+            $(this).parent().hide(); 
+            updateList();
+        });
+
+        $('#reset').on("click", function(){
+            $('.recipes_allergy').show();
+            updateList();
+        });
+
+        function updateList(){
+            var allergies = [];
+
+            $(".removeA:visible").siblings().each(function( i ) {
+                allergies.push(this.innerHTML);
+            });
+
+            $.ajaxSetup({
+                headers:  { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+            });
+            $.ajax({
+                type: 'post',
+                url: "{{URL::action('RecipeController@getCustomRecipes')}}",
+                data: {allergies: allergies},
+                success: function (response) {
+                    $('#recipes_all').empty();
+                    $.each( response, function( key, value ) {
+                        $("#recipes_all").append(' <div class="recipes_recipe"><a href="/recipe/'+ value.id +'"><img src="'+ value.img +'" alt="recipe"> <p>' + value.titel + '</p> </a> </div>');
+                    });
+                }
+            });
+        }
 
     </script>
 

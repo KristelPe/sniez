@@ -23,13 +23,13 @@ class CreateListsTable extends Migration
             $table->timestamps();
         });
 
-        DB::table('lists')->insert(
+        /*DB::table('lists')->insert(
             array(
                 array('name' => 'Dipsausjes', 'type' => 'recipe', 'img' => '/images/recipes_lists/hummus.jpg'),
                 array('name' => 'Zoetigheden', 'type' => 'recipe', 'img' => '/images/recipes_lists/sweets.jpg'),
                 array('name' => 'Ontbijt', 'type' => 'recipe', 'img' => '/images/recipes_lists/croque.jpeg'),
             )
-        );
+        );*/
     }
 
     /**
