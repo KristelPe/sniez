@@ -6,6 +6,7 @@ use App\Listable;
 use App\Recipe;
 use Illuminate\Http\Request;
 use App\Lists;
+use App\User;
 
 class ListController extends Controller
 {
@@ -23,13 +24,13 @@ class ListController extends Controller
 
             //get all recipes
             $recipes = Recipe::recipes();
-            $listItems = [];
+            $listItems = array();
 
             //add recipes where id = listable_id to array
             foreach ($listables as $l) {
-                foreach ($recipes as $key => $recipe){
-                    if ($l->list_id == $recipe->id){
-                        $listItems =  array_add($listItems, $key, $recipe);
+                foreach ($recipes as $recipe){
+                    if ($l->listable_id == $recipe->id){
+                        array_push($listItems, $recipe);
                     }
                 }
             }

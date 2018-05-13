@@ -251,9 +251,16 @@
                 align-self: center;
             }
 
+
+
         }
 
-
+        .alert{
+            text-align: center;
+            background-color: #A0D1E6;
+            padding: 1em;
+            border-radius: 5px;
+        }
 
 
     </style>
@@ -277,7 +284,7 @@
 
             <div id="recipe_save">
 
-                <button>+</button>
+                <button onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/1'">+</button>
                 <p>Voeg toe aan één van je lijstjes.</p>
 
             </div>
@@ -289,6 +296,11 @@
             <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
 
         </div>
+
+
+        @if(Session::has('message'))
+            <p class="alert">{{ Session::get('message') }}</p>
+        @endif
 
         <div id="recipe_content">
 
@@ -322,8 +334,6 @@
 
 
         </div>
-
-
 
 
     </div>

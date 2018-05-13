@@ -311,14 +311,20 @@
 
             width: 140px;
             height: 112px;
+            background-color: #A0D1E6;
+            background-image: url('../images/logo/logo_ei.png');
+            background-size: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .recipes_list a .img_list img {
 
             width: 180px;
-            margin-top: -8px;
+            /*margin-top: -8px;*/
             height: auto;
             z-index: 0;
+
         }
 
 
@@ -668,7 +674,7 @@
             @foreach($recipe_lists as $list)
                 <div class="recipes_list">
                     <a href="/list/{{$list->id}}">
-                        <div class="img_list"><img src="{{$list->img}}" alt="header_List"></div>
+                        <div class="img_list"><img src="{{$list->img}}"></div>
                         <div class="info_list">
                         <p>{{$list->name}}</p>
                         <span><p style="color: #a3a3a3;">X recepten</p></span>

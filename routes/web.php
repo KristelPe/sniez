@@ -40,6 +40,7 @@ Route::post('/home', 'AllergyController@store');
 
 Route::get('/recipes', 'RecipeController@allRecipes');
 Route::get('/recipe/{id}', 'RecipeController@showRecipe');
+Route::get('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList');
 
 /*
 =================
@@ -49,7 +50,6 @@ Route::get('/recipe/{id}', 'RecipeController@showRecipe');
 
 Route::post('/recipes', 'RecipeController@addList');
 Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
-Route::post('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList');
 
 
 /*

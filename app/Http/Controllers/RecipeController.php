@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Allergy;
 use App\Listable;
 use App\UserAllergy;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Recipe;
 use App\User;
@@ -66,18 +67,50 @@ class RecipeController extends Controller
 
         $recipe = Recipe::recipe($id);
 
-
         $user = User::find(1);
-        return view('recipelist.recipe', compact('recipe', 'user'));
+
+        return view('recipelist.recipe', compact('recipe', 'user', 'msgError', 'msgSucces'));
 
     }
 
     public function addToList($recipeId, $listId) {
 
-        $listable = new Listable();
-        $listable->list_id = $listId;
-        $listable->listable_id = $recipeId;
-        $listable->save();
+        $listable_count = Listable::where('list_id', $listId)->count();
+
+        if ($listable_count != 0){
+            $listable_old = Listable::where('list_id', $listId)->get();
+            foreach ($listable_old as $item) {
+                if ($item->listable_id == $recipeId){
+                    Session::flash('message', 'Recipe already exists');
+                } else {
+                    $listable = new Listable();
+                    $listable->list_id = $listId;
+                    $listable->listable_id = $recipeId;
+                    $listable->save();
+
+                    $recipe = Recipe::recipe($recipeId);
+
+                    $list = Lists::find($listId);
+                    $list->img = $recipe->img;
+                    $list->save();
+                    Session::flash('message', 'Recipe added to list');
+                }
+            }
+        } else {
+            $listable = new Listable();
+            $listable->list_id = $listId;
+            $listable->listable_id = $recipeId;
+            $listable->save();
+
+            $recipe = Recipe::recipe($recipeId);
+
+            $list = Lists::find($listId);
+            $list->img = $recipe->img;
+            $list->save();
+            Session::flash('message', 'Recipe added to list');
+        }
+
+        return redirect("/recipe/$recipeId");
 
     }
 
