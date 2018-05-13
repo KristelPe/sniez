@@ -54,6 +54,14 @@
             justify-content: center;
             align-content: center;
 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            background-image: url("images/down-arrow.png"); /* For Chrome and Safari */
+            background-position: 200px;
+            background-repeat: no-repeat;
+            background-size: 15px;
+
             margin: auto;
             margin-top: 20px;
             z-index: 10000;
@@ -65,8 +73,15 @@
             font-weight: 400 ;
             border: none;
             border-radius: 0%;
+            text-align: center;
 
             padding: 10px 50px;
+        }
+
+        #recipes_dropDown option {
+
+            -webkit-appearance: none;
+            -moz-appearance: none;
         }
 
         .search{
@@ -218,8 +233,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            margin: auto;
+            
 
             background-color: #A0D1E6 ;
             width: 280px;
@@ -434,6 +448,12 @@
         @media screen and (min-width: 1240px) {
 
 
+            select {
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+
+            }
             
             #recipes_saved {
 
@@ -482,6 +502,37 @@
             #add_recipes_list a p {
 
                 margin-left: -5px;
+            }
+
+            #add_list_form {
+
+                margin-top: 0px;
+                display: none;
+            }
+
+            #add_list_form form {
+
+                width: 400px;
+                height: 240px;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+            }
+
+            #add_list_form input {
+
+                color: #f3be7d;
+                font-weight: 400;
+                font-size: 0.9em;
+            }
+
+            #add_list_form form button:hover {
+
+                background-color: darkgrey;
+
             }
 
 
@@ -576,8 +627,8 @@
 
             <select id="recipes_dropDown">
 
-            <option value="recipes_saved">Bewaarde recepten</option>
-            <option value="recipes_all">Alle recepten</option>
+                <option class="recipes_dropDown_select" value="recipes_saved">Bewaarde recepten</option>
+                <option class="recipes_dropDown_select" value="recipes_all">Alle recepten</option>
 
             </select>
 

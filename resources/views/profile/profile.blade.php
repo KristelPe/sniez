@@ -316,7 +316,7 @@
 
             @endforeach
 
-                <a id="edit_allergies">bewerken</a>
+                <a id="edit_allergies" href="/allergy">bewerken</a>
 
         </div>
 
