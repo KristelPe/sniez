@@ -1,4 +1,75 @@
 @extends('master')
 @section('content')
 
+<style>
+    #edit_header{
+        width: 100%;
+        height: 12em;
+        background-image: url("images/backgrounds/bg_profile.jpg");
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        z-index: -2;
+    }
+
+    #edit_avatar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #edit_avatar img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        border: 5px solid white;
+
+        align-self: center;
+        margin-top: -50px;
+
+        -webkit-box-shadow: 0 2px 4px lightgrey;
+        -moz-box-shadow: 0 2px 4px lightgrey;
+        box-shadow: 0 2px 4px lightgrey;
+
+    }
+    
+    .edit_input{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 3px;
+        border: 1px solid #F4BF73;   
+        width: 170px;
+        padding: 1em;
+        margin-top: 2em;
+    }
+    
+    .edit_btn{
+        display: block;
+        border-radius: 3px;
+        border: 1px solid #A0D1E6;
+        background-color: #A0D1E6;
+        padding: 1em;
+        width: 160px;
+        margin-top: 5em;
+        margin-left: auto;
+        margin-right: auto;   
+        color: white;
+    }
+    
+</style>
+  
+<div id="edit_header"></div>
+
+<div id="edit_avatar">
+    <img src="{{$user->avatar}}" alt="{{"$user->name"}}">
+</div>
+   
+<form action="">
+    <input class="edit_input" type="text" placeholder="Naam">
+    <input class="edit_input" type="text" placeholder="Email">
+    <button class="edit_btn" type="submit">Save</button>
+</form>
+
 @endsection
