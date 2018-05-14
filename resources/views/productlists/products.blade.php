@@ -66,7 +66,7 @@
             margin-top: 20px;
             z-index: 10000;
 
-            background-color: #A0D1E6;
+            background-color: #88caab;
             color: white;
             letter-spacing: 1px;
             font-size: 0.8em;
@@ -171,7 +171,7 @@
 
             display: flex;
             flex-direction: row;
-            background-color: #A0D1E6 ;
+            background-color: #88caab ;
 
             width: 280px;
             height: 112px;
@@ -233,7 +233,7 @@
             justify-content: center;
 
 
-            background-color: #A0D1E6 ;
+            background-color: #88caab ;
             width: 280px;
             height: 280px;
         }
@@ -271,6 +271,80 @@
             margin-top: 20px;
             background-color: #f3be7d;
 
+        }
+
+         .products_list {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .products_list a {
+
+            display: flex;
+            flex-direction: row;
+
+            width: 280px;
+            height: 112px;
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+
+            border-radius: 4px;
+
+            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
+
+            text-decoration: none;
+
+        }
+
+        .products_list a .img_list {
+
+            width: 140px;
+            height: 112px;
+            background-color: #88caab;
+            background-image: url('../images/logo/logo_ei.png');
+            background-size: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .products_list a .img_list img {
+
+            width: 180px;
+            /*margin-top: -8px;*/
+            height: auto;
+            z-index: 0;
+
+        }
+
+        .products_list a .info_list {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background-color: white;
+        }
+
+        .products_list a .info_list p {
+
+            margin-left: 20px;
+            color: #3f3f3f;
+            font-weight: 400;
+            align-self: center;
+            width: 100px;
+        }
+
+        .products_list a .info_list span {
+
+            font-size: 0.6em;
+            margin-top: -20px;
         }
 
         #products_all {
@@ -315,8 +389,9 @@
 
         .products_product a img {
 
-            width: 150px;
+            width: 200px;
             height: auto;
+            margin: auto;
             z-index: 0;
         }
 
@@ -328,14 +403,18 @@
             background-color: rgba(255, 255, 255, 0.95);
             font-size: 0.9em;
 
-            width: 240px;
+            width: 230px;
             margin-top: 100px;
             padding: 20px 5px;
+
+            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
 
         }
 
         #reset{
-            background-color: #A0D1E6;
+            background-color: lightgrey;
         }
 
         @media screen and (min-width: 768px) {
@@ -401,6 +480,31 @@
                 margin-top: 30px;
             }
 
+            #add_products_list a {
+
+                width: 400px;
+                height: 240px;
+            }
+
+            #add_products_list  a img {
+
+                width: 50px;
+                height: 50px;
+
+                margin-left: 75px;
+                margin-right: 75px;
+
+            }
+
+            #add_products_list  a #text_add {
+
+                width: 200px;
+            }
+
+            #add_products_list  a p {
+
+                margin-left: -5px;
+            }
 
             #add_list_form {
 
@@ -433,6 +537,97 @@
 
             }
 
+
+            #add_list_form {
+
+                margin-top: 0px;
+                display: none;
+            }
+
+            #add_list_form form {
+
+                width: 400px;
+                height: 240px;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+            }
+
+            #add_list_form input {
+
+                color: #f3be7d;
+                font-weight: 400;
+                font-size: 0.9em;
+            }
+
+            #add_list_form form button:hover {
+
+                background-color: darkgrey;
+
+            }
+
+            .products_list {
+
+                display: flex;
+                flex-direction: row;
+
+                width: 400px;
+                height: 240px;
+
+                margin-bottom: 20px;
+
+                overflow: hidden;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+
+                text-decoration: none;
+
+            }
+
+            .products_list a {
+
+                display: flex;
+                flex-direction: row;
+
+                width: 400px;
+                height: 240px;
+
+                margin-bottom: 20px;
+
+                overflow: hidden;
+
+                border-radius: 4px;
+
+                -webkit-box-shadow: 0 2px 4px darkgrey;
+                -moz-box-shadow: 0 2px 4px darkgrey;
+                box-shadow: 0 2px 4px darkgrey;
+
+                text-decoration: none;
+            }
+
+
+            .products_list a .img_list {
+
+                width: 240px;
+                height: 240px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .products_list a .img_list img {
+
+                width: 240px;
+            }
+
             #products_all {
 
                 width: 80%;
@@ -461,8 +656,8 @@
             </div>
 
             <select id="products_dropDown">
-                <option class="products_dropDown_select" value="recipes_saved">Bewaarde producten</option>
-                <option class="products_dropDown_select" value="recipes_all">Alle producten</option>
+                <option class="products_dropDown_select" value="products_saved">Bewaarde producten</option>
+                <option class="products_dropDown_select" value="products_all">Alle producten</option>
             </select>
 
             <div id="products_allergies">
@@ -502,6 +697,18 @@
                 </form>
             </div>
 
+            @foreach($products_lists as $list)
+                <div class="products_list">
+                    <a href="/list/{{$list->id}}">
+                        <div class="img_list"><img src="{{$list->img}}"></div>
+                        <div class="info_list">
+                            <p>{{$list->name}}</p>
+                            <span><p style="color: #a3a3a3;">X producten</p></span>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+
         </div>
 
 
@@ -515,14 +722,16 @@
                 </div>
             @endforeach
         </div>
+
+
     </div>
 
     <script>
 
-        $('#recipes_saved').show();
-        $('#recipes_all').hide();
+        $('#products_saved').show();
+        $('#products_all').hide();
 
-        $('#recipes_dropDown').change(function () {
+        $('#products_dropDown').change(function () {
             $('.drop-down-show-hide').hide();
             $('#' + this.value).show();
 
@@ -537,7 +746,7 @@
         }
 
         $(function() {
-            $('#add_recipes_list').on('click', function() {
+            $('#add_products_list').on('click', function() {
                 if($(this).hasClass('selected')) {
                     deselect($(this));
                 } else {
@@ -548,7 +757,7 @@
             });
 
             $('.close').on('click', function() {
-                deselect($('#add_recipes_list'));
+                deselect($('#add_products_list'));
                 return false;
             });
         });
@@ -582,9 +791,9 @@
                 url: "{{URL::action('RecipeController@getCustomRecipes')}}",
                 data: {allergies: allergies},
                 success: function (response) {
-                    $('#recipes_all').empty();
+                    $('#products_all').empty();
                     $.each( response, function( key, value ) {
-                        $("#recipes_all").append(' <div class="recipes_recipe"><a href="/recipe/'+ value.id +'"><img src="'+ value.img +'" alt="recipe"> <p>' + value.titel + '</p> </a> </div>');
+                        $("#products_all").append(' <div class="products_product"><a href="/recipe/'+ value.id +'"><img src="'+ value.img +'" alt="product"> <p>' + value.titel + '</p> </a> </div>');
                     });
                 }
             });
