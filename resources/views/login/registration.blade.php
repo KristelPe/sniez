@@ -95,10 +95,6 @@
             background-color: #F4BF73;
             list-style: none;
             color: white;
-
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
         }
 
         .allergy img{
@@ -117,18 +113,14 @@
         .btn_save{
             display: block;
             border-radius: 3px;
-            border: 1px solid #F4BF73;
+            border: 1px solid #A0D1E6;
+            background-color: #A0D1E6;
             padding: 1em;
             width: 160px;
             margin-top: 5em;
             margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn_save:hover{
-            background-color: #A0D1E6;
+            margin-right: auto;   
             color: white;
-            border: 1px solid #A0D1E6;
         }
 
         .clearfix{
