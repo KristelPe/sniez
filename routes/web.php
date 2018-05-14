@@ -58,6 +58,17 @@ Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
 */
 
 Route::get('/products', 'ProductController@allProducts');
+Route::get('/product/{id}', 'ProductController@showProduct');
+Route::get('/product/{productId}/addToList/{listId}', 'ProductController@addToList');
+
+/*
+=================
+    PRODUCT POST
+=================
+*/
+
+Route::post('/products', 'ProductController@addList');
+Route::post('/productsFiltered', 'ProductController@getCustomProducts');
 
 
 /*

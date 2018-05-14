@@ -417,7 +417,7 @@
         }
 
         #reset{
-            background-color: #A0D1E6;
+            background-color: lightgrey;
         }
 
         @media screen and (min-width: 768px) {
