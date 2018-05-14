@@ -339,5 +339,7 @@
                 $("label[for='" + $(this).attr('id') + "'] > li > p:last-of-type").remove();
             }
         });
+        
+        //test
     </script>
 @endsection
