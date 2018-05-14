@@ -15,8 +15,10 @@ class CreateUserAllergiesTable extends Migration
     {
         Schema::create('user_allergies', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('allergy_id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('allergy_id');
+            $table->foreign('allergy_id')->references('id')->on('allergies');
             $table->timestamps();
         });
     }

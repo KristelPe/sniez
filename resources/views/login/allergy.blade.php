@@ -156,10 +156,22 @@
                 <ul class="allergies__container">
                     @foreach($allergies as $allergy)
                         <label for="{{$allergy->id}}">
-                            <li class="allergy">
+                            <li class="allergy"
+                                @foreach($user_allergies as $u) 
+                                    @if($u->allergy_id == $allergy->id) 
+                                        style="background-color: #A0D1E6;" 
+                                    @endif
+                                @endforeach
+                            >
                                 <img src="{{$allergy->path}}" alt="allergy_icon" id="allergy_icon">
                                 <p>{{$allergy->name}}</p>
-                                <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]" hidden>
+                                <input id="{{$allergy->id}}" type="checkbox" value="{{$allergy->id}}" name="allergies[]"
+                                    @foreach($user_allergies as $u) 
+                                        @if($u->allergy_id == $allergy->id) 
+                                       checked
+                                        @endif
+                                    @endforeach
+                                hidden>
                             </li>
                         </label>
                     @endforeach

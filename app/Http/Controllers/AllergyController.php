@@ -17,7 +17,9 @@ class AllergyController extends Controller
     {
         $allergies = Allergy::all();
         $user = Auth::user();
-        return view('login.registration', compact('allergies', 'user'));
+        $user_allergies = UserAllergy::where('user_id', Auth::id())->get();
+
+        return view('login.allergy', compact('allergies', 'user', 'user_allergies'));
     }
 
     /*
@@ -27,13 +29,17 @@ class AllergyController extends Controller
         $user = Auth::user();
 
         foreach ($request->allergies as $allergy) {
-            $user_allergy = new UserAllergy();
-            $user_allergy->user_id = $user->id;
+            UserAllergy::where('user_id', Auth::id())->where('allergy_id', '!=', $allergy)->delete();
+        }
+
+        foreach ($request->allergies as $allergy) {
+            $user_allergy = UserAllergy::firstOrNew(['user_id' => Auth::id(), 'allergy_id' => $allergy]);
+            $user_allergy->user_id = Auth::id();
             $user_allergy->allergy_id = $allergy;
             $user_allergy->save();
         }
 
-        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
+        $user_allergies = UserAllergy::where('user_id', Auth::id())->get();
         // Some recipes to show
 
         $recipes = Recipe::recipes();
