@@ -8,6 +8,7 @@ use App\User;
 use App\UserAllergy;
 use App\Lists;
 use App\Listable;
+use App\Recipe;
 
 class ProductController extends Controller
 {
@@ -61,7 +62,9 @@ class ProductController extends Controller
 
         $user = User::find(1);
 
-        return view('productlists.product', compact('product', 'user', 'msgError', 'msgSucces'));
+        $all_recipes = Recipe::recipes();
+
+        return view('productlists.product', compact('product', 'all_recipes', 'user', 'msgError', 'msgSucces'));
 
     }
 
