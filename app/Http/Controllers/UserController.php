@@ -33,4 +33,12 @@ class UserController extends Controller
 
 
     }
+
+    public function editProfile() {
+
+        $user = User::find(1);
+        $user_allergies = UserAllergy::all()->where('user_id', 1);
+
+        return view('profile.edit', compact('user', 'user_allergies'));
+    }
 }

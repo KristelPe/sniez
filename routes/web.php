@@ -51,6 +51,14 @@ Route::get('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList'
 Route::post('/recipes', 'RecipeController@addList');
 Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
 
+/*
+=================
+    PRODUCT GET
+=================
+*/
+
+Route::get('/products', 'ProductController@allProducts');
+
 
 /*
 ==================
@@ -59,7 +67,7 @@ Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
 */
 
 Route::get('/home', 'UserController@profile');
-
+Route::get('/edit', 'UserController@editProfile');
 
 /*
 ==================

@@ -161,7 +161,7 @@
             <div></div>
         </a>
         <ul id="nav-container">
-            <a class="nav-block darkblue" href="">
+            <a class="nav-block darkblue" href="/products">
                 <li>
                     <img class="nav-icon" src="/images/icons/menu/product-blue.svg" alt="lists"><p>Lijstjes</p>
                 </li>
@@ -189,7 +189,7 @@
     <nav>
         <a class="logo" href="/home">Logo</a>
         <ul>
-            <li><a href="#">Producten</a></li>
+            <li><a href="/products">Producten</a></li>
             <li><a href="/recipes">Recepten</a></li>
             <li><a href="/scan">Scan</a></li>
         </ul>
