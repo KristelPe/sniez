@@ -140,8 +140,8 @@
     <form id="qr" action="{{ action('QrController@test') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <label class=qrcode-text-btn>
-            <input class="input_file" name="qr" type=file accept="image/*" capture="camera" onchange="openQRCamera(this);" tabindex=-1>
-            <img src="/images/icons/menu/scan.png" alt="sniez">
+            <input id="qrInput" class="input_file" name="qr" type=file accept="image/*" capture="camera" onchange="openQRCamera(this);" tabindex=-1>
+            <img id="qrImg" src="/images/icons/menu/scan.png" alt="sniez">
         </label>
         <input id="data" name="data" type="text" hidden>
     </form>
@@ -168,7 +168,21 @@
         };
         reader.readAsDataURL(node.files[0]);
 
-    }  
+    }
+
+    $( document ).ready(function() { 
+        var isMobile = false;  
+
+        // device detection 
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+            isMobile = true; 
+        }  
+
+        if (isMobile == false) { 
+            document.getElementById("qrInput").disabled = true; 
+            document.getElementById("qrImg").style.cursor = "default";
+        } 
+    });
 </script>
 
 
