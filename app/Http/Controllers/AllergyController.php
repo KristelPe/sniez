@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Allergy;
+use App\Recipe;
 use App\User;
 use App\UserAllergy;
 use Illuminate\Http\Request;
@@ -14,15 +15,8 @@ class AllergyController extends Controller
      * */
     public function index()
     {
-        /*if (Auth::check()) {
-            $allergies = Allergy::all();
-            $user = Auth::user();
-            return view('login.registration', compact('allergies', 'user'));
-        } else {
-            redirect('/');
-        }*/
         $allergies = Allergy::all();
-        $user = User::first();
+        $user = Auth::user();
         return view('login.registration', compact('allergies', 'user'));
     }
 
@@ -39,11 +33,10 @@ class AllergyController extends Controller
             $user_allergy->save();
         }
 
-        $user_allergies = UserAllergy::all()->where('user_id', 1);
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
         // Some recipes to show
 
-        $json_string=file_get_contents("https://bridge.buddyweb.fr/api/testsniezapi/snieztest");
-        $recipes = json_decode($json_string);
+        $recipes = Recipe::recipes();
 
         return view('profile.profile', compact('user', 'user_allergies', 'recipes'));
     }

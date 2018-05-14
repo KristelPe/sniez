@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use QrReader;
 use App\User;
@@ -25,7 +26,7 @@ class QrController extends Controller
         return $text;
         //return redirect($text);
         */
-        $user = User::find(1);
+        $user = Auth::user();
 
         return view('scan.scan', compact('user'));
     }

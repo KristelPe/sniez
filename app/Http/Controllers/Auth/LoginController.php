@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 //use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
 
@@ -58,21 +59,24 @@ class LoginController extends Controller
 
     public function handleProviderCallback()
     {
+
         $facebookUser = Socialite::driver('facebook')->user();
-        $user = User::all()->where('email', $facebookUser->email)->first();
+        $user = User::where('email', $facebookUser->email)->first();
+
+        $u = User::firstOrNew(['email' => $facebookUser->email]);
+        $u->token = $facebookUser->token;
+        $u->name = $facebookUser->name;
+        $u->email = $facebookUser->email;
+        $u->avatar = $facebookUser->avatar;
+        $u->save();
+
+        Auth::login(User::where('email', $u->email)->first());
 
         if ($user === null) {
-
-            $user = new User;
-            $user->name = $facebookUser -> name;
-            $user->email = $facebookUser -> email;
-            $user->avatar = $facebookUser -> avatar;
-            $user->save();
+            return redirect('/allergy');
+        } else {
+            return redirect('/scan')->with('user', $u);
         }
-
-        Auth::login(User::where('email', $user->email)->first());
-
-        return redirect('/allergy');
     }
 
     public function logout()

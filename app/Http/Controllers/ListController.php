@@ -7,12 +7,13 @@ use App\Recipe;
 use Illuminate\Http\Request;
 use App\Lists;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ListController extends Controller
 {
     public function openList($id) {
 
-        $user = User::find(1);
+        $user = Auth::user();
 
         // get list
         $list = Lists::find($id);

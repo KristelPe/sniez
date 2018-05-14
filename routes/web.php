@@ -17,83 +17,87 @@ Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/', 'Controller@index');
-
-Route::get('/registration', 'UserController@profile');
+Route::get('/login', 'Controller@noAuth')->name('login');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
-/*
-=================
-    ALLERGY
-=================
-*/
 
-Route::get('/allergy', 'AllergyController@index');
-Route::post('/home', 'AllergyController@store');
+//group containing all routes that need authentication before access
+Route::group(['middleware' => ['auth']], function() {
+    /*
+    =================
+        ALLERGY
+    =================
+    */
 
-
-/*
-=================
-    RECIPE GET
-=================
-*/
-
-Route::get('/recipes', 'RecipeController@allRecipes');
-Route::get('/recipe/{id}', 'RecipeController@showRecipe');
-Route::get('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList');
-
-/*
-=================
-    RECIPE POST
-=================
-*/
-
-Route::post('/recipes', 'RecipeController@addList');
-Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
-
-/*
-=================
-    PRODUCT GET
-=================
-*/
-
-Route::get('/products', 'ProductController@allProducts');
-Route::get('/product/{id}', 'ProductController@showProduct');
-Route::get('/product/{productId}/addToList/{listId}', 'ProductController@addToList');
-
-/*
-=================
-    PRODUCT POST
-=================
-*/
-
-Route::post('/products', 'ProductController@addList');
-Route::post('/productsFiltered', 'ProductController@getCustomProducts');
+    Route::get('/allergy', 'AllergyController@index');
+    Route::post('/home', 'AllergyController@store');
 
 
-/*
-==================
-    PROFILE
-==================
-*/
+    /*
+    =================
+        RECIPE GET
+    =================
+    */
 
-Route::get('/home', 'UserController@profile');
-Route::get('/edit', 'UserController@editProfile');
+    Route::get('/recipes', 'RecipeController@allRecipes');
+    Route::get('/recipe/{id}', 'RecipeController@showRecipe');
+    Route::get('/recipe/{recipeId}/addToList/{listId}', 'RecipeController@addToList');
 
-/*
-==================
-    QR SCANNER
-==================
-*/
+    /*
+    =================
+        RECIPE POST
+    =================
+    */
 
-Route::get('/scan', 'QrController@index');
-Route::post('/scan', 'QrController@test');
+    Route::post('/recipes', 'RecipeController@addList');
+    Route::post('/recipesFiltered', 'RecipeController@getCustomRecipes');
+
+    /*
+    =================
+        PRODUCT GET
+    =================
+    */
+
+    Route::get('/products', 'ProductController@allProducts');
+    Route::get('/product/{id}', 'ProductController@showProduct');
+    Route::get('/product/{productId}/addToList/{listId}', 'ProductController@addToList');
+
+    /*
+    =================
+        PRODUCT POST
+    =================
+    */
+
+    Route::post('/products', 'ProductController@addList');
+    Route::post('/productsFiltered', 'ProductController@getCustomProducts');
 
 
-/*
-=================
-    LIST
-=================
-*/
+    /*
+    ==================
+        PROFILE
+    ==================
+    */
 
-Route::get('/list/{id}', 'ListController@openList');
+    Route::get('/home', 'UserController@profile');
+    Route::get('/edit', 'UserController@editProfile');
+
+    /*
+    ==================
+        QR SCANNER
+    ==================
+    */
+
+    Route::get('/scan', 'QrController@index');
+    Route::post('/scan', 'QrController@test');
+
+
+    /*
+    =================
+        LIST
+    =================
+    */
+
+    Route::get('/list/{id}', 'ListController@openList');
+
+});

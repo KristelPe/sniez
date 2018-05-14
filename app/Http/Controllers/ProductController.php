@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\Product;
 use App\User;
 use App\UserAllergy;
 use App\Lists;
 use App\Listable;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
     public function allProducts()
     {
 
-        $user = User::find(1);
+        $user = Auth::user();
         $user_allergies = UserAllergy::all()->where('user_id', 1);
 
         // All Carrefour Products
@@ -43,7 +45,7 @@ class ProductController extends Controller
 
 
         $list = new Lists();
-        $list->user_id = 1;
+        $list->user_id = Auth::id();
         $list->type = "product";
         $list->name = $_REQUEST['name_list'];
         $list->img = $_REQUEST['img_list'];
@@ -59,9 +61,9 @@ class ProductController extends Controller
 
         $product = Product::product($id);
 
-        $user = User::find(1);
+        $user = Auth::user();
 
-        return view('productlists.product', compact('product', 'user', 'msgError', 'msgSucces'));
+        return view('productlists.product', compact('product', 'user'));
 
     }
 
@@ -73,7 +75,8 @@ class ProductController extends Controller
             $listable_old = Listable::where('list_id', $listId)->get();
             foreach ($listable_old as $item) {
                 if ($item->listable_id == $productId){
-                    Session::flash('message', 'Recipe already exists');
+                    Session::flash('message', 'Het product bestaat al jouw lijstje');
+                    Session::flash('class', 'error');
                 } else {
                     $listable = new Listable();
                     $listable->list_id = $listId;
@@ -85,7 +88,8 @@ class ProductController extends Controller
                     $list = Lists::find($listId);
                     $list->img = $product->img;
                     $list->save();
-                    Session::flash('message', 'Recipe added to list');
+                    Session::flash('message', 'Het product is toegevoegd aan jouw lijstje');
+                    Session::flash('class', 'succes');
                 }
             }
         } else {
@@ -99,7 +103,8 @@ class ProductController extends Controller
             $list = Lists::find($listId);
             $list->img = $product->img;
             $list->save();
-            Session::flash('message', 'Recipe added to list');
+            Session::flash('message', 'Het product is toegevoegd aan jouw lijstje');
+            Session::flash('class', 'succes');
         }
 
         return redirect("/recipe/$productId");

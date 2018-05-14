@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Recipe;
 use Illuminate\Http\Request;
 use App\User;
 use App\UserAllergy;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -17,13 +19,12 @@ class UserController extends Controller
 
     public function profile() {
 
-        $user = User::find(1);
-        $user_allergies = UserAllergy::all()->where('user_id', 1);
+        $user = Auth::user();
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
 
         // Some recipes to show
 
-        $json_string=file_get_contents("https://bridge.buddyweb.fr/api/testsniezapi/snieztest");
-        $recipes = json_decode($json_string);
+        $recipes = Recipe::recipes();
 
         return view('profile.profile', compact('user', 'user_allergies', 'recipes'));
 
@@ -36,8 +37,8 @@ class UserController extends Controller
 
     public function editProfile() {
 
-        $user = User::find(1);
-        $user_allergies = UserAllergy::all()->where('user_id', 1);
+        $user = Auth::user();
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
 
         return view('profile.edit', compact('user', 'user_allergies'));
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Allergy;
 use App\Listable;
 use App\UserAllergy;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Recipe;
@@ -19,11 +20,10 @@ class RecipeController extends Controller
 
     }
 
-    public function allRecipes()
-    {
+    public function allRecipes() {
 
-        $user = User::find(1);
-        $user_allergies = UserAllergy::all()->where('user_id', 1);
+        $user = Auth::user();
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
 
         // All Libelle Lekker Recipes
 
@@ -33,7 +33,7 @@ class RecipeController extends Controller
 
         $recipes = $all_recipes;
         foreach ($all_recipes as $key => $a) {
-            foreach ($user_allergies as $u){
+            foreach ($user_allergies as $u) {
                 if (str_contains(strtolower($a->ingredienten), $u->allergies()->first()->name)) {
                     unset($recipes[$key]);
                 }
@@ -45,13 +45,14 @@ class RecipeController extends Controller
         $recipe_lists = Lists::where('type', 'recipe')->get()->sortByDesc('id');
 
         return view('recipelist.recipes', compact('recipes', 'recipe_lists', 'all_recipes', 'user', 'user_allergies'));
+
     }
 
     public function addList() {
 
 
         $list = new Lists();
-            $list->user_id = 1;
+            $list->user_id = Auth::id();
             $list->type = "recipe";
             $list->name = $_REQUEST['name_list'];
             $list->img = $_REQUEST['img_list'];
@@ -63,13 +64,13 @@ class RecipeController extends Controller
 
     public function showRecipe($id) {
 
-        // All Libelle Lekker Recipes
+        // One Libelle Lekker Recipes
 
         $recipe = Recipe::recipe($id);
 
-        $user = User::find(1);
+        $user = Auth::user();
 
-        return view('recipelist.recipe', compact('recipe', 'user', 'msgError', 'msgSucces'));
+        return view('recipelist.recipe', compact('recipe', 'user'));
 
     }
 
@@ -81,7 +82,8 @@ class RecipeController extends Controller
             $listable_old = Listable::where('list_id', $listId)->get();
             foreach ($listable_old as $item) {
                 if ($item->listable_id == $recipeId){
-                    Session::flash('message', 'Recipe already exists');
+                    Session::flash('message', 'Het recept bestaat al jouw lijstje');
+                    Session::flash('class', 'error');
                 } else {
                     $listable = new Listable();
                     $listable->list_id = $listId;
@@ -93,7 +95,8 @@ class RecipeController extends Controller
                     $list = Lists::find($listId);
                     $list->img = $recipe->img;
                     $list->save();
-                    Session::flash('message', 'Recipe added to list');
+                    Session::flash('message', 'Het recept is toegevoegd aan jouw lijstje');
+                    Session::flash('class', 'succes');
                 }
             }
         } else {
@@ -107,7 +110,8 @@ class RecipeController extends Controller
             $list = Lists::find($listId);
             $list->img = $recipe->img;
             $list->save();
-            Session::flash('message', 'Recipe added to list');
+            Session::flash('message', 'Het recept is toegevoegd aan jouw lijstje');
+            Session::flash("class", "succes");
         }
 
         return redirect("/recipe/$recipeId");
