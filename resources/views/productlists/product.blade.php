@@ -236,6 +236,7 @@
                 margin-top: 80px;
                 margin-bottom: 24px;
                 margin-left: 5%;
+                text-align: left;
             }
 
             #recipes_recipe a {
@@ -244,26 +245,6 @@
                 margin-top: 20px;
             }
 
-            #recipes_recipe a img {
-
-                width: 400px;
-                height: auto;
-                z-index: 0;
-            }
-
-            #recipes_recipe a p {
-
-                position: absolute;
-                color: black;
-                z-index: 1;
-                background-color: rgba(255, 255, 255, 0.95);
-                font-size: 0.9em;
-
-                width: 240px;
-                margin-top: 100px;
-                padding: 20px 5px;
-
-            }
 
 
 
