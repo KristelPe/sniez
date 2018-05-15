@@ -119,11 +119,13 @@
 
         }
 
-        #scanned_proposals h1 {
+         h1 {
 
             font-size: 1em;
-            font-weight: 200;
+            font-weight: 400;
             margin-bottom: 24px;
+             text-align: center;
+             margin-top: 50px;
         }
 
         #recipes_recipe a {
@@ -167,6 +169,106 @@
 
         }
 
+        @media screen and (min-width: 1240px) {
+
+            #scanned_product {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                width: 800px;
+                padding-bottom: 50px;
+            }
+
+            #scanned_product_info {
+
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+
+            }
+
+            #scanned_product_info p {
+
+                align-self:center;
+                font-size: 1.2em;
+                text-align: left;
+                width: 40%;
+            }
+
+            #product_save {
+
+                align-self: flex-end;
+                margin-right: 190px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: -80px;
+            }
+
+            #product_save p {
+
+                width: 100%;
+                margin-top: 20px;
+                font-size: 0.9em;
+            }
+
+            #scanned_proposals {
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+
+                width: 90%;
+                margin-left: 5%;
+
+                margin-top: 20px;
+
+
+            }
+
+            h1 {
+
+                font-size: 1.2em;
+                font-weight: 400;
+                margin-top: 80px;
+                margin-bottom: 24px;
+                margin-left: 5%;
+            }
+
+            #recipes_recipe a {
+
+               margin-right: 50px;
+                margin-top: 20px;
+            }
+
+            #recipes_recipe a img {
+
+                width: 400px;
+                height: auto;
+                z-index: 0;
+            }
+
+            #recipes_recipe a p {
+
+                position: absolute;
+                color: black;
+                z-index: 1;
+                background-color: rgba(255, 255, 255, 0.95);
+                font-size: 0.9em;
+
+                width: 240px;
+                margin-top: 100px;
+                padding: 20px 5px;
+
+            }
+
+
+
+        }
+
 
     </style>
 
@@ -184,7 +286,7 @@
 
         <div id="scanned_product">
 
-            <div>
+            <div id="scanned_product_info">
             <img src="{{$product->img}}" alt="scanned product">
             <p>{{$product->titel}}</p>
             </div>
@@ -192,18 +294,20 @@
             <div id="product_save">
 
                 <button onclick="location.href='/product/'+ {{$product->id}} +'/addToList/1'">+</button>
-                <p>Voeg toe aan één van je lijstjes.</p>
+                <p>Voeg toe aan één van je lijstjes</p>
 
             </div>
         </div>
 
+        <h1>Voorgestelde recepten:</h1>
+
         <div id="scanned_proposals">
 
-            <h1>Voorgestelde recepten:</h1>
+
 
             @foreach($all_recipes as $r)
 
-                @if(($r->id)< 4)
+                @if(($r->id)< 6)
 
                     <div id="recipes_recipe">
 
