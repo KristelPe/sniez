@@ -403,14 +403,9 @@
             -webkit-box-shadow: 0 2px 4px darkgrey;
             -moz-box-shadow: 0 2px 4px darkgrey;
             box-shadow: 0 2px 4px darkgrey;
-        }
-
-        .products_product a img {
-
-            width: 200px;
-            height: auto;
-            margin: auto;
-            z-index: 0;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
         }
 
         .products_product a p {
@@ -422,12 +417,10 @@
             font-size: 0.9em;
 
             width: 230px;
-            margin-top: 100px;
+            margin-top: 85px;
             padding: 20px 5px;
 
-            -webkit-box-shadow: 0 2px 4px darkgrey;
-            -moz-box-shadow: 0 2px 4px darkgrey;
-            box-shadow: 0 2px 4px darkgrey;
+            height: 30px;
 
         }
 
@@ -731,7 +724,13 @@
             @foreach($products_lists as $list)
                 <div class="products_list">
                     <a href="/list/{{$list->id}}">
-                        <div class="img_list"><img src="{{$list->img}}"></div>
+                        <div class="img_list"
+                            
+                        @if($list->img != "")    
+                            style="background-image: url('{{$list->img}}'); background-size: cover;" 
+                        @endif
+                            
+                        ></div>
                         <div class="info_list">
                             <p>{{$list->name}}</p>
                             <span><p style="color: #a3a3a3;">X producten</p></span>
@@ -746,8 +745,7 @@
         <div id="products_all" class="drop-down-show-hide">
             @foreach($all_products as $ap)
                 <div class="products_product">
-                    <a href="/product/{{$ap->id}}">
-                        <img src="{{$ap->img}}" alt="recipe">
+                    <a style="background-image: url('{{$ap->img}}');" href="/product/{{$ap->id}}">
                         <p>{{$ap->titel}}</p>
                     </a>
                 </div>
