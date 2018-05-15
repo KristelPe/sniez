@@ -131,7 +131,7 @@
             font-size: 0.8em;
             font-weight: 100;
             margin-left: 20px;
-            margin-top: 10px;
+            margin-top: 18px;
             padding: 0px 20px;
 
             border-radius: 4px;
@@ -397,7 +397,7 @@
         }
 
         .recipes_recipe a {
-
+            
             width: 240px;
             height: 240px;
 
@@ -411,9 +411,11 @@
 
             border-radius: 4px;
 
-            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -webkit-box-shadow: 0 2x 4px darkgrey;
             -moz-box-shadow: 0 2px 4px darkgrey;
             box-shadow: 0 2px 4px darkgrey;
+            
+            background-size: cover;
         }
 
         .recipes_recipe a img {
@@ -425,16 +427,17 @@
 
         .recipes_recipe a p {
 
+            border-radius: 0 0 3px 3px;
             position: absolute;
             color: black;
-            z-index: 1;
             background-color: rgba(255, 255, 255, 0.95);
             font-size: 0.9em;
 
-            width: 240px;
-            margin-top: 100px;
+            width: 230px;
+            margin-top: 85px;
             padding: 20px 5px;
 
+            height: 30px;
         }
 
         #reset{
@@ -642,10 +645,6 @@
 
                 border-radius: 4px;
 
-                -webkit-box-shadow: 0 2px 4px darkgrey;
-                -moz-box-shadow: 0 2px 4px darkgrey;
-                box-shadow: 0 2px 4px darkgrey;
-
                 text-decoration: none;
             }
 
@@ -737,7 +736,13 @@
             @foreach($recipe_lists as $list)
                 <div class="recipes_list">
                     <a href="/list/{{$list->id}}">
-                        <div class="img_list"><img src="{{$list->img}}"></div>
+                        <div 
+                            
+                        @if($list->img != "")    
+                            style="background-image: url('{{$list->img}}'); background-size: cover;" 
+                        @endif
+                            
+                        class="img_list"></div>
                         <div class="info_list">
                         <p>{{$list->name}}</p>
                         <span><p style="color: #a3a3a3;">X recepten</p></span>
@@ -751,8 +756,7 @@
         <div id="recipes_all" class="drop-down-show-hide">
             @foreach($recipes as $r)
                 <div class="recipes_recipe">
-                    <a href="/recipe/{{$r->id}}">
-                        <img src="{{$r->img}}" alt="recipe">
+                    <a style="background-image:url('{{$r->img}}');" href="/recipe/{{$r->id}}">
                         <p>{{$r->titel}}</p>
                     </a>
                 </div>
