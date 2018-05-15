@@ -147,32 +147,6 @@
             display: none;
         }
 
-
-        #profile_footer {
-
-            position: absolute;
-            bottom:0;
-            height: 3em;
-            width: 100%;
-
-            margin-left: -2.5%;
-            background-image: url("images/backgrounds/bg_profile.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #profile_footer img {
-
-            width: 50px;
-            height: auto;
-            border-radius: 100%;
-            align-self: center;
-        }
-
         @media screen and (min-width: 1100px) {
 
             #profile_content_mobile {
