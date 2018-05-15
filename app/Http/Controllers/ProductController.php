@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\Product;
 use App\User;
@@ -11,6 +10,7 @@ use App\Lists;
 use App\Listable;
 use Illuminate\Support\Facades\Auth;
 use App\Recipe;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {

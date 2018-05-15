@@ -757,7 +757,7 @@
 
 
         <div id="products_all" class="drop-down-show-hide">
-            @foreach($all_products as $ap)
+            @foreach($products as $ap)
                 <div class="products_product">
                     <a style="background-image: url('{{$ap->img}}');" href="/product/{{$ap->id}}">
                         <p>{{$ap->titel}}</p>
