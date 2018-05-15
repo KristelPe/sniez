@@ -772,7 +772,7 @@
         });
 
         $('#reset').on("click", function(){
-            $('.recipes_allergy').show();
+            $('.products_allergy').show();
             updateList();
         });
 

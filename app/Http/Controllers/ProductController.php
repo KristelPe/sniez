@@ -75,10 +75,10 @@ class ProductController extends Controller
             $listable_old = Listable::where('list_id', $listId)->get();
             foreach ($listable_old as $item) {
                 if ($item->listable_id == $productId){
-                    Session::flash('message', 'Het product bestaat al jouw lijstje');
+                    Session::flash('message', 'Het product bestaat al in jouw lijstje');
                     Session::flash('class', 'error');
                 } else {
-                    $listable = new Listable();
+                    $listable = Listable::firstOrNew(['list_id' => $listId, 'listable_id' => $productId]);
                     $listable->list_id = $listId;
                     $listable->listable_id = $productId;
                     $listable->save();

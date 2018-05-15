@@ -282,9 +282,9 @@
 
             </div>
 
-            <div id="recipe_save">
+            <div id="recipe_save" onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/1'">
 
-                <button onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/1'">+</button>
+                <button>+</button>
                 <p>Voeg toe aan één van je lijstjes.</p>
 
             </div>
@@ -299,7 +299,7 @@
 
 
         @if(Session::has('message'))
-            <p class="alert">{{ Session::get('message') }}</p>
+            <p class="{{ Session::get('class') }}">{{ Session::get('message') }}</p>
         @endif
 
         <div id="recipe_content">
