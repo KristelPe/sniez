@@ -192,7 +192,6 @@
 
                 width: 500px;
 
-
             }
 
             #recipe_avatar {

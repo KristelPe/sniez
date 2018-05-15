@@ -6,7 +6,7 @@
         bottom: 0;
         height: 5em;
         width: 100%;
-        background-image: url("images/backgrounds/bg_profile.jpg");
+        background-image: url("/images/backgrounds/bg_profile.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;

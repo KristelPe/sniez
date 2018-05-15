@@ -40,7 +40,7 @@ class ListController extends Controller
 
         }
 
-        dd($listItems);
+        return view('list.list', compact('user', 'listItems', 'recipes', 'list'));
 
     }
 }
