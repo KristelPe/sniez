@@ -11,4 +11,8 @@ class Lists extends Model
         'img',
         'user_id'
     ];
+
+    public function listables(){
+        return $this->hasMany('App\Listable', 'list_id');
+    }
 }

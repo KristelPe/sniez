@@ -214,10 +214,10 @@
 
         //$("#search").easyAutocomplete(options);
 
-        $("#search").keypress(function(e) {
-            if(e.which == 13) {
+        $("#search").keyup(function(e) {
+            //if(e.which == 13) {
                 search();
-            }
+            //}
         });
 
         $('#search').on('input', function() {

@@ -428,6 +428,19 @@
             background-color: lightgrey;
         }
 
+        #not_found{
+            border-radius: 3px;
+            border: 1px solid rgba(220, 20, 60, 0.3);
+            padding: 1em;
+            font-size: 12px;
+            color: black;
+            display: none;
+            text-align: center;
+            width: 160px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media screen and (min-width: 768px) {
 
             #products_saved {
@@ -692,10 +705,11 @@
                 </div>
 
                 <div class="search">
-                    <input class="input_search" type="text" placeholder="Zoek hier een product...">
+                    <input id="search" class="input_search" type="text" placeholder="Zoek hier een product...">
                     <button class="btn_search">Zoek</button>
                 </div>
             </div>
+            <p id="not_found">Geen recepten gevonden</p>
         </div>
 
         <div id="products_saved" class="drop-down-show-hide">
@@ -733,7 +747,7 @@
                         ></div>
                         <div class="info_list">
                             <p>{{$list->name}}</p>
-                            <span><p style="color: #a3a3a3;">X producten</p></span>
+                            <span><p style="color: #a3a3a3;">{{$list->listables->count()}} producten</p></span>
                         </div>
                     </a>
                 </div>
@@ -819,7 +833,37 @@
             });
         }
 
+        $("#search").keyup(function(e){
+            search();
+        });
 
+        $("#search").on('input', function(){
+            if ($(this).val() == "") {
+                $(".products_product").css("display", "block")
+            }
+        });
+
+        jQuery.expr[':'].contains = function(a, i, m){
+            return jQuery(a).text().toLowerCase()
+                    .indexOf(m[3].toLowerCase()) >= 0;
+        };
+
+        function search() {
+            var search = $("#search").val();
+            if (search == "") {
+                $(".products_product").css("display", "block");
+            } else {
+                $(".products_product").css("display", "none");
+                $(".products_product > a > p:contains("+search+")").parent().parent().css("display", "block");
+            }
+
+            if ($(".products_product").is(":visible")) {
+                $("#not_found").css("display", "none");
+            } else {
+                $("#not_found").css("display", "block");
+
+            }
+        }
 
     </script>
 

@@ -10,4 +10,8 @@ class Listable extends Model
         'list_id',
         'listable_id',
     ];
+
+    public function parent(){
+        return $this->belongsTo('App\Lists', 'list_id');
+    }
 }

@@ -29,7 +29,7 @@ class ProductController extends Controller
         $products = $all_products;
         foreach ($all_products as $key => $a) {
             foreach ($user_allergies as $u){
-                if (str_contains(strtolower($a->ingredienten), $u->allergies()->first()->name)) {
+                if (str_contains(strtolower($a->titel), $u->allergies()->first()->name)) {
                     unset($products[$key]);
                 }
             }
