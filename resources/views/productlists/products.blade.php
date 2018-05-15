@@ -9,7 +9,7 @@
 
             width: 100%;
             height: 12em;
-            background-image: url("images/backgrounds/bg_recipes.jpg");
+            background-image: url("images/backgrounds/bg_.jpg");
             background-size: cover;
             background-position: bottom;
             background-repeat: no-repeat;
@@ -772,7 +772,7 @@
         });
 
         $('#reset').on("click", function(){
-            $('.recipes_allergy').show();
+            $('.products_allergy').show();
             updateList();
         });
 
