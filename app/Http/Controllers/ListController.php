@@ -39,8 +39,6 @@ class ListController extends Controller
         } else if($list->type == 'product') {
 
         }
-
-        dd($listItems);
-
+        return view('list.list', compact('user', 'listItems', 'recipes', 'list'));
     }
 }
