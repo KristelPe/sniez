@@ -150,6 +150,7 @@
 
         #profile_footer {
 
+            position: absolute;
             bottom:0;
             height: 3em;
             width: 100%;
