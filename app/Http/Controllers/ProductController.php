@@ -9,11 +9,8 @@ use App\User;
 use App\UserAllergy;
 use App\Lists;
 use App\Listable;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
-=======
 use App\Recipe;
->>>>>>> 827599d21aaacb26a815d88914b520cb7948a9e4
 
 class ProductController extends Controller
 {
@@ -67,13 +64,9 @@ class ProductController extends Controller
 
         $user = Auth::user();
 
-<<<<<<< HEAD
-        return view('productlists.product', compact('product', 'user'));
-=======
         $all_recipes = Recipe::recipes();
 
         return view('productlists.product', compact('product', 'all_recipes', 'user', 'msgError', 'msgSucces'));
->>>>>>> 827599d21aaacb26a815d88914b520cb7948a9e4
 
     }
 
