@@ -82,10 +82,10 @@ class RecipeController extends Controller
             $listable_old = Listable::where('list_id', $listId)->get();
             foreach ($listable_old as $item) {
                 if ($item->listable_id == $recipeId){
-                    Session::flash('message', 'Het recept bestaat al jouw lijstje');
+                    Session::flash('message', 'Het recept bestaat al in jouw lijstje');
                     Session::flash('class', 'error');
                 } else {
-                    $listable = new Listable();
+                    $listable = Listable::firstOrNew(['list_id' => $listId, 'listable_id' => $recipeId]);
                     $listable->list_id = $listId;
                     $listable->listable_id = $recipeId;
                     $listable->save();
