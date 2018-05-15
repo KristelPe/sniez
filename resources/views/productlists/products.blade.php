@@ -9,9 +9,9 @@
 
             width: 100%;
             height: 12em;
-            background-image: url("images/backgrounds/bg_.jpg");
+            background-image: url("/images/backgrounds/bg_profile.jpg");
             background-size: cover;
-            background-position: bottom;
+            background-position: top;
             background-repeat: no-repeat;
 
             z-index: -2;
@@ -220,45 +220,62 @@
 
         #add_list_form {
 
-            margin-top: -20px;
-            margin-bottom: 50px;
-
+            position: absolute;
+            width: 100%;
+            height: 100%;
             display: none;
+            top:0;
+            left: 0;
+
         }
 
         #add_list_form form {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
 
             display: flex;
             flex-direction: column;
             justify-content: center;
 
 
-            background-color: #88caab ;
-            width: 280px;
-            height: 280px;
+            background-color: rgba(136, 202, 171, 0.95);
+
         }
-
-        #add_list_form h2 {
-
-            color: white;
-            font-weight: 400;
-            font-size: 1em;
-            text-align: center;
-        }
-
 
         #add_list_form form input {
-
-            width: 90%;
-            margin-left: 3.5%;
-            height: 40px;
-            margin-top: 20px;
+            color: white;
+            font-weight: 400;
+            font-size: 1.6em;
+            font-style: italic;
+            letter-spacing: 1px;
+            width: 70%;
+            margin-left: 25%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid white;
         }
 
-        #add_list_form form input::-webkit-input-placeholder {
+        #add_list_form form h3 {
 
-            padding-left: 10px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 400;
+            font-style:italic;
+            width: 70%;
+            margin-left: 15%;
+        }
+
+        #add_list_form form input::-webkit-input-placeholder  {
+
+            color:white;
             opacity: 0.5;
+            font-style: italic;
+            font-weight: 100;
+            letter-spacing: 1px;
 
         }
 
@@ -268,8 +285,9 @@
             padding: 10px;
             width: 50%;
             margin-left: 25%;
-            margin-top: 20px;
+            margin-top: 80px;
             background-color: #f3be7d;
+            font-size: 1em;
 
         }
 
@@ -508,66 +526,75 @@
 
             #add_list_form {
 
-                margin-top: 0px;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top:0;
                 display: none;
             }
 
             #add_list_form form {
 
-                width: 400px;
-                height: 240px;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                margin: 0;
 
-                border-radius: 4px;
 
-                -webkit-box-shadow: 0 2px 4px darkgrey;
-                -moz-box-shadow: 0 2px 4px darkgrey;
-                box-shadow: 0 2px 4px darkgrey;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+
+                background-color: rgba(136, 202, 171, 0.95);
+
             }
 
-            #add_list_form input {
+            #add_list_form form input {
 
-                color: #f3be7d;
+                width: 50%;
+                margin-left: 25%;
+                padding-bottom: 8px;
+                margin-top: 20px;
+
+
+            }
+
+            #add_list_form form h3 {
+
+                color: white;
+                font-size: 1.8em;
                 font-weight: 400;
-                font-size: 0.9em;
+                font-style:italic;
+                margin-left: 25%;
+            }
+
+            #add_list_form form input::-webkit-input-placeholder  {
+
+                color:white;
+                opacity: 0.5;
+                font-style: italic;
+                font-weight: 100;
+                letter-spacing: 1px;
+
+            }
+
+            #add_list_form form button {
+
+                width: 20%;
+                margin-left: 40%;
+                font-size: 1em;
+                border: none;
+                margin-top: 80px;
             }
 
             #add_list_form form button:hover {
 
                 background-color: darkgrey;
 
-            }
-
-
-            #add_list_form {
-
-                margin-top: 0px;
-                display: none;
-            }
-
-            #add_list_form form {
-
-                width: 400px;
-                height: 240px;
-
-                border-radius: 4px;
-
-                -webkit-box-shadow: 0 2px 4px darkgrey;
-                -moz-box-shadow: 0 2px 4px darkgrey;
-                box-shadow: 0 2px 4px darkgrey;
-            }
-
-            #add_list_form input {
-
-                color: #f3be7d;
-                font-weight: 400;
-                font-size: 0.9em;
-            }
-
-            #add_list_form form button:hover {
-
-                background-color: darkgrey;
 
             }
+
 
             .products_list {
 
@@ -689,11 +716,15 @@
             </div>
 
             <div id="add_list_form">
+
                 <form action="" method="POST">
+
+                    <h3>Vul hier de naam in van je lijstje</h3>
                     {{ csrf_field() }}
-                    <input name="name_list" placeholder="De naam van je lijstje" type="text">
-                    <input name="img_list" placeholder="Link van de foto" type="text">
+                    <input name="name_list" placeholder="Bv. Zoetigheden, Kerstmis,..." type="text">
+                    <input name="img_list" type="text" style="display: none">
                     <button type="submit">Verzenden</button>
+                    <a style="text-align: center; color: white; margin-top: 30px;" href="/products">Cancel</a>
                 </form>
             </div>
 
@@ -739,32 +770,23 @@
 
         // POPUP FORM
 
-        function deselect(e) {
-            $('#add_list_form ').slideFadeToggle(function() {
-                e.removeClass('selected');
-            });
-        }
-
         $(function() {
-            $('#add_products_list').on('click', function() {
-                if($(this).hasClass('selected')) {
-                    deselect($(this));
-                } else {
-                    $(this).addClass('selected');
-                    $('.pop').slideFadeToggle();
+
+            // contact form animations
+            $('#add_products_list').click(function() {
+                $('#add_list_form').fadeToggle();
+            })
+            $(document).mouseup(function (e) {
+                var container = $("#add_list_form");
+
+                if (!container.is(e.target)
+                    && container.has(e.target).length === 0)
+                {
+                    container.fadeOut();
                 }
-                return false;
             });
 
-            $('.close').on('click', function() {
-                deselect($('#add_products_list'));
-                return false;
-            });
         });
-
-        $.fn.slideFadeToggle = function(easing, callback) {
-            return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
-        };
 
         $(".removeA").on("click", function () {
             $(this).parent().hide();
@@ -798,6 +820,8 @@
                 }
             });
         }
+
+
 
     </script>
 
