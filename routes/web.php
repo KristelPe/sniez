@@ -20,6 +20,7 @@ Route::get('/', 'Controller@index');
 Route::get('/login', 'Controller@noAuth')->name('login');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/registrate', 'Controller@register');
 
 
 //group containing all routes that need authentication before access

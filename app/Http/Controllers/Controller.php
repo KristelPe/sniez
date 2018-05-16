@@ -26,4 +26,9 @@ class Controller extends BaseController
         return redirect('/');
 
     }
+
+    public function register() {
+
+        return view('login.registration');
+    }
 }

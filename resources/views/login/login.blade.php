@@ -7,6 +7,7 @@ body {
     background-image: url("images/backgrounds/bg_login.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: repeat;
 
     height: 80vh;
     max-height: 90vh;
@@ -21,7 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 300px;
+    margin-top: 100px;
     padding: 200px 0px;
     z-index: 20;
 
@@ -77,12 +78,77 @@ body {
     color: #61A0BB;
 }
 
+#login-form {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#login-form form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form form h3 {
+
+    font-size: 1.8em;
+    font-weight: 400;
+    text-align: center;
+    color: darkgrey;
+
+}
+
+#login-form form input {
+
+    margin-top: 80px;
+    width: 500px;
+    font-size: 2em;
+    font-weight: 400;
+    color: #88caab;
+    border: none;
+    border-bottom: 1px solid #88caab;
+    padding-bottom: 16px;
+}
+
+#login-form form input::-webkit-input-placeholder {
+
+    opacity: 0.5;
+}
+
+#login-form button {
+
+    width: 250px;
+    align-self: center;
+    font-size: 2em;
+    color: #88caab;
+    background-color: white;
+    border-color: #88caab;
+    padding: 16px 0;
+    margin-top: 80px;
+
+}
+
+#login-form button:hover {
+
+    color: white;
+    background-color: #88caab;
+
+}
+
+#login-form a {
+
+    font-size: 2em;
+    margin-top: 40px;
+}
+
 #login-text {
 
     display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1100px) {
 
     body {
 
@@ -190,6 +256,39 @@ body {
         color: #61A0BB;
     }
 
+    #login-form {
+
+        margin-top: 24px;
+    }
+
+
+    #login-form form h3 {
+
+        font-size: 1em;
+
+    }
+
+    #login-form form input {
+
+        margin-top: 24px;
+        margin-bottom: 24px;
+        width: 320px;
+        font-size: 1em;
+    }
+
+    #login-form button {
+
+        width: 19em;
+        font-size: 1em;
+        margin-top: 16px;
+    }
+
+    #login-form a {
+
+        font-size: 1em;
+        margin-top: 20px;
+    }
+
 
 
 }
@@ -222,12 +321,26 @@ body {
             <a href="/login/facebook"><p>Login met <span>Facebook</span></p></a>
         </div>
 
-        <div id="login-text">
+        <div id="login-form">
+
+            <form action="" method="POST">
+
+                <h3>of meld je aan via e-mail</h3>
+                {{ csrf_field() }}
+                <input name="email" placeholder="Je e-mailadres" type="text">
+                <input name="password" type="text" placeholder="Je wachtwoord">
+                <button type="submit">Go</button>
+                <a style="text-align: center; color: #88caab;" href="/registrate">Nog geen account?</a>
+            </form>
+
+        </div>
+
+        <!--<div id="login-text">
 
             <p>" Laat je allergiëen niet in de weg staan om heerlijk te koken. "</p>
             <h1>- <img src="images/libelle-lekker.png"></h1>
 
-        </div>
+        </div>-->
 
 
 
