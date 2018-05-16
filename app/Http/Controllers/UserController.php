@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\Recipe;
 use Illuminate\Http\Request;
 use App\User;
@@ -26,7 +27,11 @@ class UserController extends Controller
 
         $recipes = Recipe::recipes();
 
-        return view('profile.profile', compact('user', 'user_allergies', 'recipes'));
+        // Some products to show
+
+        $products = Product::products();
+
+        return view('profile.profile', compact('user', 'user_allergies', 'products', 'recipes'));
 
     }
 

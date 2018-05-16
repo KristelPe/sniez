@@ -822,7 +822,7 @@
             });
             $.ajax({
                 type: 'post',
-                url: "{{URL::action('RecipeController@getCustomRecipes')}}",
+                url: "{{URL::action('ProductController@getCustomProducts')}}",
                 data: {allergies: allergies},
                 success: function (response) {
                     $('#products_all').empty();

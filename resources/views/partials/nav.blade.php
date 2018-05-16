@@ -161,9 +161,14 @@
             <div></div>
         </a>
         <ul id="nav-container">
+            <a class="nav-block yellow" href="/home">
+                <li>
+                    <img class="nav-icon" src="/images/icons/menu/profile.svg" alt="lists"><p>Profiel</p>
+                </li>
+            </a>
             <a class="nav-block darkblue" href="/products">
                 <li>
-                    <img class="nav-icon" src="/images/icons/menu/product-blue.svg" alt="lists"><p>Lijstjes</p>
+                    <img class="nav-icon" src="/images/icons/menu/product-blue.svg" alt="lists"><p>Producten</p>
                 </li>
             </a>
             <a class="nav-block blue" href="/recipes">
@@ -176,11 +181,7 @@
                     <img class="nav-icon" src="/images/icons/menu/scan.svg" alt="lists"><p>Scan</p>
                 </li>
             </a>
-            <a class="nav-block yellow" href="/profile">
-                <li>
-                    <img class="nav-icon" src="/images/icons/menu/profile.svg" alt="lists"><p>Profile</p>
-                </li>
-            </a>
+
         </ul>
     </nav>
 </div>
@@ -189,6 +190,7 @@
     <nav>
         <a class="logo" href="/home">Logo</a>
         <ul>
+            <li><a href="/home">Profiel</a></li>
             <li><a href="/products">Producten</a></li>
             <li><a href="/recipes">Recepten</a></li>
             <li><a href="/scan">Scan</a></li>

@@ -348,7 +348,31 @@
 
                 <div id="last_products">
 
-                    <h2>Laatst bewaarde recepten</h2>
+                    <h2>Laatst opgeslaagden producten</h2>
+
+                    <div id="last_recipes_block">
+
+                        @foreach($products as $p)
+
+                            @if(($p->id)< 4)
+
+                                <div id="recipes_recipe">
+
+                                    <a href="/product/{{$p->id}}">
+                                        <img src="{{$p->img}}" alt="recipe">
+                                        <p>{{$p->titel}}</p>
+                                    </a>
+
+                                </div>
+
+                            @endif
+
+                        @endforeach
+
+                        <a id="show_recipes" href="/products">Alle opgeslagen producten... </a>
+
+                    </div>
+
 
                 </div>
 
