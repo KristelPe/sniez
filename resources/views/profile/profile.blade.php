@@ -81,6 +81,19 @@
             margin-top: 15px;
             margin-right: 10px;
         }
+        
+        #edit_profile {
+
+            font-size: 0.6em;
+            color: #A0D1E6;
+            text-align: center;
+
+            align-self: center;
+            margin-top: 10px;
+
+            border-bottom: 1px solid #A0D1E6;
+
+        }
 
         #edit_allergies {
 
@@ -93,6 +106,49 @@
 
             border-bottom: 1px solid #A0D1E6;
 
+        }
+        
+        .recipes_recipe {
+
+            margin-top: 20px;
+            margin-left: 0.7em;
+        }
+
+        .recipes_recipe a {
+
+            width: 240px;
+            height: 240px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+
+            border-radius: 4px;
+
+            -webkit-box-shadow: 0 2x 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
+
+            background-size: cover;
+        }
+
+        .recipes_recipe a p {
+
+            border-radius: 0 0 3px 3px;
+            position: absolute;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9em;
+
+            width: 230px;
+            margin-top: 85px;
+            padding: 20px 5px;
+
+            height: 30px;
         }
 
         .scan h1, p{
@@ -184,58 +240,10 @@
 
             }
 
-            #recipes_recipe {
-
-                margin-top: 20px;
-            }
-
-            #recipes_recipe a {
-
-                width: 200px;
-                height: 200px;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-                margin-bottom: 20px;
-                margin-left: 20px;
-
-                overflow: hidden;
-
-                border-radius: 4px;
-
-                -webkit-box-shadow: 0 2px 4px darkgrey;
-                -moz-box-shadow: 0 2px 4px darkgrey;
-                box-shadow: 0 2px 4px darkgrey;
-            }
-
-            #recipes_recipe a img {
-
-                width: 350px;
-                height: auto;
-                z-index: 0;
-            }
-
-            #recipes_recipe a p {
-
-                position: absolute;
-                color: black;
-                z-index: 1;
-                background-color: rgba(255, 255, 255, 0.95);
-                font-size: 0.9em;
-
-                width: 200px;
-                margin-top: 80px;
-                padding: 20px 5px;
-                text-align: left;
-
-            }
-
             #show_recipes {
 
-                width: 200px;
-                height: 200px;
+                width: 240px;
+                height: 240px;
                 margin-top: 20px;
                 background-color: #A0D1E6 ;
                 color: white;
@@ -252,7 +260,7 @@
                 -moz-box-shadow: 0 2px 4px lightgrey;
                 box-shadow: 0 2px 4px lightgrey;
 
-                margin-left: 20px;
+                margin-left: 0.7em;
 
             }
 
@@ -276,7 +284,8 @@
 
         <img src="{{$user->avatar}}" alt="avatar">
         <h1>{{$user->name}}</h1>
-
+        <a id="edit_profile" href="/edit">Bewerk profiel</a>
+        
     </div>
 
         <div id="recipes_allergies">
@@ -290,7 +299,7 @@
 
             @endforeach
 
-                <a id="edit_allergies" href="/allergy">bewerken</a>
+                <a id="edit_allergies" href="/allergy">Bewerk allergieën</a>
 
         </div>
 
@@ -327,10 +336,9 @@
 
                             @if(($r->id)< 4)
 
-                            <div id="recipes_recipe">
+                            <div class="recipes_recipe" id="recipes_recipe">
 
-                                <a href="/recipe/{{$r->id}}">
-                                    <img src="{{$r->img}}" alt="recipe">
+                                <a style="background-image: url('{{$r->img}}'); background-size: cover;" href="/recipe/{{$r->id}}">
                                     <p>{{$r->titel}}</p>
                                 </a>
 
@@ -356,10 +364,9 @@
 
                             @if(($p->id)< 4)
 
-                                <div id="recipes_recipe">
+                                <div class="recipes_recipe" id="recipes_recipe">
 
-                                    <a href="/product/{{$p->id}}">
-                                        <img src="{{$p->img}}" alt="recipe">
+                                    <a style="background-image: url('{{$p->img}}'); background-size: cover;" href="/product/{{$p->id}}">
                                         <p>{{$p->titel}}</p>
                                     </a>
 

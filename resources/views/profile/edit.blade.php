@@ -52,10 +52,21 @@
         background-color: #A0D1E6;
         padding: 1em;
         width: 160px;
-        margin-top: 5em;
+        margin-top: 3em;
         margin-left: auto;
         margin-right: auto;   
         color: white;
+    }
+    
+    .edit_checkbox{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-top: 1em;
+    }
+    
+    .edit_checkbox{    
+        appearance: none;
     }
     
 </style>
@@ -68,7 +79,19 @@
    
 <form action="">
     <input class="edit_input" type="text" placeholder="Naam">
+    <input class="edit_input" type="text" placeholder="Voornaam">
     <input class="edit_input" type="text" placeholder="Email">
+    
+    <div class="edit_checkbox">
+        <input type="checkbox" name="check_libelle">
+        <label for="check_libelle">Libelle lekker nieuswbrief</label>
+    </div>
+    
+    <div class="edit_checkbox">
+        <input type="checkbox" name="check_carrefour">
+        <label for="check_carrefour">Carrefour nieuswbrief</label>
+    </div>
+    
     <button class="edit_btn" type="submit">Save</button>
 </form>
 
