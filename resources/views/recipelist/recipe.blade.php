@@ -47,6 +47,7 @@
 
             font-size: 0.5em;
             margin-left: 10px;
+            color:#F4BF73;
         }
 
         #recipe_save button {
@@ -56,6 +57,66 @@
             border-color: transparent;
             border-radius: 100%;
         }
+
+        #recipe_save_dropdown {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            top:0;
+            left: 0;
+
+
+            flex-direction: column;
+            justify-content: center;
+
+
+            background-color: rgba(244, 191, 115, 0.95);
+
+        }
+
+        #recipe_save_dropdown h3 {
+
+            color: white;
+            text-align: center;
+            font-weight: 400;
+            margin-top: 120px;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        #recipe_save_lists {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+
+
+        #recipe_save_lists a p {
+
+            text-align: center;
+            color: white;
+
+            padding: 40px;
+            background-color: #A0D1E6;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            border-radius: 4px;
+            margin: auto;
+            font-size: 1.5em;
+
+        }
+
+        #recipe_save_lists a p:hover {
+
+            border: 4px solid white;
+        }
+
 
         #recipe_title {
 
@@ -200,6 +261,48 @@
                 margin-left: 500px;
             }
 
+            #recipe_save_dropdown {
+
+                position: absolute;
+                width: 100%;
+                height: auto;
+                padding-bottom: 100px;
+
+            }
+
+
+            #recipe_save_dropdown h3 {
+
+                color: white;
+                text-align: center;
+                font-weight: 400;
+                margin-top: 120px;
+                width: 80%;
+                margin-left: 10%;
+            }
+
+
+
+
+            #recipe_save_lists a p {
+
+                text-align: center;
+                color: white;
+
+                width: 400px;
+                padding: 100px 0px;
+                background-color: #A0D1E6;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                border-radius: 4px;
+                margin: auto;
+                margin-top: 24px;
+                font-size: 1.5em;
+
+            }
+
+
             #recipe_content {
 
                 width: 80%;
@@ -282,10 +385,27 @@
 
             </div>
 
-            <div id="recipe_save" onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/1'">
+            <div id="recipe_save" onclick="openList()">
 
                 <button>+</button>
                 <p>Voeg toe aan één van je lijstjes.</p>
+
+            </div>
+
+            <div id="recipe_save_dropdown">
+
+                <h3>Kies een lijstje waar je recept zal worden bewaard.</h3>
+                <div id="recipe_save_lists">
+
+                    @foreach($recipe_lists as $l)
+
+                        <a onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/{{$l->id}}'"><p  style="background-image: url({{$l->img}})";>{{$l->name}}</p></a>
+
+                    @endforeach
+
+                </div>
+
+                <a style="text-decoration: none;" href="/recipe/{{$recipe->id}}"><p style="text-align: center;font-size: 0.8em; margin-top: 40px; color: white;">Ik doe dit later wel.</p></a>
 
             </div>
 
@@ -337,5 +457,29 @@
 
 
     </div>
+
+    <script>
+
+    // POPUP FORM
+
+    $(function() {
+
+    // contact form animations
+    $('#recipe_save').click(function() {
+    $('#recipe_save_dropdown').fadeToggle();
+    })
+    $(document).mouseup(function (e) {
+    var container = $("#recipe_save_dropdown");
+
+    if (!container.is(e.target)
+    && container.has(e.target).length === 0)
+    {
+    container.fadeOut();
+    }
+    });
+
+    });
+
+    </script>
 
 @endsection

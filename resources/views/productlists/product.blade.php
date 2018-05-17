@@ -103,6 +103,68 @@
 
         }
 
+        #product_save_dropdown {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            top:0;
+            left: 0;
+
+            z-index: 10;
+
+
+            flex-direction: column;
+            justify-content: center;
+
+
+            background-color: rgba(136, 202, 171, 0.95);
+
+        }
+
+        #product_save_dropdown h3 {
+
+            color: white;
+            text-align: center;
+            font-weight: 400;
+            margin-top: 120px;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        #product_save_lists {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+
+
+        #product_save_lists a p {
+
+            text-align: center;
+            color: white;
+
+            padding: 40px;
+            background-color: #A0D1E6;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            border-radius: 4px;
+            margin: auto;
+            font-size: 1.5em;
+
+        }
+
+        #product_save_lists a p:hover {
+
+            border: 4px solid white;
+        }
+
 
         #scanned_proposals {
 
@@ -214,6 +276,47 @@
                 font-size: 0.9em;
             }
 
+            #product_save_dropdown {
+
+                position: absolute;
+                width: 100%;
+                height: auto;
+                bottom: 0;
+                padding-bottom: 100px;
+
+            }
+
+
+            #product_save_dropdown h3 {
+
+                color: white;
+                text-align: center;
+                font-weight: 400;
+                margin-top: 120px;
+                width: 80%;
+                margin-left: 10%;
+            }
+
+
+
+
+            #product_save_lists a p {
+
+                text-align: center;
+                color: white;
+
+                width: 400px;
+                padding: 100px 0px;
+                background-color: #A0D1E6;
+                background-repeat: no-repeat;
+
+                border-radius: 4px;
+                margin: auto;
+                margin-top: 24px;
+                font-size: 1.5em;
+
+            }
+
             #scanned_proposals {
 
                 display: flex;
@@ -225,6 +328,7 @@
                 margin-left: 5%;
 
                 margin-top: 20px;
+                z-index: 0;
 
 
             }
@@ -274,10 +378,27 @@
 
             <div id="product_save">
 
-                <button onclick="location.href='/product/'+ {{$product->id}} +'/addToList/1'">+</button>
+                <button>+</button>
                 <p>Voeg toe aan één van je lijstjes</p>
 
             </div>
+        </div>
+
+        <div id="product_save_dropdown">
+
+            <h3>Kies een lijstje waar je recept zal worden bewaard.</h3>
+            <div id="product_save_lists">
+
+                @foreach($products_lists as $l)
+
+                    <a onclick="location.href='/product/'+ {{$product->id}} +'/addToList/{{$l->id}}'"><p  style="background-image: url({{$l->img}})";>{{$l->name}}</p></a>
+
+                @endforeach
+
+            </div>
+
+            <a style="text-decoration: none;" href="/product/{{$product->id}}"><p style="text-align: center;font-size: 0.8em; margin-top: 40px; color: white;">Ik doe dit later wel.</p></a>
+
         </div>
 
         <h1>Voorgestelde recepten:</h1>
@@ -308,5 +429,28 @@
 
     </div>
 
+    <script>
+
+        // POPUP FORM
+
+        $(function() {
+
+            // contact form animations
+            $('#product_save').click(function() {
+                $('#product_save_dropdown').fadeToggle();
+            })
+            $(document).mouseup(function (e) {
+                var container = $("#product_save_dropdown");
+
+                if (!container.is(e.target)
+                    && container.has(e.target).length === 0)
+                {
+                    container.fadeOut();
+                }
+            });
+
+        });
+
+    </script>
 
 @endsection
