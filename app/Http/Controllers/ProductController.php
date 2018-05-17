@@ -66,7 +66,11 @@ class ProductController extends Controller
 
         $all_recipes = Recipe::recipes();
 
-        return view('productlists.product', compact('product', 'all_recipes', 'user', 'msgError', 'msgSucces'));
+        // Saved Products
+
+        $products_lists = Lists::where('type', 'product')->get()->sortByDesc('id');
+
+        return view('productlists.product', compact('product', 'all_recipes', 'user', 'msgError', 'msgSucces', 'products_lists'));
 
     }
 
@@ -110,7 +114,7 @@ class ProductController extends Controller
             Session::flash('class', 'succes');
         }
 
-        return redirect("/recipe/$productId");
+        return redirect("/product/$productId");
 
     }
 

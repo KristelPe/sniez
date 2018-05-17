@@ -70,7 +70,11 @@ class RecipeController extends Controller
 
         $user = Auth::user();
 
-        return view('recipelist.recipe', compact('recipe', 'user'));
+        // Saved Recipes
+
+        $recipe_lists = Lists::where('type', 'recipe')->get()->sortByDesc('id');
+
+        return view('recipelist.recipe', compact('recipe', 'user', 'recipe_lists'));
 
     }
 

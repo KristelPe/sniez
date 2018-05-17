@@ -1,6 +1,41 @@
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 
 
-<style>
+    <!-- Flaticon -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
+
+    <title>Sniez | We make sure you won't</title>
+
+
+    <style>
 
         body {
 
@@ -9,8 +44,8 @@
             background-position: center;
             background-repeat: repeat;
 
-            height: 80vh;
-            max-height: 90vh;
+            height: 100vh;
+            max-height: 130vh;
 
             font-family: 'Roboto Slab', sans-serif;
 
@@ -22,12 +57,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-top: 100px;
-            padding: 200px 0px;
+            align-content: center;
+            padding: 80px 0;
             z-index: 20;
 
-            width: 80%;
-            margin-left: 10%;
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 24px;
 
             background-color: white;
 
@@ -36,59 +72,32 @@
         #login-logo {
 
             background-color: #88caab;
-            padding: 7.5em 4.2em;
+            padding: 3.5em 2.2em;
             border-radius: 100%;
-            width: 15em;
+            width: 5em;
 
             align-self: center;
         }
 
         #login-logo img{
 
-            width: 15em;
+            width: 5em;
         }
 
-        #login-btn {
-
-            background-color: #A0D1E6;
-            width: 30em;
-            align-self: center;
-
-            margin-top: 100px;
-        }
-
-        #login-btn:hover {
-
-            background-color: #88caab;
-            color: white;
-        }
-
-        #login-btn a {
-
-            font-family: 'Lato', sans-serif;
-            font-weight: 100;
-            font-size: 2em;
-            text-decoration: none;
-            color: white;
-            text-align: center;
-        }
-
-        #login-btn span {
-
-            color: #61A0BB;
-        }
 
         #login-form {
 
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 24px;
+
         }
 
         #login-form form {
 
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         #login-form form h3 {
@@ -102,9 +111,9 @@
 
         #login-form form input {
 
-            margin-top: 80px;
-            width: 500px;
-            font-size: 2em;
+            margin-top: 24px;
+            width: 280px;
+            font-size: 0.8em;
             font-weight: 400;
             color: #88caab;
             border: none;
@@ -114,8 +123,8 @@
 
         #login-form form #login-form-name input {
 
-            width:220px;
-            margin-right: 50px;
+            width:120px;
+            margin-right: 16px;
         }
         #login-form form input::-webkit-input-placeholder {
 
@@ -124,14 +133,14 @@
 
         #login-form button {
 
-            width: 250px;
+            width: 120px;
             align-self: center;
-            font-size: 2em;
+            font-size: 0.8em;
             color: #88caab;
             background-color: white;
             border-color: #88caab;
             padding: 16px 0;
-            margin-top: 80px;
+            margin-top: 24px;
 
         }
 
@@ -144,8 +153,8 @@
 
         #login-form a {
 
-            font-size: 2em;
-            margin-top: 40px;
+            font-size: 0.6em;
+            margin-top: 32px;
         }
 
         #login-text {
@@ -309,6 +318,10 @@
 
     </style>
 
+</head>
+
+<body>
+
     @if(Session::has('message'))
         <p class="{{ Session::get('class') }}">{{ Session::get('message') }}</p>
     @endif
@@ -355,3 +368,5 @@
 
     </div>
 
+</body>
+</html>

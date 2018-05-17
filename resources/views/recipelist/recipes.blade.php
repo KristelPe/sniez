@@ -107,6 +107,7 @@
             text-indent: -9999px;
             margin-left: -3em;
             align-self: center;
+            background-color: transparent;
         }
 
         #recipes_allergies {
