@@ -82,16 +82,7 @@
     <input class="edit_input" type="text" placeholder="Voornaam">
     <input class="edit_input" type="text" placeholder="Email">
     
-    <div class="edit_checkbox">
-        <input type="checkbox" name="check_libelle">
-        <label for="check_libelle">Libelle lekker nieuswbrief</label>
-    </div>
-    
-    <div class="edit_checkbox">
-        <input type="checkbox" name="check_carrefour">
-        <label for="check_carrefour">Carrefour nieuswbrief</label>
-    </div>
-    
+    <button class="edit_btn" type="submit">Login met facebook</button>
     <button class="edit_btn" type="submit">Save</button>
 </form>
 
