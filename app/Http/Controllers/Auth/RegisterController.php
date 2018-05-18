@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -20,7 +24,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    //use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -71,6 +75,51 @@ class RegisterController extends Controller
 
     }
 
+    public function emailRegistration(Request $request){
+        $user = User::where('email', $request->email)->first();
 
+        if ($user == null){
+            $user = new User();
+            $user->name = $request->firstname . ' ' . $request->lastname;
+            $user->email = $request->email;
+
+            if ($request->hasFile('avatar')) {
+                $filename = $request->file('avatar')->hashName();
+                $user->avatar =  '/uploads/' . $filename;
+                $destinationPath = 'uploads/';
+                $request->file('avatar')->move($destinationPath, $filename);
+            }
+
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            Auth::login(User::where('email', $user->email)->first());
+
+            return redirect('/allergy');
+        } else {
+            if ($user->password == null){
+
+                $user->name = $request->firstname . ' ' . $request->lastname;
+                $user->email = $request->email;
+                if ($request->hasFile('avatar')) {
+                    $filename = $request->file('avatar')->hashName();
+                    $user->avatar =  '/uploads/' . $filename;
+                    $destinationPath = 'uploads/';
+                    $request->file('avatar')->move($destinationPath, $filename);
+                }
+                $user->password = Hash::make($request->password);
+                $user->save();
+
+                Auth::login(User::where('email', $user->email)->first());
+
+                return redirect('/allergy');
+            } else {
+                Session::flash("message", "Dit e-mailadres is al reeds in gebruik");
+                Session::flash("class", "error");
+                return redirect('/register');
+            }
+        }
+
+    }
 
 }

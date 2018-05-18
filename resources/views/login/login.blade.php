@@ -360,14 +360,14 @@ body {
 
         <div id="login-form">
 
-            <form action="" method="POST">
+            <form action="{{URL::action('Auth\LoginController@emailLogin')}}" enctype="multipart/form-data" method="POST">
 
                 <h3>of meld je aan via e-mail</h3>
                 {{ csrf_field() }}
-                <input name="email" placeholder="Je e-mailadres" type="text">
-                <input name="password" type="text" placeholder="Je wachtwoord">
+                <input name="email" placeholder="Je e-mailadres" type="email">
+                <input name="password" type="password" placeholder="Je wachtwoord">
                 <button type="submit">Go</button>
-                <a style="text-align: center; color: #88caab;" href="/registrate">Nog geen account?</a>
+                <a style="text-align: center; color: #88caab;" href="/register">Nog geen account?</a>
             </form>
 
         </div>

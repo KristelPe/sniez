@@ -341,18 +341,21 @@
 
         <div id="login-form">
 
-            <form action="" method="POST">
+            <form action="{{URL::action('Auth\RegisterController@emailRegistration')}}" enctype="multipart/form-data" method="POST">
 
                 {{ csrf_field() }}
+
+                <input type="file" name="avatar" placeholder="profiel foto">
+
                 <div id="login-form-name">
                     <input name="firstname" placeholder="Voornaam" type="text">
                     <input name="lastname" type="text" placeholder="Naam">
                 </div>
 
-                <input name="email" placeholder="Je e-mailadres" type="text">
-                <input name="password" type="text" placeholder="Je wachtwoord">
+                <input name="email" placeholder="Je e-mailadres" type="email">
+                <input name="password" type="password" placeholder="Je wachtwoord">
                 <button type="submit">Go</button>
-                <a style="text-align: center; color: #88caab;" href="/registrate">Ik heb al een account</a>
+                <a style="text-align: center; color: #88caab;" href="/login">Ik heb al een account</a>
             </form>
 
         </div>

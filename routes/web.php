@@ -19,8 +19,11 @@ Route::get('/login/callback', 'Auth\LoginController@handleProviderCallback');
 Route::get('/', 'Controller@index');
 Route::get('/login', 'Controller@noAuth')->name('login');
 
+Route::post('/login', 'Auth\LoginController@emailLogin');
+Route::post('/register', 'Auth\RegisterController@emailRegistration');
+
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/registrate', 'Controller@register');
+Route::get('/register', 'Controller@register');
 
 
 //group containing all routes that need authentication before access

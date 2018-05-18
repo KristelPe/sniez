@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 //use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
 
@@ -59,7 +61,6 @@ class LoginController extends Controller
 
     public function handleProviderCallback()
     {
-
         $facebookUser = Socialite::driver('facebook')->user();
         $user = User::where('email', $facebookUser->email)->first();
 
@@ -67,7 +68,9 @@ class LoginController extends Controller
         $u->token = $facebookUser->token;
         $u->name = $facebookUser->name;
         $u->email = $facebookUser->email;
-        $u->avatar = $facebookUser->avatar;
+        if ($user === null || ($user != null && $user->avatar == null)) {
+            $u->avatar = $facebookUser->avatar;
+        }
         $u->save();
 
         Auth::login(User::where('email', $u->email)->first());
@@ -76,6 +79,21 @@ class LoginController extends Controller
             return redirect('/allergy');
         } else {
             return redirect('/scan')->with('user', $u);
+        }
+    }
+
+    public function emailLogin(Request $request){
+        $user = User::where('email', $request->email)->first();
+        
+        if (Hash::check($request->password, $user->password)) {
+
+            Auth::login(User::where('email', $user->email)->first());
+
+            return redirect('/scan')->with('user', $user);
+        } else {
+            Session::flash("message", "Het opgegeven wachtwoord of e-mailadres is niet correct");
+            Session::flash("class", "error");
+            return redirect('/login');
         }
     }
 
