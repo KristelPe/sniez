@@ -137,7 +137,7 @@
         <p>Zoek gerust je product via de zoekfunctie of gebruik je smartphone.</p>
     </div>
 
-    <form id="qr" action="{{ action('QrController@test') }}" method="post" enctype="multipart/form-data">
+    <form id="qr" action="{{ action('QrController@getProduct') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <label class=qrcode-text-btn>
             <input id="qrInput" class="input_file" name="qr" type=file accept="image/*" capture="camera" onchange="openQRCamera(this);" tabindex=-1>

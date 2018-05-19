@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Allergy;
+use App\Product;
 use App\Recipe;
 use App\User;
 use App\UserAllergy;
@@ -39,18 +40,6 @@ class AllergyController extends Controller
             $user_allergy->save();
         }
 
-        $user_allergies = UserAllergy::where('user_id', Auth::id())->get();
-        // Some recipes to show
-
-        $recipes = Recipe::recipes();
-
-        return view('profile.profile', compact('user', 'user_allergies', 'recipes'));
-    }
-
-    /*
-     * LATER: Update allergies on profilepage
-     * */
-    public function update(){
-
+        return redirect('/home');
     }
 }

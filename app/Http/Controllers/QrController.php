@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Lists;
+use App\Product;
+use App\Recipe;
+use App\UserAllergy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -31,9 +35,42 @@ class QrController extends Controller
         return view('scan.scan', compact('user'));
     }
 
-    public function test(Request $request){
-        $item = json_decode($request->input('data'));
-        //dd($item);
-        return view('scan.product', compact('item'));
+    public function getProduct(Request $request){
+        $id = $request->input('data');
+
+        $user = Auth::user();
+        $product = Product::product($id);
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
+
+        $alerts = array();
+        foreach ($user_allergies as $u){
+            if (str_contains($product->alerts, $u->allergies()->first()->name)) {
+                array_push($alerts, $u->allergies()->first()->name);
+            }
+        }
+
+        $recipes = Recipe::recipes();
+        $all_recipes = $recipes;
+        foreach ($all_recipes as $key => $a) {
+            foreach ($user_allergies as $u) {
+                if (str_contains(strtolower($a->alerts), $u->allergies()->first()->name)) {
+                    unset($all_recipes[$key]);
+                }
+            }
+        }
+        $keys = array_keys($all_recipes);
+        shuffle($keys);
+        $random = array();
+        foreach ($keys as $key) {
+            $random[$key] = $all_recipes[$key];
+        }
+        $all_recipes = array_slice($random, 0, 5);
+
+        // Saved Products
+
+        $products_lists = Lists::where('type', 'product')->get()->sortByDesc('id');
+
+        return view('productlists.product', compact('product', 'all_recipes', 'user', 'products_lists', 'alerts'));
+
     }
 }

@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
 
         $user = Auth::user();
-        $user_allergies = UserAllergy::all()->where('user_id', 1);
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
 
         // All Carrefour Products
 
@@ -29,7 +29,7 @@ class ProductController extends Controller
         $products = $all_products;
         foreach ($all_products as $key => $a) {
             foreach ($user_allergies as $u){
-                if (str_contains(strtolower($a->titel), $u->allergies()->first()->name)) {
+                if (str_contains(strtolower($a->alerts), $u->allergies()->first()->name)) {
                     unset($products[$key]);
                 }
             }
@@ -62,15 +62,39 @@ class ProductController extends Controller
 
         $product = Product::product($id);
 
+        $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
+
+        $alerts = array();
+        foreach ($user_allergies as $u){
+            if (str_contains($product->alerts, $u->allergies()->first()->name)) {
+                array_push($alerts, $u->allergies()->first()->name);
+            }
+        }
+
         $user = Auth::user();
 
-        $all_recipes = Recipe::recipes();
+        $recipes = Recipe::recipes();
+        $all_recipes = $recipes;
+        foreach ($all_recipes as $key => $a) {
+            foreach ($user_allergies as $u) {
+                if (str_contains(strtolower($a->alerts), $u->allergies()->first()->name)) {
+                    unset($all_recipes[$key]);
+                }
+            }
+        }
+        $keys = array_keys($all_recipes);
+        shuffle($keys);
+        $random = array();
+        foreach ($keys as $key) {
+            $random[$key] = $all_recipes[$key];
+        }
+        $all_recipes = array_slice($random, 0, 5);
 
         // Saved Products
 
         $products_lists = Lists::where('type', 'product')->get()->sortByDesc('id');
 
-        return view('productlists.product', compact('product', 'all_recipes', 'user', 'msgError', 'msgSucces', 'products_lists'));
+        return view('productlists.product', compact('product', 'all_recipes', 'user', 'products_lists', 'alerts'));
 
     }
 

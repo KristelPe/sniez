@@ -307,7 +307,7 @@
 
             <div id="profile_content_mobile">
 
-                <form id="qr" action="{{ action('QrController@test') }}" method="post" enctype="multipart/form-data">
+                <form id="qr" action="{{ action('QrController@getProduct') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <label class=qrcode-text-btn>
                         <input class="input_file" name="qr" type=file accept="image/*" capture="camera" onchange="openQRCamera(this);" tabindex=-1>

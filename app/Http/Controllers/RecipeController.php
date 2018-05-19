@@ -34,7 +34,7 @@ class RecipeController extends Controller
         $recipes = $all_recipes;
         foreach ($all_recipes as $key => $a) {
             foreach ($user_allergies as $u) {
-                if (str_contains(strtolower($a->ingredienten), $u->allergies()->first()->name)) {
+                if (str_contains(strtolower($a->alerts), $u->allergies()->first()->name)) {
                     unset($recipes[$key]);
                 }
             }
@@ -130,7 +130,7 @@ class RecipeController extends Controller
 
         foreach ($all_recipes as $key => $a){
             foreach ($allergies as $allergy){
-                if (str_contains(strtolower($a->ingredienten), $allergy)) {
+                if (str_contains(strtolower($a->alerts), $allergy)) {
                     unset($recipes[$key]);
                 }
             }

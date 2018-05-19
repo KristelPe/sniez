@@ -93,7 +93,7 @@ Route::group(['middleware' => ['auth']], function() {
     */
 
     Route::get('/scan', 'QrController@index');
-    Route::post('/scan', 'QrController@test');
+    Route::post('/scan', 'QrController@getProduct');
 
 
     /*

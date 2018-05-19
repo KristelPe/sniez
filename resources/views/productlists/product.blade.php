@@ -369,6 +369,12 @@
 
         </div>
 
+        <p>Let op dit product bevat:
+            @foreach($alerts as $a)
+                {{$a}}
+            @endforeach
+        </p>
+
         <div id="scanned_product">
 
             <div id="scanned_product_info">
@@ -409,8 +415,6 @@
 
             @foreach($all_recipes as $r)
 
-                @if(($r->id)< 6)
-
                     <div id="recipes_recipe">
 
                         <a href="/recipe/{{$r->id}}">
@@ -419,8 +423,6 @@
                         </a>
 
                     </div>
-
-                @endif
 
             @endforeach
 
