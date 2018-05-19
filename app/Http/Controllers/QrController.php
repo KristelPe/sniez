@@ -6,6 +6,7 @@ use App\Lists;
 use App\Product;
 use App\Recipe;
 use App\UserAllergy;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -31,8 +32,9 @@ class QrController extends Controller
         //return redirect($text);
         */
         $user = Auth::user();
+        $product = $search = "";
 
-        return view('scan.scan', compact('user'));
+        return view('scan.scan', compact('user', 'product', 'search'));
     }
 
     public function getProduct(Request $request){
@@ -72,5 +74,21 @@ class QrController extends Controller
 
         return view('productlists.product', compact('product', 'all_recipes', 'user', 'products_lists', 'alerts'));
 
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $user = Auth::user();
+
+        $search = $request->search_val;
+
+        $all_products = Product::products();
+        $products = array();
+        foreach ($all_products as $key => $a) {
+            if (str_contains(strtolower($a->titel), strtolower($search))) {
+                array_push($products, $a);
+            }
+        }
+        return view('scan.scan', compact('user', 'products', 'search'));
     }
 }
