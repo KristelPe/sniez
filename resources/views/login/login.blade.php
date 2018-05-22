@@ -317,7 +317,7 @@ body {
         font-size: 1em;
         margin-top: 16px;
         padding-top: 16px;
-        padding-bottom: 32px;
+        padding-bottom: 16px;
     }
 
     #login-form a {
