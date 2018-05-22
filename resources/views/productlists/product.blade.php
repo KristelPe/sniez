@@ -64,12 +64,12 @@
             align-self: center;
         }
 
-        #scanned_warning_green {
+        .scanned_warning_green {
 
             background-color: #88caab;
         }
 
-        #scanned_warning_red {
+        .scanned_warning_red {
 
             background-color: #E55266;
 
@@ -419,15 +419,15 @@
 
             @if($alerts == null)
 
-            <p id="scanned_warning_green">Dit product is veilig voor je.</p>
+            <p class="scanned_warning_green">Dit product is veilig voor je.</p>
 
             @else()
 
-                <p id="scanned_warning_red">Let op dit product bevat:</p>
+                <p  class="scanned_warning_red">Let op dit product bevat:
 
                 @foreach($alerts as $a)
 
-                    <p>{{$a}}</p>
+                    {{$a}}</p>
 
                 @endforeach
 
