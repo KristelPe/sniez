@@ -46,6 +46,36 @@
             letter-spacing: 1px;
         }
 
+        #scanned_warning {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        #scanned_warning p {
+
+            text-align: center;
+            font-weight: 400;
+            color: white;
+            width: 80%;
+            padding: 20px 0px;
+            align-self: center;
+        }
+
+        #scanned_warning_green {
+
+            background-color: #88caab;
+        }
+
+        #scanned_warning_red {
+
+            background-color: #E55266;
+
+
+        }
+
         #scanned_product {
 
             display: flex;
@@ -384,11 +414,26 @@
 
         </div>
 
-        <p>Let op dit product bevat:
-            @foreach($alerts as $a)
-                {{$a}}
-            @endforeach
-        </p>
+
+        <div id="scanned_warning">
+
+            @if($alerts == null)
+
+            <p id="scanned_warning_green">Dit product is veilig voor je.</p>
+
+            @else()
+
+                <p id="scanned_warning_red">Let op dit product bevat:</p>
+
+                @foreach($alerts as $a)
+
+                    <p>{{$a}}</p>
+
+                @endforeach
+
+            @endif
+
+        </div>
 
         <div id="scanned_product">
 

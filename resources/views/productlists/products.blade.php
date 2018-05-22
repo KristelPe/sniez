@@ -107,6 +107,7 @@
             text-indent: -9999px;
             margin-left: -3em;
             align-self: center;
+            background-color: transparent;
         }
 
         #products_allergies {
@@ -151,12 +152,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            width: 90%;
-            margin-left: auto;
-
             margin-top: 20px;
             margin-bottom: 100px;
+
+            width: 90%;
+            margin-left: 5%;
         }
 
         #add_products_list {
@@ -171,6 +171,7 @@
 
             display: flex;
             flex-direction: row;
+            align-self: center;
             background-color: #88caab ;
 
             width: 280px;
@@ -249,11 +250,11 @@
         #add_list_form form input {
             color: white;
             font-weight: 400;
-            font-size: 1.6em;
+            font-size: 1em;
             font-style: italic;
             letter-spacing: 1px;
             width: 70%;
-            margin-left: 25%;
+            margin-left: 15%;
             background-color: transparent;
             border: none;
             border-bottom: 2px solid white;
@@ -303,7 +304,7 @@
 
             display: flex;
             flex-direction: row;
-
+            align-self: center;
             width: 280px;
             height: 112px;
 
@@ -772,10 +773,12 @@
     <script>
 
         $('#products_saved').show();
+        $('#products_allergies').hide();
         $('#products_all').hide();
 
         $('#products_dropDown').change(function () {
             $('.drop-down-show-hide').hide();
+            $('#products_allergies').show();
             $('#' + this.value).show();
 
         });
@@ -827,7 +830,7 @@
                 success: function (response) {
                     $('#products_all').empty();
                     $.each( response, function( key, value ) {
-                        $("#products_all").append(' <div class="products_product"><a href="/recipe/'+ value.id +'"><img src="'+ value.img +'" alt="product"> <p>' + value.titel + '</p> </a> </div>');
+                        $("#products_all").append(' <div class="products_product"><a href="/product/'+ value.id +'"><img src="'+ value.img +'" alt="product"> <p>' + value.titel + '</p> </a> </div>');
                     });
                 }
             });

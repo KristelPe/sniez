@@ -26,6 +26,7 @@
             border: 0;
             text-indent: -9999px;
             margin-left: -3em;
+            background-color: transparent;
         }
 
         #allergy_header{
@@ -90,11 +91,12 @@
             border-radius: 3px;
             display: block;
             float: left;
-            margin: 0.3em;
-            width: 160px;
+            width: 50%;
             background-color: #F4BF73;
             list-style: none;
             color: white;
+            margin-top: 16px;
+            margin-left: 17.5%;
         }
 
         .allergy img{
@@ -126,6 +128,33 @@
         .clearfix{
             content: "";
             clear: both;
+        }
+
+        @media screen and (min-width: 1240px) {
+
+            #allergies-form{
+                max-width: 740px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .allergies__container{
+                margin-left: -1em;
+            }
+
+            .allergy{
+                border-radius: 3px;
+                display: block;
+                float: left;
+                margin: 0.3em;
+                width: 160px;
+                background-color: #F4BF73;
+                list-style: none;
+                color: white;
+                margin-top: 0px;
+            }
+
+
         }
     </style>
 
