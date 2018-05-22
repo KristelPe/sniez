@@ -277,12 +277,12 @@
             <a href="/scan"><img src="/images/nav/left-arrow.png" alt="back"><p>Ga terug</p></a>
         </div>
     @else
-        <div class="mobile">
+        <div id="mobile" class="mobile">
             <h1>Of scan een barcode</h1>
             <p>Klik op het icoontje om je camera te openen.</p>
         </div>
 
-        <div class="desktop">
+        <div id="desktop" class="desktop">
             <h1>Voor het scannen van een product heb je de mobiele versie van deze website nodig.</h1>
             <p>Zoek gerust je product via de zoekfunctie of gebruik je smartphone.</p>
         </div>
@@ -332,7 +332,12 @@
         if (isMobile == false) { 
             document.getElementById("qrInput").disabled = true; 
             document.getElementById("qrImg").style.cursor = "default";
-        } 
+            document.getElementById("mobile").style.display = "none";
+            document.getElementById("desktop").style.display = "block";
+        }  else {
+            document.getElementById("mobile").style.display = "block";
+            document.getElementById("desktop").style.display = "none";
+        }
     });
 
     $("#input").keypress(function(e) {
