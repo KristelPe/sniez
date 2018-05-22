@@ -85,6 +85,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/home', 'UserController@profile');
     Route::get('/edit', 'UserController@editProfile');
+    Route::post('/update', 'UserController@updateProfile');
 
     /*
     ==================
