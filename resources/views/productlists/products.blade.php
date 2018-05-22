@@ -601,29 +601,7 @@
 
 
             }
-
-
-            .products_list {
-
-                display: flex;
-                flex-direction: row;
-
-                width: 400px;
-                height: 240px;
-
-                margin-bottom: 20px;
-
-                overflow: hidden;
-
-                border-radius: 4px;
-
-                -webkit-box-shadow: 0 2px 4px darkgrey;
-                -moz-box-shadow: 0 2px 4px darkgrey;
-                box-shadow: 0 2px 4px darkgrey;
-
-                text-decoration: none;
-
-            }
+            
 
             .products_list a {
 
