@@ -84,16 +84,22 @@ class LoginController extends Controller
 
     public function emailLogin(Request $request){
         $user = User::where('email', $request->email)->first();
-        
-        if (Hash::check($request->password, $user->password)) {
 
-            Auth::login(User::where('email', $user->email)->first());
+        if ($user != null) {
+            if (Hash::check($request->password, $user->password)) {
 
-            return redirect('/scan')->with('user', $user);
+                Auth::login(User::where('email', $user->email)->first());
+
+                return redirect('/scan')->with('user', $user);
+            } else {
+                Session::flash("message", "Het opgegeven wachtwoord of e-mailadres is niet correct");
+                Session::flash("class", "error");
+                return redirect('/');
+            }
         } else {
-            Session::flash("message", "Het opgegeven wachtwoord of e-mailadres is niet correct");
+            Session::flash("message", "Er werd geen account gevonden met dit e-mailadres");
             Session::flash("class", "error");
-            return redirect('/login');
+            return redirect('/');
         }
     }
 
