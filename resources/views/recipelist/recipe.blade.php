@@ -51,7 +51,9 @@
         }
 
         #recipe_save button {
-
+            
+            width: 25px;
+            height: 25px;
             background-color: #F4BF73 ;
             color: white;
             border-color: transparent;
