@@ -156,7 +156,7 @@
             justify-content: center;
 
             width: 90%;
-            margin-left: auto;
+            margin-left: 5%;
 
             margin-top: 20px;
             margin-bottom: 100px;
@@ -174,6 +174,7 @@
 
             display: flex;
             flex-direction: row;
+            align-self: center;
             background-color: #A0D1E6 ;
 
             width: 280px;
@@ -312,7 +313,7 @@
 
             display: flex;
             flex-direction: row;
-
+            align-self: center;
             width: 280px;
             height: 112px;
 
@@ -783,10 +784,13 @@
 
         $('#recipes_saved').show();
         $('#recipes_all').hide();
+        $('#recipes_allergies').hide();
 
         $('#recipes_dropDown').change(function () {
             $('.drop-down-show-hide').hide();
+            $('#recipes_allergies').show();
             $('#' + this.value).show();
+
 
         });
 

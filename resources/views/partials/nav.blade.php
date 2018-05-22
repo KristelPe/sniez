@@ -1,6 +1,6 @@
 <style>
     .darkblue{
-        background-color: #0E6184;
+        background-color: #88caab;
         z-index: 8;
     }
     .blue{
@@ -8,7 +8,7 @@
         z-index: 7;
     }
     .yellow{
-        background-color: #E55266;
+        background-color: #0E6184;
         z-index: 6;
     }
     .pink{
@@ -182,6 +182,12 @@
                 </li>
             </a>
 
+            <a class="nav-block yellow" href="/logout">
+                <li>
+                    <img class="nav-icon" style="height: 40px;" src="/images/icons/menu/exit.svg" alt="lists"><p>Logout</p>
+                </li>
+            </a>
+
         </ul>
     </nav>
 </div>
@@ -190,10 +196,11 @@
     <nav>
         <a class="logo" href="/home">Logo</a>
         <ul>
-            <li><a href="/home">Profiel</a></li>
+            <li><a href="/home" style="color: #88caab">Profiel</a></li>
             <li><a href="/products">Producten</a></li>
             <li><a href="/recipes">Recepten</a></li>
             <li><a href="/scan">Scan</a></li>
+            <li><a href="/logout" style="color: grey; opacity: 0.5;">Logout</a></li>
         </ul>
     </nav>
 </div>

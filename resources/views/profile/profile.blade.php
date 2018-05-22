@@ -149,6 +149,7 @@
             padding: 20px 5px;
 
             height: 30px;
+            text-align: left;
         }
 
         .scan h1, p{
@@ -204,6 +205,11 @@
         }
 
         @media screen and (min-width: 1100px) {
+
+            #profile_header {
+
+                height: 15em;
+            }
 
             #profile_content_mobile {
 
