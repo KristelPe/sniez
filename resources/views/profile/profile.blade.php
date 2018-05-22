@@ -356,7 +356,7 @@
 
                 <div id="last_products">
 
-                    <h2>Laatst opgeslaagden producten</h2>
+                    <h2>Laatst opgeslagen producten</h2>
 
                     <div id="last_recipes_block">
 
