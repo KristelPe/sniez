@@ -1,4 +1,7 @@
 <style>
+    .nav-mobile{    
+        position: fixed;
+    }
     .darkblue{
         background-color: #0E6184;
         z-index: 8;
