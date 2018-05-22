@@ -333,10 +333,6 @@ body {
 </head>
 <body>
 
-    @if(Session::has('message'))
-        <p class="{{ Session::get('class') }}">{{ Session::get('message') }}</p>
-    @endif
-
     <div class="layover">
 
     </div>

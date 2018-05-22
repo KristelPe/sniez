@@ -302,7 +302,7 @@
                 font-size: 1em;
                 margin-top: 16px;
                 padding-top: 16px;
-                padding-bottom: 32px;
+                padding-bottom: 16px;
             }
 
             #login-form a {
@@ -324,9 +324,6 @@
 
 <body>
 
-    @if(Session::has('message'))
-        <p class="{{ Session::get('class') }}">{{ Session::get('message') }}</p>
-    @endif
 
     <div class="layover">
 
