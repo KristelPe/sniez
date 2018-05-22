@@ -190,8 +190,14 @@
              margin-top: 50px;
         }
 
-        #recipes_recipe a {
+        .recipes_recipe {
 
+            margin-top: 20px;
+            margin-left: 0.7em;
+        }
+
+        .recipes_recipe a {
+            
             width: 240px;
             height: 240px;
 
@@ -205,30 +211,33 @@
 
             border-radius: 4px;
 
-            -webkit-box-shadow: 0 2px 4px darkgrey;
+            -webkit-box-shadow: 0 2x 4px darkgrey;
             -moz-box-shadow: 0 2px 4px darkgrey;
             box-shadow: 0 2px 4px darkgrey;
+            
+            background-size: cover;
         }
 
-        #recipes_recipe a img {
+        .recipes_recipe a img {
 
             width: 400px;
             height: auto;
             z-index: 0;
         }
 
-        #recipes_recipe a p {
+        .recipes_recipe a p {
 
+            border-radius: 0 0 3px 3px;
             position: absolute;
             color: black;
-            z-index: 1;
             background-color: rgba(255, 255, 255, 0.95);
             font-size: 0.9em;
 
-            width: 240px;
-            margin-top: 100px;
+            width: 230px;
+            margin-top: 85px;
             padding: 20px 5px;
 
+            height: 30px;
         }
 
         @media screen and (min-width: 1240px) {
@@ -267,6 +276,12 @@
                 flex-direction: row;
                 justify-content: center;
                 margin-top: -80px;
+            }
+            
+            #product_save button {
+
+                height: 38px;
+
             }
 
             #product_save p {
@@ -345,8 +360,8 @@
 
             #recipes_recipe a {
 
-               margin-right: 50px;
-                margin-top: 20px;
+                width: 80%;
+                margin-left: 10%;
             }
 
 
@@ -414,17 +429,14 @@
 
 
             @foreach($all_recipes as $r)
-
-                    <div id="recipes_recipe">
-
-                        <a href="/recipe/{{$r->id}}">
-                            <img src="{{$r->img}}" alt="recipe">
-                            <p>{{$r->titel}}</p>
-                        </a>
-
-                    </div>
-
+                <div class="recipes_recipe">
+                    <a style="background-image:url('{{$r->img}}');" href="/recipe/{{$r->id}}">
+                        <p>{{$r->titel}}</p>
+                    </a>
+                </div>
             @endforeach
+            
+            
 
 
         </div>
