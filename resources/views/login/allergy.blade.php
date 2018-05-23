@@ -156,6 +156,9 @@
 
 
         }
+        .nav-desktop, .nav-mobile {
+            display: none;
+        }
     </style>
 
     <div id="allergies-box">
