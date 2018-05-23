@@ -307,7 +307,7 @@
             }
             if($(this).attr('id') == 1) {
                 $('.labels > li').css("background-color", "#F4BF73");
-                $("input [type='checkbox']").prop("checked", false);
+                $("input[type='checkbox']").prop("checked", false);
                 $("label[for='1'] > li").css("background-color", "#A0D1E6");
                 $("#1").prop("checked", true);
             }
