@@ -688,7 +688,7 @@
                     <button class="btn_search">Zoek</button>
                 </div>
             </div>
-            <p id="not_found">Geen recepten gevonden</p>
+            <p id="not_found">Geen producten gevonden</p>
         </div>
 
         <div id="products_saved" class="drop-down-show-hide">
