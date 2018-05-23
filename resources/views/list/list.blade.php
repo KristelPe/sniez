@@ -129,7 +129,7 @@
 <div id="recipes_all" class="drop-down-show-hide">
             @foreach($listItems as $l)
                 <div class="recipes_recipe">
-                    <a href="/recipe/{{$l->id}}">
+                    <a href="/{{$list->type}}/{{$l->id}}">
                         <img src="{{$l->img}}" alt="recipe">
                         <p>{{$l->titel}}</p>
                     </a>
