@@ -21,6 +21,7 @@ class CreateAllergiesTable extends Migration
 
         DB::table('allergies')->insert(
             array(
+                array('name' => 'geen allergieën', 'path' => '/images/icons/no-allergies.png'),
                 array('name' => 'eieren', 'path' => '/images/icons/eieren.png'),
                 array('name' => 'gluten', 'path' => '/images/icons/gluten.png'),
                 array('name' => 'honing', 'path' => '/images/icons/honing.png'),

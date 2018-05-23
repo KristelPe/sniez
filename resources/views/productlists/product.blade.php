@@ -421,15 +421,17 @@
 
             <p class="scanned_warning_green">Dit product is veilig voor je.</p>
 
-            @else()
+            @else
 
                 <p  class="scanned_warning_red">Let op dit product bevat:
-
-                @foreach($alerts as $a)
-
-                    {{$a}}</p>
-
-                @endforeach
+                    @foreach($alerts as $key => $a)
+                        @if (count($alerts) == ($key+1))
+                            {{$a}}
+                        @else
+                            {{$a}},
+                        @endif
+                    @endforeach
+                </p>
 
             @endif
 
