@@ -179,12 +179,12 @@
             color: white;
 
             padding: 40px;
-            background-color: #A0D1E6;
-            background-size: cover;
-            background-position: center;
+            background-color: white;
+            background-size: 30%;
             background-repeat: no-repeat;
+            background-position: 50% 50%;
 
-            border-radius: 4px;
+            border: 2px solid white;
             margin: auto;
             font-size: 1.5em;
 
@@ -353,6 +353,7 @@
                 width: 400px;
                 padding: 100px 0px;
                 background-color: #A0D1E6;
+                background-size: cover;
                 background-repeat: no-repeat;
 
                 border-radius: 4px;

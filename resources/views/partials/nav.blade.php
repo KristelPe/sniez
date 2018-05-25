@@ -71,8 +71,8 @@
     .hamburger-container div{
         height: 4px;
         width: 40px;
-        background-color: white;
-        box-shadow: 0px 0px 8px #e3e3e3;
+        background-color: black;
+        box-shadow: 0px 0px 4px #e3e3e3;
         border-radius: 3px;
     }
     .hamburger-container div:nth-child(2){

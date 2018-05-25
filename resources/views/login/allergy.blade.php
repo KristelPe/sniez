@@ -83,10 +83,6 @@
             margin-right: auto;
         }
 
-        .allergies__container{
-            margin-left: -1em;
-        }
-
         .allergy{
             border-radius: 3px;
             display: block;

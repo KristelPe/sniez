@@ -696,7 +696,7 @@
                 <a href="#">
                     <img src="images/add.png" alt="add_list">
                     <div id="text_add">
-                        <p>Voeg een nieuw bord toe</p>
+                        <p>Voeg een nieuwe lijst toe</p>
                     </div>
                 </a>
             </div>

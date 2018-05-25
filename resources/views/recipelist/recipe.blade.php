@@ -96,8 +96,6 @@
             margin-top: 40px;
         }
 
-
-
         #recipe_save_lists a p {
 
             text-align: center;
@@ -108,7 +106,7 @@
             background-size: cover;
             background-repeat: no-repeat;
 
-            border-radius: 4px;
+            border: 2px solid white;
             margin: auto;
             font-size: 1.5em;
 
@@ -401,7 +399,7 @@
 
                     @foreach($recipe_lists as $l)
 
-                        <a onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/{{$l->id}}'"><p  style="background-image: url({{$l->img}})";>{{$l->name}}</p></a>
+                        <a onclick="location.href='/recipe/'+ {{$recipe->id}} +'/addToList/{{$l->id}}'"><p style="background-image: url({{$l->img}}); background-size: cover";>{{$l->name}}</p></a>
 
                     @endforeach
 
