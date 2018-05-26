@@ -221,7 +221,7 @@
 
         #add_list_form {
 
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             display: none;
@@ -533,7 +533,6 @@
 
             #add_list_form {
 
-                position: absolute;
                 width: 100%;
                 height: 100%;
                 top:0;

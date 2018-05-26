@@ -239,6 +239,19 @@
             margin-bottom: 30px;
             align-self: center;
         }
+        
+        .new_list{
+            font-size: 0.6em;
+            display: block;
+            margin-left: auto;
+            margin-right: auto:
+            font-size: 0.6em;
+            color: white;
+            text-align: center;
+
+            align-self: center;
+            margin-top: 5em;  
+        }
 
         @media screen and (min-width: 1024px) {
 
@@ -406,6 +419,8 @@
                 </div>
 
                 <a style="text-decoration: none;" href="/recipe/{{$recipe->id}}"><p style="text-align: center;font-size: 0.8em; margin-top: 40px; color: white;">Ik doe dit later wel.</p></a>
+                
+                <a class="new_list" href="recipes.blade.php">Maak een nieuwe lijst</a>
 
             </div>
 

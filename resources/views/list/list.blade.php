@@ -47,50 +47,54 @@
     }
     
     .recipes_recipe {
-        margin-top: 20px;
-        margin-left: 1em;
-        margin-right: 1em;
-    }
 
-    .recipes_recipe a {
+            margin-top: 20px;
+        }
 
-        width: 240px;
-        height: 240px;
+        .recipes_recipe a {
+            
+            width: 240px;
+            height: 240px;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-        margin-bottom: 20px;
+            margin-bottom: 20px;
 
-        overflow: hidden;
+            overflow: hidden;
 
-        border-radius: 4px;
+            border-radius: 4px;
 
-        -webkit-box-shadow: 0 2px 4px darkgrey;
-        -moz-box-shadow: 0 2px 4px darkgrey;
-        box-shadow: 0 2px 4px darkgrey;
-    }
+            -webkit-box-shadow: 0 2x 4px darkgrey;
+            -moz-box-shadow: 0 2px 4px darkgrey;
+            box-shadow: 0 2px 4px darkgrey;
+            
+            background-size: cover;
+        }
 
-    .recipes_recipe a img {
+        .recipes_recipe a img {
 
             width: 400px;
             height: auto;
+            z-index: 0;
         }
 
-    .recipes_recipe a p {
+        .recipes_recipe a p {
 
-        position: absolute;
-        color: black;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.95);
-        font-size: 0.9em;
+            border-radius: 0 0 3px 3px;
+            position: absolute;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9em;
 
-        width: 240px;
-        margin-top: 100px;
-        padding: 20px 5px;
+            width: 230px;
+            margin-top: 85px;
+            padding: 20px 5px;
 
-    }
+            height: 30px;
+        }
+
     
     #recipes_all {
 
@@ -129,8 +133,7 @@
 <div id="recipes_all" class="drop-down-show-hide">
             @foreach($listItems as $l)
                 <div class="recipes_recipe">
-                    <a href="/{{$list->type}}/{{$l->id}}">
-                        <img src="{{$l->img}}" alt="recipe">
+                    <a style="background-image:url('{{$l->img}}'); background-size: cover;" href="/{{$list->type}}/{{$l->id}}">
                         <p>{{$l->titel}}</p>
                     </a>
                 </div>

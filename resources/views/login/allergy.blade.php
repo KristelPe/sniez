@@ -167,7 +167,7 @@
         <div id="allergy_avatar">
 
             <img src="{{$user->avatar}}" alt="profilepicture" id="avatar">
-            <h1>Aan welke soorten voedingsproducten ben je allergisch?</h1>
+            <h1>Selecteer je allergieën en slaag ze daarna op!</h1>
 
         </div>
 

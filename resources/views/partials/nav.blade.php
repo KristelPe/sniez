@@ -1,6 +1,8 @@
 <style>
     .nav-mobile{    
+        display: block;
         position: fixed;
+        z-index: 20;
     }
     .darkblue{
         background-color: #88caab;

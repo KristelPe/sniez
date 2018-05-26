@@ -137,7 +137,6 @@
 
             position: absolute;
             width: 100%;
-            height: 100%;
             display: none;
             top:0;
             left: 0;
@@ -165,9 +164,7 @@
 
         #product_save_lists {
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: fixed;
             margin-top: 40px;
         }
 
@@ -176,7 +173,7 @@
         #product_save_lists a p {
 
             text-align: center;
-            color: white;
+            color: #88CAAB;
 
             padding: 40px;
             background-color: white;
@@ -323,10 +320,7 @@
 
             #product_save_dropdown {
 
-                position: absolute;
                 width: 100%;
-                height: auto;
-                bottom: 0;
                 padding-bottom: 100px;
 
             }
@@ -348,12 +342,11 @@
             #product_save_lists a p {
 
                 text-align: center;
-                color: white;
+                cursor: pointer;
 
                 width: 400px;
                 padding: 100px 0px;
-                background-color: #A0D1E6;
-                background-size: cover;
+                background-color: white;
                 background-repeat: no-repeat;
 
                 border-radius: 4px;
