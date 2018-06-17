@@ -683,8 +683,8 @@
             </div>
 
             <select id="recipes_dropDown">
-                <option class="recipes_dropDown_select" value="recipes_saved">Bewaarde recepten</option>
-                <option class="recipes_dropDown_select" value="recipes_all">Alle recepten</option>
+                <option class="recipes_dropDown_select" value="recipes_saved">Alle recepten</option>
+                <option class="recipes_dropDown_select" value="recipes_all">Bewaarde recepten</option>
             </select>
 
             <div id="recipes_allergies">
@@ -707,6 +707,19 @@
         </div>
 
         <div id="recipes_saved" class="drop-down-show-hide">
+
+            @foreach($recipes as $r)
+                <div class="recipes_recipe">
+                    <a style="background-image:url('{{$r->img}}');" href="/recipe/{{$r->id}}">
+                        <p>{{$r->titel}}</p>
+                    </a>
+                </div>
+            @endforeach
+
+        </div>
+
+
+        <div id="recipes_all" class="drop-down-show-hide">
             <div id="add_recipes_list">
                 <a href="#">
                     <img src="images/add.png" alt="add_list">
@@ -716,61 +729,50 @@
                 </a>
             </div>
 
-           <div id="add_list_form">
-               <form action="" method="POST">
+            <div id="add_list_form">
+                <form action="" method="POST">
 
-                   <h3>Vul hier de naam in van je lijstje</h3>
-                   {{ csrf_field() }}
-                   <input name="name_list" placeholder="Bv. Pasta, Koekjes,..." type="text">
-                   <input name="img_list" type="text" style="display: none">
-                   <button type="submit">Verzenden</button>
-                   <a style="text-align: center; color: white; margin-top: 30px;" href="/recipes">Cancel</a>
-               </form>
-           </div>
+                    <h3>Vul hier de naam in van je lijstje</h3>
+                    {{ csrf_field() }}
+                    <input name="name_list" placeholder="Bv. Pasta, Koekjes,..." type="text">
+                    <input name="img_list" type="text" style="display: none">
+                    <button type="submit">Verzenden</button>
+                    <a style="text-align: center; color: white; margin-top: 30px;" href="/recipes">Cancel</a>
+                </form>
+            </div>
 
             @foreach($recipe_lists as $list)
                 <div class="recipes_list">
                     <a href="/list/{{$list->id}}">
-                        <div 
-                            
-                        @if($list->img != "")    
-                            style="background-image: url('{{$list->img}}'); background-size: cover;" 
-                        @endif
-                            
-                        class="img_list"></div>
+                        <div
+
+                                @if($list->img != "")
+                                style="background-image: url('{{$list->img}}'); background-size: cover;"
+                                @endif
+
+                                class="img_list"></div>
                         <div class="info_list">
-                        <p>{{$list->name}}</p>
-                        <span><p style="color: #a3a3a3;">{{$list->listables->count()}} recepten</p></span>
+                            <p>{{$list->name}}</p>
+                            <span><p style="color: #a3a3a3;">{{$list->listables->count()}} recepten</p></span>
                         </div>
                     </a>
                 </div>
             @endforeach
-        </div>
 
-
-        <div id="recipes_all" class="drop-down-show-hide">
-            @foreach($recipes as $r)
-                <div class="recipes_recipe">
-                    <a style="background-image:url('{{$r->img}}');" href="/recipe/{{$r->id}}">
-                        <p>{{$r->titel}}</p>
-                    </a>
-                </div>
-            @endforeach
         </div>
     </div>
 
     <script>
 
+        $('#recipes_allergies').show();
         $('#recipes_saved').show();
         $('#recipes_all').hide();
-        $('#recipes_allergies').hide();
+
 
         $('#recipes_dropDown').change(function () {
             $('.drop-down-show-hide').hide();
-            $('#recipes_allergies').show();
+            $('#recipes_allergies').hide();
             $('#' + this.value).show();
-
-
         });
 
         // POPUP FORM

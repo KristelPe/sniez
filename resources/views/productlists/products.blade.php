@@ -648,11 +648,6 @@
 
         }
 
-
-
-
-
-
     </style>
 
 
@@ -667,8 +662,8 @@
             </div>
 
             <select id="products_dropDown">
-                <option class="products_dropDown_select" value="products_saved">Bewaarde producten</option>
-                <option class="products_dropDown_select" value="products_all">Alle producten</option>
+                <option class="products_dropDown_select" value="products_saved">Alle producten</option>
+                <option class="products_dropDown_select" value="products_all">Bewaarde producten</option>
             </select>
 
             <div id="products_allergies">
@@ -691,6 +686,20 @@
         </div>
 
         <div id="products_saved" class="drop-down-show-hide">
+
+            @foreach($products as $ap)
+                <div class="products_product">
+                    <a style="background-image: url('{{$ap->img}}');" href="/product/{{$ap->id}}">
+                        <p>{{$ap->titel}}</p>
+                    </a>
+                </div>
+            @endforeach
+
+        </div>
+
+
+        <div id="products_all" class="drop-down-show-hide">
+
             <div id="add_products_list">
                 <a href="#">
                     <img src="images/add.png" alt="add_list">
@@ -717,11 +726,11 @@
                 <div class="products_list">
                     <a href="/list/{{$list->id}}">
                         <div class="img_list"
-                            
-                        @if($list->img != "")    
-                            style="background-image: url('{{$list->img}}'); background-size: cover;" 
-                        @endif
-                            
+
+                             @if($list->img != "")
+                             style="background-image: url('{{$list->img}}'); background-size: cover;"
+                                @endif
+
                         ></div>
                         <div class="info_list">
                             <p>{{$list->name}}</p>
@@ -731,17 +740,7 @@
                 </div>
             @endforeach
 
-        </div>
 
-
-        <div id="products_all" class="drop-down-show-hide">
-            @foreach($products as $ap)
-                <div class="products_product">
-                    <a style="background-image: url('{{$ap->img}}');" href="/product/{{$ap->id}}">
-                        <p>{{$ap->titel}}</p>
-                    </a>
-                </div>
-            @endforeach
         </div>
 
 

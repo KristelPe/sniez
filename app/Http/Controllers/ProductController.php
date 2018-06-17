@@ -92,7 +92,7 @@ class ProductController extends Controller
 
         // Saved Products
 
-        $products_lists = Lists::where('type', 'product')->get()->sortByDesc('id');
+        $products_lists = Lists::where('type', 'product')->where('user_id', Auth::id())->get()->sortByDesc('id');
 
         return view('productlists.product', compact('product', 'all_recipes', 'user', 'products_lists', 'alerts'));
 
