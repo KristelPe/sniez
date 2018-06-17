@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Listable;
+use App\Lists;
 use App\Product;
 use App\Recipe;
 use Illuminate\Http\Request;
@@ -23,44 +25,44 @@ class UserController extends Controller
 
         $user = Auth::user();
         $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
+        $listables = Listable::all();
 
         // Some recipes to show
 
-        $recipes = Recipe::recipes();
-        $all_recipes = $recipes;
-        foreach ($all_recipes as $key => $a) {
-            foreach ($user_allergies as $u) {
-                if (str_contains(strtolower($a->alerts), $u->allergies()->first()->name)) {
-                    unset($all_recipes[$key]);
+        $recipes_lists = Lists::where('type', 'recipe')->where('user_id', Auth::id())->get();
+        $recipes_listables = array();
+        foreach ($recipes_lists as $r){
+            foreach ($listables as $l) {
+                if ($l->list_id == $r->id){
+                    array_push($recipes_listables, $l);
                 }
             }
         }
-        $keys = array_keys($all_recipes);
-        shuffle($keys);
-        $random = array();
-        foreach ($keys as $key) {
-            $random[$key] = $all_recipes[$key];
+        $recipes = array();
+        foreach ($recipes_listables as $rl) {
+            $recipe = Recipe::recipe($rl->listable_id);
+            array_push($recipes, $recipe);
         }
-        $recipes = array_slice($random, 5);
+        $recipes = array_slice(array_reverse($recipes),0, 5);
 
         // Some products to show
 
-        $products = Product::products();
-        $all_products = $products;
-        foreach ($all_products as $key => $a) {
-            foreach ($user_allergies as $u) {
-                if (str_contains(strtolower($a->alerts), $u->allergies()->first()->name)) {
-                    unset($all_products[$key]);
+        $products_lists = Lists::where('type', 'product')->where('user_id', Auth::id())->get();
+        $products_listables = array();
+        foreach ($products_lists as $p){
+            foreach ($listables as $l) {
+                if ($l->list_id == $p->id){
+                    array_push($products_listables, $l);
+
                 }
             }
         }
-        $keys = array_keys($all_products);
-        shuffle($keys);
-        $random = array();
-        foreach ($keys as $key) {
-            $random[$key] = $all_products[$key];
+        $products = array();
+        foreach ($products_listables as $pl) {
+            $product = Product::product($pl->listable_id);
+            array_push($products, $product);
         }
-        $products = array_slice($random, 0, 5);
+        $products = array_slice(array_reverse($products),0, 5);
 
         return view('profile.profile', compact('user', 'user_allergies', 'products', 'recipes'));
 

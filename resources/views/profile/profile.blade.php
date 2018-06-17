@@ -340,7 +340,6 @@
 
                         @foreach($recipes as $r)
 
-                            @if(($r->id)< 4)
 
                             <div class="recipes_recipe" id="recipes_recipe">
 
@@ -350,7 +349,6 @@
 
                             </div>
 
-                            @endif
 
                         @endforeach
 
@@ -368,7 +366,6 @@
 
                         @foreach($products as $p)
 
-                            @if(($p->id)< 4)
 
                                 <div class="recipes_recipe" id="recipes_recipe">
 
@@ -378,7 +375,6 @@
 
                                 </div>
 
-                            @endif
 
                         @endforeach
 
