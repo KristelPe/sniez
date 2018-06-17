@@ -749,12 +749,12 @@
     <script>
 
         $('#products_saved').show();
-        $('#products_allergies').hide();
+        $('#products_allergies').show();
         $('#products_all').hide();
 
         $('#products_dropDown').change(function () {
             $('.drop-down-show-hide').hide();
-            $('#products_allergies').show();
+            $('#products_allergies').hide();
             $('#' + this.value).show();
 
         });
@@ -804,9 +804,9 @@
                 url: "{{URL::action('ProductController@getCustomProducts')}}",
                 data: {allergies: allergies},
                 success: function (response) {
-                    $('#products_all').empty();
+                    $('#products_saved').empty();
                     $.each( response, function( key, value ) {
-                        $("#products_all").append(' <div class="products_product"><a href="/product/'+ value.id +'"><img src="'+ value.img +'" alt="product"> <p>' + value.titel + '</p> </a> </div>');
+                        $("#products_saved").append(' <div class="products_product"><a href="/product/'+ value.id +'"><img src="'+ value.img +'" alt="product"> <p>' + value.titel + '</p> </a> </div>');
                     });
                 }
             });

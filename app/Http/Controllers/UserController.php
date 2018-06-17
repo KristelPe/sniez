@@ -25,6 +25,7 @@ class UserController extends Controller
         $user_allergies = UserAllergy::all()->where('user_id', Auth::id());
 
         // Some recipes to show
+
         $recipes = Recipe::recipes();
         $all_recipes = $recipes;
         foreach ($all_recipes as $key => $a) {
@@ -40,7 +41,7 @@ class UserController extends Controller
         foreach ($keys as $key) {
             $random[$key] = $all_recipes[$key];
         }
-        $recipes = array_slice($random, 0, 5);
+        $recipes = array_slice($random, 5);
 
         // Some products to show
 

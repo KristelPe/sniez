@@ -821,9 +821,9 @@
                 url: "{{URL::action('RecipeController@getCustomRecipes')}}",
                 data: {allergies: allergies},
                 success: function (response) {
-                    $('#recipes_all').empty();
+                    $('#recipes_saved').empty();
                     $.each( response, function( key, value ) {
-                        $("#recipes_all").append(' <div class="recipes_recipe"><a href="/recipe/'+ value.id +'"><img src="'+ value.img +'" alt="recipe"> <p>' + value.titel + '</p> </a> </div>');
+                        $("#recipes_saved").append(' <div class="recipes_recipe"><a href="/recipe/'+ value.id +'"><img src="'+ value.img +'" alt="recipe"> <p>' + value.titel + '</p> </a> </div>');
                     });
                 }
             });
