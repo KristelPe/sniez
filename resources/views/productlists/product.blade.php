@@ -205,6 +205,7 @@
             margin-left: 5%;
 
             margin-top: 20px;
+            margin-bottom: 100px;
 
 
         }
@@ -380,6 +381,7 @@
 
                 margin-top: 20px;
                 z-index: 0;
+                margin-bottom: 100px;
 
 
             }

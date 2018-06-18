@@ -198,6 +198,7 @@
             display: flex;
             flex-direction: row;
             text-decoration: none;
+            margin-bottom: 100px;
 
         }
 
