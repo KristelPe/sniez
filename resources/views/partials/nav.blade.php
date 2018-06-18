@@ -2,7 +2,7 @@
     .nav-mobile{    
         display: block;
         position: fixed;
-        z-index: 20;
+        z-index: 150;
     }
     .darkblue{
         background-color: #88caab;
@@ -21,9 +21,15 @@
         z-index: 5;
     }
 
+    nav {
+
+        z-index: 150;
+    }
+
     .nav-block{
         width: 100vw;
         height: 25vh;
+
     }
     
     #nav-container{
@@ -34,8 +40,9 @@
         margin: -8px;
         padding: 0;
         position: absolute;
-        z-index: 4;
+
         display: none;
+
     }
     .nav-block{
         display: flex;
@@ -212,8 +219,10 @@
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script>
+
     function toggleNav(){
         $("#nav-container").toggle();
         $("#hamburger").toggleClass("close");
+
     }
 </script>

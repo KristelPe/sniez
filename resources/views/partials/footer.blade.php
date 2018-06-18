@@ -1,7 +1,7 @@
 <style>
 
     #profile_footer {
-        position: fixed;
+
         z-index: 100;
         left: 0;
         bottom: 0;
@@ -36,6 +36,13 @@
         float: right;
         height: 30px;
         width: 30px;
+    }
+
+    @media screen and (min-width: 768px){
+
+        #profile_footer {
+            position: fixed;
+        }
     }
 
 </style>
