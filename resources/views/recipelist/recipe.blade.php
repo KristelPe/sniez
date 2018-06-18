@@ -68,6 +68,7 @@
             display: none;
             top:0;
             left: 0;
+            bottom: 0;
 
 
             flex-direction: column;
@@ -75,6 +76,7 @@
 
 
             background-color: rgba(244, 191, 115, 0.95);
+            z-index: 150;
 
         }
 
@@ -420,7 +422,7 @@
 
                 <a style="text-decoration: none;" href="/recipe/{{$recipe->id}}"><p style="text-align: center;font-size: 0.8em; margin-top: 40px; color: white;">Ik doe dit later wel.</p></a>
                 
-                <a class="new_list" href="recipes.blade.php">Maak een nieuwe lijst</a>
+                <a class="new_list" href="/recipes">Maak een nieuwe lijst</a>
 
             </div>
 

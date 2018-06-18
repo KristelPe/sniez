@@ -140,8 +140,9 @@
             display: none;
             top:0;
             left: 0;
+            bottom: 0;
 
-            z-index: 10;
+            z-index: 150;
 
 
             flex-direction: column;
@@ -206,6 +207,17 @@
             margin-top: 20px;
 
 
+        }
+
+        .new_list{
+            display: block;
+            margin-left: auto;
+            font-size: 0.6em;
+            color: white;
+            text-align: center;
+
+            align-self: center;
+            margin-top: 5em;
         }
 
          h1 {
@@ -460,6 +472,8 @@
             </div>
 
             <a style="text-decoration: none;" href="/product/{{$product->id}}"><p style="text-align: center;font-size: 0.8em; margin-top: 40px; color: white;">Ik doe dit later wel.</p></a>
+            <a class="new_list" href="/products">Maak een nieuwe lijst</a>
+
 
         </div>
 

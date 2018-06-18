@@ -81,6 +81,7 @@
             max-width: 740px;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 100px;
         }
 
         .allergy{
@@ -115,7 +116,7 @@
             background-color: #A0D1E6;
             padding: 1em;
             width: 160px;
-            margin-top: 5em;
+            margin-top: 2em;
             margin-left: auto;
             margin-right: auto;   
             color: white;

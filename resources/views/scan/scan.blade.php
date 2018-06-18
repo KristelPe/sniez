@@ -89,6 +89,7 @@
         cursor: pointer;   
         border-radius: 100%;
         border: 1px solid #F4BF73;
+        margin-bottom: 100px;
     }
 
     @media screen and (min-width: 1024px){

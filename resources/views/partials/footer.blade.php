@@ -1,7 +1,8 @@
 <style>
 
     #profile_footer {
-        margin-top: 3em;
+        position: fixed;
+        z-index: 100;
         left: 0;
         bottom: 0;
         height: 5em;

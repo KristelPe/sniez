@@ -181,6 +181,7 @@
             margin-left: 10%;
 
             margin-top: 20px;
+            margin-bottom: 100px;
         }
 
         #profile_content_mobile h1 {
