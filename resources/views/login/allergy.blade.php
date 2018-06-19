@@ -19,7 +19,7 @@
         <div id="allergy_avatar">
 
             <img src="{{$user->avatar}}" alt="profilepicture" id="avatar">
-            <h1>Selecteer je allergieën en slaag ze daarna op!</h1>
+            <h1>Selecteer je allergieën en sla ze daarna op!</h1>
 
         </div>
 
