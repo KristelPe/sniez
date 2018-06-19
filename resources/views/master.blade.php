@@ -34,47 +34,15 @@
 
         <title>Sniez | We make sure you won't</title>
 
+        <!-- CSS -->
 
-    <style>
-        body
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/master.css') }}" />
 
-        {
 
-            height: 80vh;
-            max-height: 90vh;
-
-            font-family: 'Roboto Slab', sans-serif;
-        }
-        
-        .succes{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            color: white; 
-            border-radius: 3px;
-            border: 1px solid #88caab;
-            background-color: #88caab;
-            width: 25%;
-            padding: 1em;
-        }
-        
-        .error{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            color: white; 
-            border-radius: 3px;
-            border: 1px solid #F4BF73;
-            background-color: #F4BF73;
-            width: 25%;
-            padding: 1em;
-        }
-    </style>
     </head>
 
     <body>
+
     @if($_SERVER['REQUEST_URI'] != "/")
         @include('partials.nav')
     @endif
@@ -84,4 +52,5 @@
     @include('partials.footer')
 
     </body>
+
 </html>

@@ -1,162 +1,13 @@
 @extends('master')
 
 @section('content')
-    <link rel="stylesheet" href="/css/easy-autocomplete.min.css">
-    <link rel="stylesheet" href="/css/easy-autocomplete.themes.min.css">
-    <style>
-        .search{
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
-        .input_search{
-            border-radius: 3px;
-            border: 1px solid #F4BF73;
-            padding: 1em;
-            width: 160px;
-        }
+    <!-- CSS -->
 
-        .btn_search{
-            background-image: url(/images/icons/search-orange.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            border: 0;
-            text-indent: -9999px;
-            margin-left: -3em;
-            background-color: transparent;
-        }
-
-        #allergy_header{
-            width: 100%;
-            height: 12em;
-            background-image: url("images/backgrounds/bg_profile.jpg");
-            background-size: cover;
-            background-position: top;
-            background-repeat: no-repeat;
-            z-index: -2;
-        }
-
-        #allergy_avatar{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #allergy_avatar img{
-            width: 100px;
-            height: 100px;
-            border-radius: 100%;
-            border: 5px solid white;
-
-            align-self: center;
-            margin-top: -50px;
-
-            -webkit-box-shadow: 0 2px 4px lightgrey;
-            -moz-box-shadow: 0 2px 4px lightgrey;
-            box-shadow: 0 2px 4px lightgrey;
-        }
-
-        #allergy_avatar h1 {
-            font-size: 1em;
-            text-align: center;
-        }
-
-        #not_found{
-            border-radius: 3px;
-            border: 1px solid rgba(220, 20, 60, 0.3);
-            padding: 1em;
-            font-size: 12px;
-            color: black;
-            display: none;
-            text-align: center;
-            width: 160px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #allergies-form{
-            max-width: 740px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 100px;
-        }
-
-        .allergy{
-            border-radius: 3px;
-            display: block;
-            float: left;
-            width: 50%;
-            background-color: #F4BF73;
-            list-style: none;
-            color: white;
-            margin-top: 16px;
-            margin-left: 17.5%;
-        }
-
-        .allergy img{
-            display: block;
-            width: 50px;
-            height: 50px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 0.5em;
-        }
-
-        .allergy p{
-            text-align: center;
-        }
-
-        .btn_save{
-            display: block;
-            border-radius: 3px;
-            border: 1px solid #A0D1E6;
-            background-color: #A0D1E6;
-            padding: 1em;
-            width: 160px;
-            margin-top: 2em;
-            margin-left: auto;
-            margin-right: auto;   
-            color: white;
-        }
-
-        .clearfix{
-            content: "";
-            clear: both;
-        }
-
-        @media screen and (min-width: 1240px) {
-
-            #allergies-form{
-                max-width: 740px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .allergies__container{
-                margin-left: -1em;
-            }
-
-            .allergy{
-                border-radius: 3px;
-                display: block;
-                float: left;
-                margin: 0.3em;
-                width: 160px;
-                background-color: #F4BF73;
-                list-style: none;
-                color: white;
-                margin-top: 0px;
-            }
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/login/allergy.css') }}" />
 
 
-        }
-        .nav-desktop, .nav-mobile {
-            display: none;
-        }
-    </style>
+    <!-- ALLERGY -->
 
     <div id="allergies-box">
 
@@ -224,7 +75,7 @@
 
 
 
-
+    <!-- JS -->
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="/js/jquery.easy-autocomplete.min.js"></script>
