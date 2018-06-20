@@ -40,7 +40,7 @@ return [
     'facebook' => [
         'client_id' => '1959522321042224',
         'client_secret' => 'bed04b5408361b366fb506eade2981ca',
-        'redirect' => 'http://sniez.eu/login/callback',
+        'redirect' => 'http://www.sniez.eu/login/callback',
     ],
 
 ];
